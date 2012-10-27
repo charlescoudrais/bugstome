@@ -8,13 +8,13 @@
     echo $this->headTitle('BUGS ME | Créations 2C') . PHP_EOL;
     echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
     echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
-
 //    echo $this->headScript()->setFile('/js/library/prototype.js') . PHP_EOL;
 //    echo $this->headScript()->setFile('/js/prototype.class.js') . PHP_EOL;
-    
     echo $this->headScript()->setFile('/js/library/jquery.js') . PHP_EOL;
+    echo $this->headScript()->setFile('/js/library/jquery.balloon.min.js') . PHP_EOL;
     echo $this->headScript()->setFile('/js/myJquery.js') . PHP_EOL;
 ?>
+    
 </head>
 <body>
     <div id="header">
@@ -24,8 +24,8 @@
             </h1> 
         </div>
         <div id="nav">
-            <div id="user-links">
-                <a href="">USER_LINKS</a>
+            <div id="user-links" class="balloon" title="balloon content">
+                USER_LINKS
             </div>
             <?php echo $this->navigation(); ?>
             <div class="clear-both"></div>
