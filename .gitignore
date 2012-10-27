@@ -65,37 +65,7 @@ library/Zend/Amf/Server.php
 
 library/Zend/*
 
-*.xml
 
-*.sql
-
-*.wsdl
-
-*.xsd
-
-*.phar
-
-*.bat
-
-*.config
-
-*.cmd
-
-*.ps1
-
-*.wadcfg
-
-*.dll
-
-*.exe
-
-*.rtf
-
-*.cscfg
-
-*.csdef
-
-*.flf
 
 nbproject/private/private.properties
 
@@ -104,3 +74,7 @@ nbproject/project.properties
 public/img/004.jpg
 
 application/Core/configs/application.ini
+
+nbproject/private/private.xml
+
+nbproject/project.xml
