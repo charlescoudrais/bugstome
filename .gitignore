@@ -63,7 +63,7 @@ library/Zend/Amf/Response/Http.php
 
 library/Zend/Amf/Server.php
 
-*.php
+library/Zend/*
 
 *.xml
 
