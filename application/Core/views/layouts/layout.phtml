@@ -1,0 +1,43 @@
+<?php
+    echo $this->doctype() . PHP_EOL;
+?>
+<html>
+<head>
+<?php
+    echo $this->headMeta()->setCharset('utf-8') . PHP_EOL;
+    echo $this->headTitle('BUGS ME | Créations 2C') . PHP_EOL;
+    echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
+    echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
+
+//    echo $this->headScript()->setFile('/js/library/prototype.js') . PHP_EOL;
+//    echo $this->headScript()->setFile('/js/prototype.class.js') . PHP_EOL;
+    
+    echo $this->headScript()->setFile('/js/library/jquery.js') . PHP_EOL;
+    echo $this->headScript()->setFile('/js/myJquery.js') . PHP_EOL;
+?>
+</head>
+<body>
+    <div id="header">
+        <div id="header-top">
+            <h1 id="sitename">
+                <a href="/index/index">BUGS ME | Créations 2C</a>
+            </h1> 
+        </div>
+        <div id="nav">
+            <div id="user-links">
+                <a href="">USER_LINKS</a>
+            </div>
+            <?php echo $this->navigation(); ?>
+            <div class="clear-both"></div>
+        </div>
+    </div>
+    <div id="notification"></div>
+    <div id="main">
+        <?php echo $this->layout()->content . PHP_EOL;?>
+    </div>
+    <div id="footer">
+        
+    </div>
+</body>
+<?php //echo $this->headScript()->setFile('/js/myPrototype.js') . PHP_EOL;?>
+</html>
