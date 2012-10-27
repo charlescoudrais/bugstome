@@ -1,5 +1,8 @@
 bugsme
 ======
-It will be an open source... when done!
 
-Project Manager (bug tracking, tasks manager...).
+Soon!
+
+Zend Framework 1 based Project Manager (bug tracking, tasks manager...).
+
+It will be an open source... when done!
