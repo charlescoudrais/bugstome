@@ -9,6 +9,7 @@ $(document).ready(function(){
         offsetY: 6,
         css: {
             minWidth: "100px",
+            padding: '10px 4px',
             color: '#00ff33',
             background: '#696969',
             border: '1px solid #ECECEC',
