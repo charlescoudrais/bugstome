@@ -102,3 +102,5 @@ nbproject/private/private.properties
 nbproject/project.properties
 
 public/img/004.jpg
+
+application/Core/configs/application.ini
