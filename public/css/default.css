@@ -173,8 +173,11 @@ p {
     margin: 10px 0px 5px 0px;
 }
 .ul-balloon {
-    list-style-type: circle;
-    margin-left: 20px;
+    list-style-type: none;
+    /*margin-left: 20px;*/
+}
+.ul-balloon li {
+    padding: 6px;
 }
 .ul-balloon li a {
     color: #00ff33;
