@@ -5,7 +5,7 @@ $(document).ready(function(){
     
     $('#user-links').balloon({
         position: 'bottom',
-        offsetX: -30,
+        offsetX: -50,
         offsetY: 6,
         css: {
             minWidth: "100px",
@@ -18,6 +18,7 @@ $(document).ready(function(){
         },
         contents: '<ul class="ul-balloon">' +
                   '<li><a href="">YOUR_PARAMS</a></li>' +
+                  '<li><a href="">HELP</a></li>' +
                   '<li><a href="">etc...</a></li>' +
                   '</ul>' +
                   '<hr style="margin: 10px 0px 4px 0px;" />' +
