@@ -61,10 +61,11 @@ a.button {
     /*border: 1px solid #FFFFFF;*/
     border-radius: 3px;
     box-shadow: 0px 0px 4px 1px #CCC;
+    text-decoration: none;
 }
-a.button:hover {
+/*a.button:hover {
     color: #00ff33;
-}
+}*/
 
 p, .article {
     padding: 6px;
@@ -209,13 +210,13 @@ h1#sitename>a {
 }
 
 /* FORMS */
-/*
- * CSS FOR FORMS
- */
- .zend_form {
+.zend_form {
      margin: auto;
      width: 70%;
- }   
+ }
+ .errors {
+     color: red;
+ }
 /* .form-div-label {
      display: inline;
      height: 26px;
@@ -232,6 +233,7 @@ h1#sitename>a {
      text-align: right;
  }
  .form-elt-label {
+     /*width: 350px;*/
      font-weight: bold;
      color: #757575;
  }
@@ -252,7 +254,8 @@ h1#sitename>a {
     background-image: -webkit-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
     background-image: -ms-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='FF1F6BA2',EndColorStr='FF1F6BA2');
-    /*border: 1px solid #FFFFFF;*/
+    cursor: pointer;
+    border: none;
     border-radius: 3px;
     box-shadow: 0px 0px 4px 1px #CCC;
  }
@@ -264,4 +267,22 @@ h1#sitename>a {
      width: 100%;
      border: 2px solid #ECECEC;
      border-radius: 2px;
+ }
+ select {
+     /*
+     background: none;
+     background-image: none;
+     background-color: #ffffff;
+     border: 1px solid #CCC;
+     -webkit-appearance: menulist;
+    
+     box-sizing: none;
+    -webkit-box-align: center;
+    border-image: inherit;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+    */
  }

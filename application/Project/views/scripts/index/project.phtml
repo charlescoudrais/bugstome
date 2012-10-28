@@ -11,7 +11,10 @@ $fieldDecorators = array(
                         ),
                         array(
                             'Label',
-                            array('class' => 'form-elt-label'),
+                            array(
+                                'class' => 'form-elt-label',
+                                'style' => 'padding-right: 30px;'
+                            ),
 //                            array(
 //                                'tag'   => 'div',
 //                                'class' => 'form-div-label'
@@ -45,7 +48,7 @@ $tareaDecorators = array(
                         array(
                             array('row' => 'HtmlTag'),
                             array(
-                                'tag' => 'div',
+                                'tag'   => 'div',
                                 'class' => 'form-row'
                             )
                         )
@@ -54,9 +57,12 @@ $tareaDecorators = array(
 $buttonDecorators = array(
                         'ViewHelper',
                         array(
-                            array('row' => 'HtmlTag'),
                             array(
-                                'tag' => 'div',
+                                'row' => 'HtmlTag',
+                                'class' => 'sub'
+                            ),
+                            array(
+                                'tag'   => 'div',
                                 'class' => 'form-row-submit offset-label'
                             )
                         )
