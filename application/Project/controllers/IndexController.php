@@ -1,7 +1,18 @@
 <?php
-class Project_ProjectController extends Zend_Controller_Action
+class Project_IndexController extends Zend_Controller_Action
 {
-    public function indexAction()
+    public function listAction()
+    {
+        $this->view->pageTitle   = $this->view->translate('PROJECTS_TITLE');
+        
+        $this->view->projects = array(
+            1 => 'Project 1',
+            2 => 'Project 2',
+            3 => 'Project 3'
+        );
+    }
+    
+    public function projectAction()
     {
         $form = new Project_Form_Project();
         $form->setAction('')
@@ -15,6 +26,6 @@ class Project_ProjectController extends Zend_Controller_Action
         
         $this->view->pageTitle   = $this->view->translate('PROJECTS_TITLE');
         $this->view->formProject = $form;
-        
     }
+    
 }

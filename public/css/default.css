@@ -177,11 +177,22 @@ h1#sitename>a {
 }
 .ul-balloon {
     list-style-type: none;
-    /*margin-left: 20px;*/
 }
 .ul-balloon li {
     padding: 6px;
 }
 .ul-balloon li a {
     color: #00ff33;
+}
+
+/* LISTS */
+.ul-projects {
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+}
+.ul-projects li {
+    height: 30px;
+    border-bottom: 1px solid #ECECEC;
+    line-height: 30px;
 }
