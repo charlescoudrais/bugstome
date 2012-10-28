@@ -138,7 +138,7 @@ h1#sitename>a {
     cursor: pointer;
 }
 #nav li.active {
-    color: #00ff33;
+    color: #49a0df;
     background-color: #505050;
     background-image: -moz-linear-gradient(270deg,#505050 0.85%,#696969 50.13%,#505050 99.96%);
     background-image: -o-linear-gradient(270deg,#505050 0.85%,#696969 50.13%,#505050 99.96%);
@@ -149,7 +149,8 @@ h1#sitename>a {
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='FF505050',EndColorStr='FF505050');
 }
 #nav li.active a {
-    color: #00ff33;
+    color: #79c4fb;
+    font-size: 13px;
 }
 #nav li a {
     color: #ffffff;
