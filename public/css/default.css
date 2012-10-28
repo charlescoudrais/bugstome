@@ -46,11 +46,19 @@ a:active {
 }
 /* BUTTONS */
 a.button {
-    padding: 6px;
-    color: #696969;
-    border: 1px solid #FFFFFF;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #4AB6D2;
+    background-image: -moz-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    background-image: -o-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    background-image: -linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    background-image: -webkit-gradient(linear,left top,right bottom,from(#1F6BA2),color-stop(50.14%,#4AB6D2),to(#1F6BA2));
+    background-image: -webkit-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    background-image: -ms-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='FF1F6BA2',EndColorStr='FF1F6BA2');
+    /*border: 1px solid #FFFFFF;*/
     border-radius: 3px;
-    box-shadow: 0px 0px 4px 0px #CCC;
+    box-shadow: 0px 0px 4px 1px #CCC;
 }
 a.button:hover {
     color: #00ff33;
