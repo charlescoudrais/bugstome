@@ -2,12 +2,12 @@
 return array(
     
 // GLOBALS
-    'HOME_TITLE'     => 'DASHBOARD', 
-    'STATS_TITLE'    => 'STATISTICS', 
-    'PROJECTS_TITLE' => 'PROJECTS', 
-    'TASKS_TITLE'    => 'TASKS',
-    'USERS_TITLE'    => 'USERS LIST',
-    'USER_TITLE'     => 'YOUR ACCOUNT',
+    'HOME_TITLE'         => 'DASHBOARD', 
+    'STATS_TITLE'        => 'STATISTICS', 
+    'USERS_TITLE'        => 'USERS LIST',
+    'USER_TITLE'         => 'YOUR ACCOUNT',
+    'TASKS_TITLE'        => 'TASKS',
+    'CREATE_NEW_TASK'    => 'New task',
 // FORMS
     
 // STATS
@@ -15,11 +15,10 @@ return array(
 // NAVIGATION
     'NAV_HOME'    => 'Dashboard',
     'NAV_TASK'    => 'Tasks',
-    'NAV_PROJECT' => 'Projects',
     'NAV_STAT'    => 'Statistics',
     
 // USER
-    'YOUR_PARAMS' => 'Your account',
+    'YOUR_PARAMS' => 'My account',
     'USER_LIST'   => 'Users list',
     
 // TEAM

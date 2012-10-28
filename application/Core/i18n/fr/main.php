@@ -2,25 +2,24 @@
 return array(
     
 // GLOBALS
-    'HOME_TITLE'     => 'DASHBOARD', 
-    'STATS_TITLE'    => 'STATISTIQUES', 
-    'PROJECTS_TITLE' => 'PROJETS', 
-    'TASKS_TITLE'    => 'TÂCHES', 
-    'USERS_TITLE'    => 'LISTE DES UTILISATEURS', 
-    'USER_TITLE'     => 'VOTRE COMPTE', 
+    'HOME_TITLE'      => 'DASHBOARD', 
+    'STATS_TITLE'     => 'STATISTIQUES', 
+    'USERS_TITLE'     => 'LISTE DES UTILISATEURS', 
+    'USER_TITLE'      => 'VOTRE COMPTE',
+    'TASKS_TITLE'     => 'TÂCHES', 
+    'CREATE_NEW_TASK' => 'Nouvelle tâche',
 // FORMS
     
 // STATS
     
 // NAVIGATION
-    'NAV_HOME'    => 'Dashboard',
-    'NAV_TASK'    => 'Tâches',
-    'NAV_PROJECT' => 'Projets',
-    'NAV_STAT'    => 'Statistiques',
+    'NAV_HOME'      => 'Dashboard',
+    'NAV_TASK'      => 'Tâches',
+    'NAV_STAT'      => 'Statistiques',
 
 // USER
-    'YOUR_PARAMS' => 'Votre compte',
-    'USER_LIST'   => 'Liste des utilisateurs',
+    'YOUR_PARAMS'   => 'Mon compte',
+    'USER_LIST'     => 'Liste des utilisateurs',
     
 // TEAM
     'THE_TEAM'      => 'L\'ÉQUIPE',

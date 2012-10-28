@@ -24,7 +24,7 @@ class Project_IndexController extends Zend_Controller_Action
         }
         
         
-        $this->view->pageTitle   = $this->view->translate('PROJECTS_TITLE');
+        $this->view->pageTitle   = $this->view->translate('NEW_PROJECT_TITLE');
         $this->view->formProject = $form;
     }
     
