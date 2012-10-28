@@ -24,7 +24,6 @@ class Project_Form_Project extends Zend_Form
                     );
         $projectManager->setMultiOptions(array('User 1', 'User 2', 'User 3'));
         $projectDescription->addFilter(new Zend_Filter_StripTags());
-        $projectSubmit->setLabel('SUBMIT');
         
         $this->addElement($projectId);
         $this->addElement($projectName);

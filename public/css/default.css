@@ -207,3 +207,61 @@ h1#sitename>a {
     border-bottom: 1px solid #ECECEC;
     line-height: 30px;
 }
+
+/* FORMS */
+/*
+ * CSS FOR FORMS
+ */
+ .zend_form {
+     margin: auto;
+     width: 70%;
+ }   
+/* .form-div-label {
+     display: inline;
+     height: 26px;
+     width: 150px;
+ }*/
+ .form-div-elt {
+     /*display: inline;*/
+ }
+ .form-row {
+     margin-bottom: 10px;
+ }
+ .form-row-submit {
+     margin: 10px 0px;
+     text-align: right;
+ }
+ .form-elt-label {
+     font-weight: bold;
+     color: #757575;
+ }
+ input[type=text] {
+     height: 26px;
+     /*width: 100%;*/
+     border: 2px solid #ECECEC;
+     border-radius: 2px;
+ }
+ input[type=submit] {
+    padding: 10px;
+    color: #ffffff;
+    background-color: #4AB6D2;
+    background-image: -moz-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    background-image: -o-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    background-image: -linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    background-image: -webkit-gradient(linear,left top,right bottom,from(#1F6BA2),color-stop(50.14%,#4AB6D2),to(#1F6BA2));
+    background-image: -webkit-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    background-image: -ms-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='FF1F6BA2',EndColorStr='FF1F6BA2');
+    /*border: 1px solid #FFFFFF;*/
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px 1px #CCC;
+ }
+ *[disabled=disabled] {
+     opacity: 0.5;
+ }
+ textarea {
+     height: 220px;
+     width: 100%;
+     border: 2px solid #ECECEC;
+     border-radius: 2px;
+ }

@@ -1,3 +1,81 @@
+<?php
+$fieldDecorators = array(
+                        'ViewHelper',
+                        array(
+                            array('elt' => 'HtmlTag'),
+                            array(
+                                'tag'   => 'div',
+                                'class' => 'form-div-elt',
+                                'style' => 'display: inline;'
+                            )
+                        ),
+                        array(
+                            'Label',
+                            array('class' => 'form-elt-label'),
+//                            array(
+//                                'tag'   => 'div',
+//                                'class' => 'form-div-label'
+//                            )
+                        ),
+                        'Description',
+                        'Errors',
+                        array(
+                            array('row' => 'HtmlTag'),
+                            array(
+                                'tag'   => 'div',
+                                'class' => 'form-row'
+                            )
+                        )
+                    );
+$tareaDecorators = array(
+                        'ViewHelper',
+                        array(
+                            array('elt' => 'HtmlTag'),
+                            array(
+                                'tag'   => 'div',
+                                'class' => 'div-tarea'
+                            )
+                        ),
+                        array(
+                            'Label',
+                            array('class' => 'form-elt-label'),
+                        ),
+                        'Description',
+                        'Errors',
+                        array(
+                            array('row' => 'HtmlTag'),
+                            array(
+                                'tag' => 'div',
+                                'class' => 'form-row'
+                            )
+                        )
+                    );
+
+$buttonDecorators = array(
+                        'ViewHelper',
+                        array(
+                            array('row' => 'HtmlTag'),
+                            array(
+                                'tag' => 'div',
+                                'class' => 'form-row-submit offset-label'
+                            )
+                        )
+                    );
+
+$this->formProject->inp_project_name->setLabel('PROJECT_NAME')
+                      ->clearDecorators()
+                      ->setDecorators($fieldDecorators);
+$this->formProject->sel_project_manager->setLabel('PROJECT_MANAGER')
+                      ->clearDecorators()
+                      ->setDecorators($fieldDecorators);
+$this->formProject->tarea_project_description->setLabel('PROJECT_DESCRIPTION')
+                      ->clearDecorators()
+                      ->setDecorators($tareaDecorators);
+$this->formProject->submit_project_form->setLabel('SUBMIT')
+                       ->clearDecorators()
+                       ->setDecorators($buttonDecorators);
+?>
+
 <h1><?= $this->pageTitle; ?></h1>
 <div class="article">
     <?= $this->formProject; ?>
