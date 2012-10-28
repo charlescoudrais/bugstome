@@ -47,7 +47,7 @@ a:active {
 }
 
 /* BUTTONS */
-a.button {
+.button {
     padding: 10px;
     color: #49a0df;
     background-color: #E1E1E1;
@@ -62,7 +62,7 @@ a.button {
     box-shadow: 0px 0px 4px #CCC;
     text-decoration: none;
 }
-a.button:hover {
+.button:hover {
     color: #FFFFFF;
     background-color: #4AB6D2;
     background-image: -moz-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
@@ -209,11 +209,21 @@ h1#sitename>a {
     margin: 0;
     margin-left: 20px;
     padding: 0;
+    list-style-type: none;
 }
 .ul-projects li {
-    height: 30px;
+    padding: 6px;
+    height: 40px;
     border-bottom: 1px solid #ECECEC;
-    line-height: 30px;
+    line-height: 40px;
+}
+.ul-projects li a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4AB6D2;
+}
+.ul-projects li a:hover {
+    color: #1F6BA2;
 }
 
 /* FORMS */

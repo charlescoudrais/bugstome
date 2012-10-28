@@ -8,7 +8,9 @@
 <div class="article">
     <ul class="ul-projects">
     <?php foreach ($this->projects as $projectId => $projectValue) : ?>
-        <li><?= $projectId . ' - ' . $projectValue ?></li>
+        <li>
+        <?='<a href="" id="a-project-'.$projectId.'">'.$projectValue.'</a>'?>
+        </li>
     <?php endforeach; ?>
     </ul>
 </div>
