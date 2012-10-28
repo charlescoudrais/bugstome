@@ -1,5 +1,5 @@
 <?php
-class StatController extends Zend_Controller_Action
+class Stat_StatController extends Zend_Controller_Action
 {
     public function indexAction()
     {
