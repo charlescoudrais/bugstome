@@ -12,6 +12,18 @@ body {
     font-size: 12px;
 }
 
+#footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #CCC;
+}
+#footer p {
+    margin: auto;
+    width: 1000px;
+    text-align: right;
+}
+
 /* HEADERS */
 h1, h2, h3, h4, h5, h6 {
     padding: 6px;
@@ -94,10 +106,6 @@ h1#sitename {
 h1#sitename>a {
     text-decoration: none;
     color: #EFEFEF;
-}
-
-#footer {
-    background-color: red;
 }
 
 /* NAVIGATION */
@@ -185,6 +193,7 @@ h1#sitename>a {
 #main {
     margin: 0px auto;
     width: 1000px;
+    min-height: 450px;
 }
 
 /* BALLOON */
@@ -195,6 +204,7 @@ h1#sitename>a {
     margin: 10px 0px 5px 0px;
 }
 .ul-balloon {
+    min-width: 180px;
     list-style-type: none;
 }
 .ul-balloon li {

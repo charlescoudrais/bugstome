@@ -17,6 +17,7 @@
     
 </head>
 <body>
+    
     <div id="header">
         <div id="header-top">
             <h1 id="sitename">
@@ -25,19 +26,25 @@
         </div>
         <div id="nav">
             <div id="user-links" class="balloon" title="balloon content">
-                USER_LINKS
+                User Name (user links)
             </div>
             <?php echo $this->navigation(); ?>
             <div class="clear-both"></div>
         </div>
     </div>
+    
     <div id="notification"></div>
+    
     <div id="main">
         <?php echo $this->layout()->content . PHP_EOL;?>
     </div>
+
     <div id="footer">
-        
+        <p>
+            <img src="/img/PoweredBy_ZF_4LightBG.png" alt="Powered by Zend Framework" />
+        </p>
     </div>
+    
 </body>
 <?php //echo $this->headScript()->setFile('/js/myPrototype.js') . PHP_EOL;?>
 </html>
