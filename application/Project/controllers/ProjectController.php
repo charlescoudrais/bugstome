@@ -1,5 +1,5 @@
 <?php
-class ProjectController extends Zend_Controller_Action
+class Project_ProjectController extends Zend_Controller_Action
 {
     public function indexAction()
     {

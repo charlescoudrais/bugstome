@@ -1,5 +1,5 @@
 <?php
-class TaskController extends Zend_Controller_Action
+class Task_TaskController extends Zend_Controller_Action
 {
     public function tasksAction()
     {

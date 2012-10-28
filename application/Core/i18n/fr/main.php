@@ -12,7 +12,7 @@ return array(
     
 // NAVIGATION
     'NAV_HOME'    => 'Dashboard',
-    'NAV_TASKS'    => 'Tâches',
+    'NAV_TASK'    => 'Tâches',
     'NAV_PROJECT' => 'Projets',
     'NAV_STAT'    => 'Statistiques',
     
