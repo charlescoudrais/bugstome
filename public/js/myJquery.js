@@ -17,8 +17,8 @@ $(document).ready(function(){
             opacity: 0.9
         },
         contents: '<ul class="ul-balloon">' +
-                  '<li><a href="">YOUR_PARAMS</a></li>' +
-                  '<li><a href="">HELP</a></li>' +
+                  '<li><a href="/user/user">Your account</a></li>' +
+                  '<li><a href="">Help^</a></li>' +
                   '<li><a href="">etc...</a></li>' +
                   '</ul>' +
                   '<hr style="margin: 10px 0px 4px 0px;" />' +
