@@ -6,15 +6,13 @@ return array(
     'STATS_TITLE'        => 'STATISTICS', 
     'USERS_TITLE'        => 'USERS LIST',
     'USER_TITLE'         => 'YOUR ACCOUNT',
-    'TASKS_TITLE'        => 'TASKS',
-    'CREATE_NEW_TASK'    => 'New task',
+    
 // FORMS
     
 // STATS
     
 // NAVIGATION
     'NAV_HOME'    => 'Dashboard',
-    'NAV_TASK'    => 'Tasks',
     'NAV_STAT'    => 'Statistics',
     
 // USER
