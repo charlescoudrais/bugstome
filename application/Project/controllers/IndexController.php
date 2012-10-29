@@ -20,6 +20,13 @@ class Project_IndexController extends Zend_Controller_Action
         if ($projectId !== 0) {
             // @TODO: set values
             $project->getProjectMapper()->find($projectId);
+            $this->view->pageTitle = $this->view->translate(
+                        'PROJECT'
+                    ) . $projectId;
+        } else {
+            $this->view->pageTitle = $this->view->translate(
+                        'NEW_PROJECT_TITLE'
+                    );
         }
         
         $form = new Project_Form_Project();
@@ -32,7 +39,6 @@ class Project_IndexController extends Zend_Controller_Action
             }
         }
         
-        $this->view->pageTitle   = $this->view->translate('NEW_PROJECT_TITLE');
         $this->view->projectId = $projectId;
         $this->view->formProject = $form;
     }

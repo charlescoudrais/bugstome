@@ -7,6 +7,7 @@ return array(
     
     'NAV_PROJECT'         => 'Projects',
     
+    'PROJECT'             => 'Project ',
     'PROJECT_NAME'        => 'Project name',
     'PROJECT_MANAGER'     => 'Project manager',
     'PROJECT_DESCRIPTION' => 'Project description',
