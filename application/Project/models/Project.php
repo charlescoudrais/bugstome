@@ -21,7 +21,13 @@ class Project_Model_Project
      * @var string 
      */
     private $projectDescription;
-    
+    /**
+     *
+     * @var Project_Model_Mapper_Project 
+     */
+    private $projectMapper;
+
+
     /**
      * 
      * @return type
@@ -62,4 +68,16 @@ class Project_Model_Project
         $this->projectDescription = $projectDescription;
         return $this;
     }
+    
+    public function getProjectMapper() {
+        $this->projectMapper = new Project_Model_Mapper_Project();
+        return $this->projectMapper;
+    }
+
+    public function setProjectMapper($projectMapper) {
+        $this->projectMapper = new Project_Model_Mapper_Project();
+        return $this;
+    }
+
+
 }

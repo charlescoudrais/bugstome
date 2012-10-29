@@ -14,8 +14,14 @@ class Project_IndexController extends Zend_Controller_Action
     
     public function projectAction()
     {
-        $userId = (int) $this->getRequest()->getParam('id');
-        $project = new Project_Model_Project($userId);
+        $projectId = (int) $this->getRequest()->getParam('id');
+        $project = new Project_Model_Project();
+        
+        if ($projectId !== 0) {
+            // @TODO: set values
+            $project->getProjectMapper()->find($projectId);
+        }
+        
         $form = new Project_Form_Project();
         
         $form->setAction('')
@@ -26,12 +32,8 @@ class Project_IndexController extends Zend_Controller_Action
             }
         }
         
-        if ($userId !== 0) {
-            // @TODO: set values
-        }
-        
         $this->view->pageTitle   = $this->view->translate('NEW_PROJECT_TITLE');
-        $this->view->userId = $userId;
+        $this->view->projectId = $projectId;
         $this->view->formProject = $form;
     }
     
