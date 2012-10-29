@@ -11,7 +11,8 @@
     <ul class="ul-projects">
     <?php foreach ($this->projects as $projectId => $projectValue) : ?>
         <li>
-        <?='<a href="" id="a-project-'.$projectId.'">'.$projectValue.'</a>'?>
+        <?='<a href="/project/project/'.$projectId.'" 
+                 id="a-project-'.$projectId.'">'.$projectValue.'</a>'?>
         </li>
     <?php endforeach; ?>
     </ul>

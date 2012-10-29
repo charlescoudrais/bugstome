@@ -14,7 +14,10 @@ class Project_IndexController extends Zend_Controller_Action
     
     public function projectAction()
     {
+        $userId = (int) $this->getRequest()->getParam('id');
+        $project = new Project_Model_Project($userId);
         $form = new Project_Form_Project();
+        
         $form->setAction('')
              ->setMethod('post');
         if ($this->getRequest()->isPost()) {
@@ -23,8 +26,12 @@ class Project_IndexController extends Zend_Controller_Action
             }
         }
         
+        if ($userId !== 0) {
+            // @TODO: set values
+        }
         
         $this->view->pageTitle   = $this->view->translate('NEW_PROJECT_TITLE');
+        $this->view->userId = $userId;
         $this->view->formProject = $form;
     }
     
