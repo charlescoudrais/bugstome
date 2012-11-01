@@ -221,7 +221,7 @@ h1#sitename>a {
 /* FORMS */
 .zend_form {
      margin: auto;
-     width: 70%;
+     width: 100%;
 }
 .errors {
     color: red;

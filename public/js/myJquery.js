@@ -1,6 +1,17 @@
 /* 
  * My application jquery functions, listeners and events...
  */
+
+$(function() {
+    $( ".datepicker" ).datepicker({ 
+        regional: "Fr",
+        constrainInput: true,
+        //currentText: "Now",
+        dateFormat: "YYYY-MM-DD",
+        minDate: "-0"
+    });
+});
+    
 $(document).ready(function(){
     
     $('#user-links').balloon({

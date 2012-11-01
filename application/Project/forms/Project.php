@@ -5,6 +5,8 @@ class Project_Form_Project extends Zend_Form
     {
         $projectId          = new Zend_Form_Element_Hidden('hid_project_id');
         $projectName        = new Zend_Form_Element_Text('inp_project_name');
+        $projectStartDate   = new Zend_Form_Element_Text('inp_project_start_datepicker');
+        $projectEndDate     = new Zend_Form_Element_Text('inp_project_end_datepicker');
         $projectManager     = new Zend_Form_Element_Select(
                     'sel_project_manager'
                 );
@@ -22,11 +24,23 @@ class Project_Form_Project extends Zend_Form
                            array('min' => 1, 'max' => 50)
                        )
                     );
+        $projectStartDate->setRequired(true)->setAttrib('class', 'datepicker')
+                    ->addFilter(new Zend_Filter_StripTags())
+                    ->addValidator(
+                       new Zend_Validate_Date(array())
+                    );
+        $projectEndDate->setRequired(false)->setAttrib('class', 'datepicker')
+                    ->addFilter(new Zend_Filter_StripTags())
+                    ->addValidator(
+                       new Zend_Validate_Date(array())
+                    );
         $projectManager->setMultiOptions(array('User 1', 'User 2', 'User 3'));
         $projectDescription->addFilter(new Zend_Filter_StripTags());
         
         $this->addElement($projectId);
         $this->addElement($projectName);
+        $this->addElement($projectStartDate);
+        $this->addElement($projectEndDate);
         $this->addElement($projectManager);
         $this->addElement($projectDescription);
         $this->addElement($projectSubmit);
