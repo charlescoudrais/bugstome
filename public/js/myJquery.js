@@ -7,7 +7,7 @@ $(function() {
         regional: "Fr",
         constrainInput: true,
         //currentText: "Now",
-        dateFormat: "YYYY-MM-DD",
+        dateFormat: "yy-mm-dd",
         minDate: "-0"
     });
 });
