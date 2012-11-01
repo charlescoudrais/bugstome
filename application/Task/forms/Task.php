@@ -5,8 +5,12 @@ class Task_Form_Task extends Zend_Form
     {
         $taskId          = new Zend_Form_Element_Hidden('hid_task_id');
         $taskName        = new Zend_Form_Element_Text('inp_task_name');
-        $taskStartDate   = new Zend_Form_Element_Text('inp_task_start_datepicker');
-        $taskEndDate     = new Zend_Form_Element_Text('inp_task_end_datepicker');
+        $taskStartDate   = new Zend_Form_Element_Text(
+                    'inp_task_start_datepicker'
+                );
+        $taskEndDate     = new Zend_Form_Element_Text(
+                    'inp_task_end_datepicker'
+                );
         $taskManager     = new Zend_Form_Element_Select(
                     'sel_task_manager'
                 );
