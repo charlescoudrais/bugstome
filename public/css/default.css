@@ -28,35 +28,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
     padding: 6px;
 }
-h1 {
-    font-size: 18px;  
-}
-h2 {
-    font-size: 16px; 
-}
-h3 {
-    font-size: 14px;
-}
-h4 {
-    font-size: 12px;
-}
-h5 {
-    font-size: 10px;
-}
-h6 {
-    font-size: 8px;
-}
+h1 { font-size: 18px; }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4 { font-size: 12px; }
+h5 { font-size: 10px; }
+h6 { font-size:  8px; }
 
 /* LINKS */
-a {
-    color: #0066ff;
-}
-a:hover {
-    color: #0033cc;
-}
-a:active {
-    color: #0066ff;
-}
+a { color: #0066ff; }
+a:hover { color: #0033cc; }
+a:active { color: #0066ff; }
 
 /* BUTTONS */
 .button {
@@ -215,24 +197,24 @@ h1#sitename>a {
 }
 
 /* LISTS */
-.ul-projects {
+.ul-projects, .ul-tasks {
     margin: 0;
     margin-left: 20px;
     padding: 0;
     list-style-type: none;
 }
-.ul-projects li {
+.ul-projects li, .ul-tasks li {
     padding: 6px;
     height: 40px;
     border-bottom: 1px solid #ECECEC;
     line-height: 40px;
 }
-.ul-projects li a {
+.ul-projects li a, .ul-tasks li a {
     font-size: 16px;
     font-weight: bold;
     color: #4AB6D2;
 }
-.ul-projects li a:hover {
+.ul-projects li a:hover, .ul-tasks li a:hover {
     color: #1F6BA2;
 }
 

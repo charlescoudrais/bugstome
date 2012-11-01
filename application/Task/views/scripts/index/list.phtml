@@ -1,9 +1,19 @@
 <h1><?= $this->pageTitle; ?></h1>
 <div class="article">
     <p style="text-align: right">
-        <a class="button" href="/task/task">
+        <a class="button" href="/task/task/0">
             <?=$this->translate('CREATE_NEW_TASK');?>
         </a>
     </p>
 </div>
 <br /><br />
+<div class="article">
+    <ul class="ul-tasks">
+    <?php foreach ($this->tasks as $taskId => $taskValue) : ?>
+        <li>
+        <?='<a href="/task/task/'.$taskId.'" 
+                 id="a-task-'.$taskId.'">'.$taskValue.'</a>'?>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+</div>

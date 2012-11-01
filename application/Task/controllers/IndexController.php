@@ -28,7 +28,7 @@ class Task_IndexController extends Zend_Controller_Action
             $this->view->tId = $taskId;
             $form->setDefault(
                         'inp_task_name',
-                        'Projet ' . $taskId
+                        $this->view->translate('TASK') . ' '  . $taskId
                     );
             $form->setDefault(
                         'sel_task_manager',

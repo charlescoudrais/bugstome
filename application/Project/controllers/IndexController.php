@@ -28,7 +28,7 @@ class Project_IndexController extends Zend_Controller_Action
             $this->view->pId = $projectId;
             $form->setDefault(
                         'inp_project_name',
-                        'Projet ' . $projectId
+                        $this->view->translate('PROJECT'). ' ' . $projectId
                     );
             $form->setDefault(
                         'sel_project_manager',
