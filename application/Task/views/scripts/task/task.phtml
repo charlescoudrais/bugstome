@@ -68,16 +68,16 @@ $buttonDecorators = array(
                         )
                     );
 
-$this->formProject->inp_project_name->setLabel('PROJECT_NAME')
+$this->formTask->inp_task_name->setLabel('PROJECT_NAME')
                                     ->clearDecorators()
                                     ->setDecorators($fieldDecorators);
-$this->formProject->sel_project_manager->setLabel('PROJECT_MANAGER')
+$this->formTask->sel_task_manager->setLabel('PROJECT_MANAGER')
                       ->clearDecorators()
                       ->setDecorators($fieldDecorators);
-$this->formProject->tarea_project_description->setLabel('PROJECT_DESCRIPTION')
+$this->formTask->tarea_task_description->setLabel('PROJECT_DESCRIPTION')
                       ->clearDecorators()
                       ->setDecorators($tareaDecorators);
-$this->formProject->submit_project_form->setLabel('SUBMIT')
+$this->formTask->submit_task_form->setLabel('SUBMIT')
                        ->clearDecorators()
                        ->setDecorators($buttonDecorators);
 ?>
@@ -85,5 +85,5 @@ $this->formProject->submit_project_form->setLabel('SUBMIT')
 <h1><?= $this->pageTitle; ?></h1>
 
 <div class="article">
-    <?= $this->formProject; ?>
+    <?= $this->formTask; ?>
 </div>

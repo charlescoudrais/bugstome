@@ -17,19 +17,34 @@ class Project_IndexController extends Zend_Controller_Action
         $projectId = (int) $this->getRequest()->getParam('id');
         $project = new Project_Model_Project();
         
+        $form = new Project_Form_Project();
+        
         if ($projectId !== 0) {
             // @TODO: set values
             $project->getProjectMapper()->find($projectId);
             $this->view->pageTitle = $this->view->translate(
                         'PROJECT'
                     ) . $projectId;
+            $this->view->pId = $projectId;
+            $form->setDefault(
+                        'inp_project_name',
+                        'Projet ' . $projectId
+                    );
+            $form->setDefault(
+                        'sel_project_manager',
+                        '1'
+                    );
+            $form->setDefault(
+                        'tarea_project_description',
+                        ''
+                    );
+            
+            
         } else {
             $this->view->pageTitle = $this->view->translate(
                         'NEW_PROJECT_TITLE'
                     );
         }
-        
-        $form = new Project_Form_Project();
         
         $form->setAction('')
              ->setMethod('post');
