@@ -1,0 +1,21 @@
+<virtualHost *:80>
+    ServerAdmin webmaster@bugsme.mbp
+    DocumentRoot "/path_to_your_web_directory/bugsme/public/"
+    ServerName bugsme.mbp
+    <Directory /path_to_your_web_directory/bugsme/public>
+        Options -Indexes FollowSymLinks -MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+        SetEnv APPLICATION_ENV development
+#        #SetEnv APPLICATION_ENV production
+        <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} -d [OR]
+            RewriteCond %{REQUEST_FILENAME} -s [OR]
+            RewriteCond %{REQUEST_FILENAME} -l
+            RewriteRule ^.*$ - [L]
+            RewriteRule ^.*$ index.php [L]
+        </IfModule>
+    </Directory>
+</virtualHost>
