@@ -25,25 +25,30 @@ class Task_IndexController extends Zend_Controller_Action
             $this->view->pageTitle = $this->view->translate(
                         'TASK'
                     ) . $taskId;
-            $this->view->tId = $taskId;
             $form->setDefault(
                         'inp_task_name',
                         $this->view->translate('TASK') . ' '  . $taskId
                     );
             $form->setDefault(
+                        'hid_task_id',
+                        $taskId
+                    );
+            $form->setDefault(
                         'sel_task_manager',
                         '1'
                     );
-            $form->setDefault(
-                        'tarea_task_description',
-                        ''
-                    );
-            
-            
+//            $form->setDefault(
+//                        'tarea_task_description',
+//                        ''
+//                    );
+            foreach ($form->getElements() as $elem) {
+                $elem->setAttrib('disabled','disabled');
+            }
         } else {
             $this->view->pageTitle = $this->view->translate(
                         'NEW_TASK_TITLE'
                     );
+            //@TODO: get the last id +1 
         }
         
         $form->setAction('')
@@ -57,5 +62,16 @@ class Task_IndexController extends Zend_Controller_Action
         $this->view->taskId = $taskId;
         $this->view->formTask = $form;
         
+    }
+    
+    public function noteAction()
+    {
+        $taskId = (int) $this->getRequest()->getParam('id');
+        $taskNb = (int) $this->getRequest()->getParam('nb');
+        $this->view->taskId = $taskId;
+        $this->view->taskNb = $taskNb;
+        $this->view->pageTitle = $this->view->translate(
+                        'TASK'
+                    ) . ' ' . $taskId . ', ' . 'Note' . ' ' . $taskNb;
     }
 }

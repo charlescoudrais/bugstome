@@ -43,20 +43,6 @@ a:active { color: #0066ff; }
 /* BUTTONS */
 .button {
     padding: 10px;
-    color: #49a0df;
-    background-color: #E1E1E1;
-    background-image: -moz-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    background-image: -o-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    background-image: -linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    background-image: -webkit-gradient(linear,left top,right bottom,from(#E1E1E1),color-stop(50.14%,#F1F1F1),to(#E1E1E1));
-    background-image: -webkit-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    background-image: -ms-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    /*border: 1px solid #FFFFFF;*/
-    border-radius: 3px;
-    box-shadow: 0px 0px 4px #CCC;
-    text-decoration: none;
-}
-.button:hover {
     color: #FFFFFF;
     background-color: #4AB6D2;
     background-image: -moz-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
@@ -65,7 +51,27 @@ a:active { color: #0066ff; }
     background-image: -webkit-gradient(linear,left top,right bottom,from(#1F6BA2),color-stop(50.14%,#4AB6D2),to(#1F6BA2));
     background-image: -webkit-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
     background-image: -ms-linear-gradient(270deg,#1F6BA2 0.34%,#49a0df 50.14%,#1F6BA2 99.63%);
+    /*border: 1px solid #FFFFFF;*/
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px #CCC;
+    text-decoration: none;
+}
+.button:hover {
+    color: #49a0df;
+    background-color: #E1E1E1;
+    background-image: -moz-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    background-image: -o-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    background-image: -linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    background-image: -webkit-gradient(linear,left top,right bottom,from(#E1E1E1),color-stop(50.14%,#F1F1F1),to(#E1E1E1));
+    background-image: -webkit-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    background-image: -ms-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
     
+}
+.article-btn {
+    padding: 6px;
+    border: 1px solid #ECECEC;
+    border-right: 0px;
+    border-left: 0px;
 }
 
 p, .article {
@@ -196,6 +202,13 @@ h1#sitename>a {
     color: #00ff33;
 }
 
+/* PAGES */
+.h1-page-title {
+    margin-bottom: 10px;
+    color: #49a0df;
+    border-bottom: 1px solid #ECECEC;
+}
+
 /* LISTS */
 .ul-projects, .ul-tasks {
     margin: 0;
@@ -212,7 +225,7 @@ h1#sitename>a {
 .ul-projects li a, .ul-tasks li a {
     font-size: 16px;
     font-weight: bold;
-    color: #4AB6D2;
+    color: #49a0df;
 }
 .ul-projects li a:hover, .ul-tasks li a:hover {
     color: #1F6BA2;
@@ -221,10 +234,41 @@ h1#sitename>a {
 /* FORMS */
 .zend_form {
      margin: auto;
-     width: 100%;
+     width: 98%;
 }
 .errors {
     color: red;
+}
+dl.zend_form dt {
+    float: left;
+    width: 200px;
+    height: 29px;
+    line-height: 28px;
+    /*color: #49a0df;*/
+    font-weight: bold;
+}
+dl.zend_form dd {
+    padding: 0px;
+    margin:0px 0px 10px 0px;
+    width: 100%;
+    height: 30px;
+    line-height: 28px;
+}
+#inp_task_start_datepicker-label {
+    
+}
+#inp_task_end_datepicker-label {
+    
+}
+#inp_task_start_datepicker-element {
+    float: left;
+    width: 200px;
+}
+#inp_task_end_datepicker-element {
+    
+}
+#tarea_task_description-element {
+    height: 100px;
 }
 /* .form-div-label {
      display: inline;
@@ -235,40 +279,25 @@ h1#sitename>a {
     /*display: inline;*/
 }
 .form-row {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 .form-row-submit {
-    margin: 10px 0px;
+    clear: both;
+    width: 80%;
+    margin: 0px;
     text-align: right;
 }
 .form-elt-label {
-    /*width: 350px;*/
     font-weight: bold;
     color: #757575;
 }
 input[type=text] {
     height: 26px;
-    /*width: 100%;*/
+    width: 160px;
     border: 2px solid #ECECEC;
     border-radius: 2px;
 }
 input[type=submit] {
-    padding: 10px;
-    font-size: 13px;
-    color: #49a0df;
-    background-color: #E1E1E1;
-    background-image: -moz-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    background-image: -o-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    background-image: -linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    background-image: -webkit-gradient(linear,left top,right bottom,from(#E1E1E1),color-stop(50.14%,#F1F1F1),to(#E1E1E1));
-    background-image: -webkit-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    background-image: -ms-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
-    cursor: pointer;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0px 0px 4px #CCC;
-}
-input[type=submit]:hover {
     padding: 10px;
     font-size: 13px;
     color: #ffffff;
@@ -282,14 +311,30 @@ input[type=submit]:hover {
     cursor: pointer;
     border: none;
     border-radius: 3px;
+    box-shadow: 0px 0px 4px #CCC;
+}
+input[type=submit]:hover {
+    padding: 10px;
+    font-size: 13px;
+    color: #49a0df;
+    background-color: #E1E1E1;
+    background-image: -moz-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    background-image: -o-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    background-image: -linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    background-image: -webkit-gradient(linear,left top,right bottom,from(#E1E1E1),color-stop(50.14%,#F1F1F1),to(#E1E1E1));
+    background-image: -webkit-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    background-image: -ms-linear-gradient(270deg,#E1E1E1 0.34%,#F1F1F1 50.14%,#E1E1E1 99.63%);
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
     box-shadow: 0px 0px 4px#CCC;
 }
 *[disabled=disabled] {
-     opacity: 0.5;
+     opacity: 0.9;
  }
  textarea {
-     height: 220px;
-     width: 100%;
+     height: 80px;
+     /*width: 100%;*/
      border: 2px solid #ECECEC;
      border-radius: 2px;
  }

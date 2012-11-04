@@ -69,27 +69,43 @@ $buttonDecorators = array(
                     );
 
 $this->formTask->inp_task_name->setLabel('TASK_NAME')
-                                    ->clearDecorators()
-                                    ->setDecorators($fieldDecorators);
-$this->formTask->inp_task_start_datepicker->setLabel('TASK_START_DATE')
-                                    ->clearDecorators()
-                                    ->setDecorators($fieldDecorators);
-$this->formTask->inp_task_end_datepicker->setLabel('TASK_END_DATE')
-                                    ->clearDecorators()
-                                    ->setDecorators($fieldDecorators);
-$this->formTask->sel_task_manager->setLabel('TASK_MANAGER')
-                      ->clearDecorators()
-                      ->setDecorators($fieldDecorators);
-$this->formTask->tarea_task_description->setLabel('TASK_DESCRIPTION')
-                      ->clearDecorators()
-                      ->setDecorators($tareaDecorators);
+        ;
+$this->formTask->inp_task_start_datepicker->setLabel('TASK_START_DATE');
+$this->formTask->inp_task_end_datepicker->setLabel('TASK_END_DATE');
+$this->formTask->sel_task_manager->setLabel('TASK_MANAGER');
+$this->formTask->tarea_task_description->setLabel('TASK_DESCRIPTION');
+$this->formTask->hid_task_id->clearDecorators()
+                       ->setDecorators($buttonDecorators);
+if ($this->taskId === 0) {
 $this->formTask->submit_task_form->setLabel('SUBMIT')
                        ->clearDecorators()
                        ->setDecorators($buttonDecorators);
+} else {
+    $this->formTask->removeElement('submit_task_form');
+}
 ?>
 
-<h1><?= $this->pageTitle; ?></h1>
+<h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
 
 <div class="article">
     <?= $this->formTask; ?>
 </div>
+<?php if ($this->taskId > 0) : ?>
+<div class="article-btn">
+    <p style="text-align: left">
+        <a class="" href="/task/task/<?=$this->taskId?>/0">
+            <?=$this->translate('ADD_A_NOTE');?>
+        </a>
+        &nbsp;&nbsp;
+        <a class="" href="/task/task/0/file">
+            <?=$this->translate('ATTACH_A_DOCUMENT');?>
+        </a>
+        <?php if (isset($this->userRole)) : ?>
+        &nbsp;&nbsp;
+        <a class="" href="/task/task/<?=$this->taskId?>">
+            <?=$this->translate('MODIFY_TASK');?>
+        </a>
+        <?php endif; ?>
+    </p>
+</div>
+<?php endif;

@@ -50,5 +50,6 @@ class Task_Form_Task extends Zend_Form
         $this->addElement($taskManager);
         $this->addElement($taskDescription);
         $this->addElement($taskSubmit);
+      
     }
 }
