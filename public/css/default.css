@@ -42,7 +42,7 @@ a { color: #0066ff; }
 a:hover { color: #0033cc; }
 a:active { color: #0066ff; }
 
-a.add-links {color:#ff9900 ; font-weight: bold; }
+a.add-links {color:#ff9900 ; font-weight: bold; line-height: 28px;}
 
 /* BUTTONS */
 .button {
@@ -58,10 +58,17 @@ a.add-links {color:#ff9900 ; font-weight: bold; }
     background-color: #1F6BA2;
 }
 .article-btn {
-    padding: 6px;
-    border: 1px solid #ECECEC;
+/*    border: 1px solid #ECECEC;
     border-right: 0px;
-    border-left: 0px;
+    border-left: 0px;*/
+/*    float: right;*/
+    /*width: 170px;*/
+    /*padding: 6px;*/
+}
+.ul-btn-add li {
+    height: 30px;
+    line-height: 30px;
+    /*vertical-align: baseline;*/
 }
 
 p, .article {
@@ -282,8 +289,9 @@ input[type=submit]:hover {
     cursor: pointer;
     /*background-attachment: scroll;*/
 }
-.zend_form {
+dl.zend_form {
     margin: auto;
+    padding: 0;
     width: 98%;
 }
 .errors {
@@ -301,7 +309,7 @@ dl.zend_form dt {
 dl.zend_form dd {
     padding: 0px;
     margin:0px 0px 10px 0px;
-    width: 100%;
+    /*width: 100%;*/
     height: 30px;
     line-height: 28px;
 }
@@ -337,8 +345,9 @@ dl.zend_form dd {
 }
 .form-row-submit {
     clear: both;
-    width: 90%;
+    /*width: 90%;*/
     margin: 0px;
+    padding-right: 50px;
     text-align: right;
 }
 .form-elt-label {

@@ -95,26 +95,34 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
     ?>
 </div>
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
-
-<div class="article">
+<div style="float:left; margin-top: 10px; padding: 0; width: 780px; border-right: 1px solid #ECECEC;">
     <?= $this->formTask; ?>
 </div>
+
 <?php if ($this->taskId > 0) : ?>
-<div class="article-btn">
-    <p style="text-align: left">
-        <a class="add-links" href="/task/task/<?=$this->taskId?>/0">
-            <?=$this->translate('ADD_A_NOTE');?>
-        </a>
-        &nbsp;&nbsp;
-        <a class="add-links" href="/task/task/0/file">
-            <?=$this->translate('ATTACH_A_DOCUMENT');?>
-        </a>
+<div class="article-btn" style="margin-top: 30px; margin-left: 800px; ">
+    <ul class="ul-btn-add">
+        <li>
+            <img src="/img/add_note_0.jpeg" style="width: 24px;" />
+                
+            <a class="add-links" href="/task/task/<?=$this->taskId?>/0">
+                <?=$this->translate('ADD_A_NOTE');?>
+            </a>
+        </li>
+        <li>
+            
+            <a class="add-links" href="/task/task/0/file">
+                <img src="/img/attachment_0.png" style="width: 24px;"  />
+                <?=$this->translate('ATTACH_A_DOCUMENT');?>
+            </a>
+        </li>
         <?php if (isset($this->userRole)) : ?>
-        &nbsp;&nbsp;
-        <a class="add-links" href="/task/task/<?=$this->taskId?>">
-            <?=$this->translate('MODIFY_TASK');?>
-        </a>
+        <li>
+            <a class="add-links" href="/task/task/<?=$this->taskId?>">
+                <?=$this->translate('MODIFY_TASK');?>
+            </a>
+        </li>
         <?php endif; ?>
-    </p>
+    </ul>
 </div>
-<?php endif;
+<?php endif; ?>

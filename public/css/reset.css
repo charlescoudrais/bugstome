@@ -23,6 +23,8 @@ h5 {font-size: 1.5em;}
 
 h6 {font-size: 1em;}
 
+ul {margin: 0; padding: 0; list-style-type: none;}
+
 .clear-both {
     margin: 0; padding: 0;
     clear: both;
