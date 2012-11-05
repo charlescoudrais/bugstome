@@ -85,6 +85,15 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
 }
 ?>
 
+<div style="float:right; margin: 0; padding: 6px; line-height: 24px;">
+    <?php
+    //@TODO : elapsed time
+        echo $this->translate('TASK_ELAPSED_TIME') . ' : ';
+        echo '<span class="span-h1">';
+        echo '00:00:00';
+        echo '</span>';
+    ?>
+</div>
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
 
 <div class="article">
@@ -93,16 +102,16 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
 <?php if ($this->taskId > 0) : ?>
 <div class="article-btn">
     <p style="text-align: left">
-        <a class="" href="/task/task/<?=$this->taskId?>/0">
+        <a class="add-links" href="/task/task/<?=$this->taskId?>/0">
             <?=$this->translate('ADD_A_NOTE');?>
         </a>
         &nbsp;&nbsp;
-        <a class="" href="/task/task/0/file">
+        <a class="add-links" href="/task/task/0/file">
             <?=$this->translate('ATTACH_A_DOCUMENT');?>
         </a>
         <?php if (isset($this->userRole)) : ?>
         &nbsp;&nbsp;
-        <a class="" href="/task/task/<?=$this->taskId?>">
+        <a class="add-links" href="/task/task/<?=$this->taskId?>">
             <?=$this->translate('MODIFY_TASK');?>
         </a>
         <?php endif; ?>
