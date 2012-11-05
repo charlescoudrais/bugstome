@@ -103,24 +103,47 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
 <div class="article-btn" style="margin-top: 30px; margin-left: 800px; ">
     <ul class="ul-btn-add">
         <li>
-            <img src="/img/add_note_0.jpeg" style="width: 24px;" />
-                
-            <a class="add-links" href="/task/task/<?=$this->taskId?>/0">
-                <?=$this->translate('ADD_A_NOTE');?>
-            </a>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/add_note_0.jpeg" style="width: 24px;" />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links" href="/task/task/<?=$this->taskId?>/0">
+                            <?=$this->translate('ADD_A_NOTE');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
         </li>
         <li>
-            
-            <a class="add-links" href="/task/task/0/file">
-                <img src="/img/attachment_0.png" style="width: 24px;"  />
-                <?=$this->translate('ATTACH_A_DOCUMENT');?>
-            </a>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/attachment_0.png" style="width: 24px;"  />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links" href="/task/task/0/file">
+                            <?=$this->translate('ATTACH_A_DOCUMENT');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
         </li>
         <?php if (isset($this->userRole)) : ?>
         <li>
-            <a class="add-links" href="/task/task/<?=$this->taskId?>">
-                <?=$this->translate('MODIFY_TASK');?>
-            </a>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <!--<img src="/img/attachment_0.png" style="width: 24px;"  />-->
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links" href="/task/task/<?=$this->taskId?>">
+                            <?=$this->translate('MODIFY_TASK');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
         </li>
         <?php endif; ?>
     </ul>
