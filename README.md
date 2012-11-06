@@ -5,6 +5,10 @@ Soon!
 Zend Framework 1 based Project Manager (bug tracking, tasks manager...).
 It will be an open source... when done!
 
+At this time, it work better on webkit...
+
+
+
 ##
 ## REQUIREMENTS
 ##
