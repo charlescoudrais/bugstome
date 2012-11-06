@@ -13,11 +13,16 @@ return array(
     
     'ADD_A_NOTE'        => 'Add a note',
     'ATTACH_A_DOCUMENT' => 'Attach a document',
+    'ADD_TIME'          => 'Add time',
+    'CLOSE_TASK'        => 'Close this task',
+    'ALERT_TASK'        => 'Add an alert',
+    'HELP_TASK'         => 'Help',
     'MODIFY_TASK'       => 'Edit this task',
     
 // FORMS
     'TASK_NAME'         => 'Title :',
     'TASK_MANAGER'      => 'Manager :',
+    'TASK_PRIORITY'     => 'Priority :',
     'TASK_DESCRIPTION'  => 'Description :',
     'SUBMIT'            => 'Save',
 

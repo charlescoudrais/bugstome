@@ -12,12 +12,17 @@ return array(
     'TASK_END_DATE'     => 'Date de fin :',
     
     'ADD_A_NOTE'        => 'Ajouter une note',
+    'ADD_TIME'          => 'Ajouter du temps',
+    'CLOSE_TASK'        => 'Fermer cette tâche',
+    'HELP_TASK'         => 'Aide',
+    'ALERT_TASK'        => 'Ajouter une alerte',
     'ATTACH_A_DOCUMENT' => 'Joindre un document',
     'MODIFY_TASK'       => 'Éditer la tâche',
     
 // FORMS
     'TASK_NAME'         => 'Titre :',
     'TASK_MANAGER'      => 'Responsable :',
+    'TASK_PRIORITY'     => 'Priorité :',
     'TASK_DESCRIPTION'  => 'Déscription :',
     'SUBMIT'            => 'Enregistrer',
     
