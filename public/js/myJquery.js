@@ -41,9 +41,36 @@ $(document).ready(function(){
     });
     
     $('#nav li').each(function(iterator){
-        $(this).click(function(){
-            window.location = $(this).children('a').attr('href'); 
+        $(this).on("click", function(){
+            window.location = $(this).find('a').attr('href'); 
         });
+    });
+    
+    $('.ul-btn-add li').each(function(iterator){
+        $(this).on("click", function(){
+            window.location = $(this).find('a').attr('href'); 
+        });
+        $(this).css({
+           cursor: 'pointer'
+        });
+        //*
+        $(this).on("mouseover", function(){
+           $(this).css({
+               opacity: '0.9'
+           });
+           $(this).find('a').css({
+               textDecoration: 'underline'
+           });
+        });
+        $(this).on("mouseout", function(){
+           $(this).css({
+               opacity: '1'
+           });
+           $(this).find('a').css({
+               textDecoration: 'none'
+           }); 
+        });
+        // */
     });
 });
 

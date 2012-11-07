@@ -86,7 +86,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
 }
 ?>
 
-<div style="float:right; margin: 0; padding: 6px; line-height: 24px;">
+<div style="float:right; margin: 0; padding: 6px; line-height: 32px;">
     <?php
     //@TODO : elapsed time
         echo $this->translate('TASK_ELAPSED_TIME') . ' : ';
@@ -96,12 +96,12 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
     ?>
 </div>
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
-<div style="float:left; margin-top: 10px; padding: 0; padding-top: 20px; width: 780px; border-right: 1px solid #ECECEC;">
+<div style="float:left; margin-top: 10px; padding: 0; padding-top: 20px; width: 780px;">
     <?= $this->formTask; ?>
 </div>
 
 
-<div class="article-btn" style="margin: 0; padding: 0; padding-top: 30px; margin-left: 800px; ">
+<div class="article-btn" style="margin: 0; padding: 0; padding-left: 4px; padding-top: 30px; margin-left: 786px; border-left: 1px solid #ECECEC;">
     <ul class="ul-btn-add">
         <?php if ($this->taskId > 0) : ?>
         <li>
@@ -109,7 +109,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                 <tr>
                     <td style="padding: 4px;">
                         <img src="/img/icons_svg/timer_icon.svg"
-                             style="width: 24px;" />
+                             style="width: 32px;" />
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links" href="#<?=$this->taskId?>">
@@ -124,7 +124,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                 <tr>
                     <td style="padding: 4px;">
                         <img src="/img/icons_svg/note_icon.svg"
-                             style="width: 24px;" />
+                             style="width: 32px;" />
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
@@ -140,7 +140,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                 <tr>
                     <td style="padding: 4px;">
                         <img src="/img/attachment_0_blue.png"
-                             style="width: 24px;"  />
+                             style="width: 32px;"  />
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
@@ -157,7 +157,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                 <tr>
                     <td style="padding: 4px;">
                         <img src="/img/icons_svg/modify_icon.svg"
-                             style="width: 24px;"  />
+                             style="width: 32px;"  />
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
@@ -173,7 +173,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                 <tr>
                     <td style="padding: 4px;">
                         <img src="/img/icons_svg/alert_icon.svg"
-                             style="width: 24px;"  />
+                             style="width: 32px;"  />
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
@@ -190,7 +190,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                 <tr>
                     <td style="padding: 4px;">
                         <img src="/img/icons_svg/lock_icon.svg"
-                             style="width: 24px;" />
+                             style="width: 32px;" />
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
@@ -207,7 +207,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                 <tr>
                     <td style="padding: 4px;">
                         <img src="/img/icons_svg/help_icon.svg"
-                             style="width: 24px;" />
+                             style="width: 32px;" />
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
@@ -220,8 +220,8 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
         </li>
     </ul>
     <?php if ($this->taskId == 0) : ?>
-    <div>
-        TODO : Explain...
+    <div class="article">
+        <p>TODO : Explain...</p>
     </div>
     <?php endif; ?>
 </div>
