@@ -35,11 +35,13 @@
             </h1> 
         </div>
         <div id="nav">
-            <div id="user-links" class="balloon" title="balloon content">
-                User Name (user links)
+            <div id="nav-content">
+                <div id="user-links" class="balloon" title="balloon content">
+                    User Name (user links)
+                </div>
+                <?php echo $this->navigation(); ?>
+                <div class="clear-both"></div>
             </div>
-            <?php echo $this->navigation(); ?>
-            <div class="clear-both"></div>
         </div>
     </div>
     

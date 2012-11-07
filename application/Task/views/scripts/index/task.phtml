@@ -96,12 +96,12 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
     ?>
 </div>
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
-<div style="float:left; margin-top: 10px; padding: 0; padding-top: 20px; width: 780px;">
+<div class="action-content">
     <?= $this->formTask; ?>
 </div>
 
 
-<div class="article-btn" style="margin: 0; padding: 0; padding-left: 4px; padding-top: 30px; margin-left: 786px; border-left: 1px solid #ECECEC;">
+<div class="article-btn">
     <ul class="ul-btn-add">
         <?php if ($this->taskId > 0) : ?>
         <li>
@@ -151,7 +151,7 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                 </tr>
             </table>
         </li>
-        <?php //if (isset($this->userRole)) : ?>
+        <?php if (isset($this->userRole)) : ?>
         <li>
             <table>
                 <tr>
@@ -172,23 +172,6 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
             <table>
                 <tr>
                     <td style="padding: 4px;">
-                        <img src="/img/icons_svg/alert_icon.svg"
-                             style="width: 32px;"  />
-                    </td>
-                    <td style="padding: 4px;">
-                        <a class="add-links"
-                           href="/task/task/<?=$this->taskId?>/alert">
-                            <?=$this->translate('ALERT_TASK');?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-        <?php //endif; ?>
-        <li>
-            <table>
-                <tr>
-                    <td style="padding: 4px;">
                         <img src="/img/icons_svg/lock_icon.svg"
                              style="width: 32px;" />
                     </td>
@@ -196,6 +179,23 @@ $this->formTask->submit_task_form->setLabel('SUBMIT')
                         <a class="add-links"
                            href="/task/task/<?=$this->taskId?>/close">
                             <?=$this->translate('CLOSE_TASK');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <?php endif; ?>
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/alert_icon.svg"
+                             style="width: 32px;"  />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="/task/task/<?=$this->taskId?>/alert">
+                            <?=$this->translate('ALERT_TASK');?>
                         </a>
                     </td>
                 </tr>

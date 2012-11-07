@@ -14,6 +14,7 @@ class Task_IndexController extends Zend_Controller_Action
     
     public function taskAction()
     {
+//        $this->view->userRole = true;
         $taskId = (int) $this->getRequest()->getParam('id');
         $task = new Task_Model_Task();
         

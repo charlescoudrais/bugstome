@@ -16,7 +16,7 @@ $(document).ready(function(){
     
     $('#user-links').balloon({
         position: 'bottom',
-        offsetX: -50,
+        offsetX: -30,
         offsetY: 6,
         css: {
             minWidth: "100px",

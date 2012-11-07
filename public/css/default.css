@@ -61,13 +61,19 @@ a.add-links {
     background-color: #1f6ba2;
 }
 .article-btn {
-/*    border: 1px solid #ECECEC;
-    border-right: 0px;
-    border-left: 0px;*/
-/*    float: right;*/
-    /*width: 170px;*/
-    /*padding: 6px;*/
+    margin: 0; margin-left: 786px;
+    padding: 0; padding-left: 4px; padding-top: 30px;
+/*    border-left: 1px solid #ECECEC;*/
 }
+.action-content {
+    float:left;
+    margin-top: 10px;
+    padding: 20px 0px 30px 0px;
+    width: 780px;
+    border-right: 1px solid #ECECEC;
+}
+
+
 .ul-btn-add li {
 /*    height: 30px;
     line-height: 30px;*/
@@ -113,7 +119,12 @@ h1#sitename>a {
     border-top: 1px solid #505050;
     border-bottom: 1px solid #505050;
 }
+#nav-content {
+    margin: 0px auto;
+    width: 1000px;
+}
 #nav>ul {
+    margin-left: 100px;
     list-style-type: none;
 }
 #nav li {
@@ -168,7 +179,8 @@ h1#sitename>a {
 
 #user-links {
     float: right;
-    padding: 6px 100px 6px 6px;
+    padding: 6px;
+    padding-right: 16px;
     height: 30px;
     font-weight: bold;
     color: #00ff33;
@@ -208,6 +220,7 @@ h1#sitename>a {
 .h1-page-title {
     margin-bottom: 10px;
     color: #49a0df;
+    text-align: center;
     border-bottom: 1px solid #ECECEC;
 }
 
@@ -261,7 +274,7 @@ input[type=submit]:hover {
  }
  textarea {
     height: 80px;
-    width: 80%;
+    width: 480px;
     background-color: #efefef;
     border: 2px solid #ececec;
     border-radius: 2px;
@@ -298,18 +311,19 @@ input[type=submit]:hover {
 dl.zend_form {
     margin: auto;
     padding: 0;
-    width: 98%;
+    width: 640px;
 }
 .errors {
     color: red;
 }
 dl.zend_form dt {
     float: left;
-    width: 100px;
+    width: 120px;
     height: 29px;
     line-height: 28px;
     
-    /*color: #49a0df;*/
+    color: #49a0df;
+    font-size: 14px;
     font-weight: bold;
 }
 dl.zend_form dd {
@@ -320,7 +334,8 @@ dl.zend_form dd {
     line-height: 28px;
 }
 #inp_task_name {
-    width: 460px;
+    width: 468px;
+    padding: 0 6px;
 }
 #inp_task_start_datepicker-label {
     
