@@ -347,6 +347,9 @@ dl.zend_form dd {
     float: left;
     width: 200px;
 }
+#inp_task_start_datepicker {
+    /*padding-left: 6px;*/
+}
 #inp_task_end_datepicker-element {
     
 }

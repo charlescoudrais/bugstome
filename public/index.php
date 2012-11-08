@@ -42,7 +42,8 @@ set_error_handler(
             print $message . PHP_EOL;
             print '</pre>' . PHP_EOL;
         } else {
-            print 'Error error';
+            //@TODO: SWITCH...
+            header('Location: /error/perso');
         }
         exit(1);
     }
