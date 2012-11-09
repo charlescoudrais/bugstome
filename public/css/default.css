@@ -333,7 +333,7 @@ dl.zend_form dd {
     height: 30px;
     line-height: 28px;
 }
-#inp_task_name {
+#inp_task_name, #inp_project_name {
     width: 468px;
     padding: 0 6px;
 }
@@ -343,17 +343,17 @@ dl.zend_form dd {
 #inp_task_end_datepicker-label {
     
 }
-#inp_task_start_datepicker-element {
+#inp_task_start_datepicker-element, #inp_project_start_datepicker-element {
     float: left;
     width: 200px;
 }
-#inp_task_start_datepicker {
+#inp_task_start_datepicker, #inp_project_start_datepicker {
     /*padding-left: 6px;*/
 }
 #inp_task_end_datepicker-element {
     
 }
-#tarea_task_description-element {
+#tarea_task_description-element, #tarea_project_description-element {
     height: 100px;
 }
 /* .form-div-label {

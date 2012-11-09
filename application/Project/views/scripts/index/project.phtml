@@ -69,27 +69,145 @@ $buttonDecorators = array(
                     );
 
 $this->formProject->inp_project_name->setLabel('PROJECT_NAME')
-                                    ->clearDecorators()
-                                    ->setDecorators($fieldDecorators);
-$this->formProject->inp_project_start_datepicker->setLabel('PROJECT_START_DATE')
-                                    ->clearDecorators()
-                                    ->setDecorators($fieldDecorators);
-$this->formProject->inp_project_end_datepicker->setLabel('PROJECT_END_DATE')
-                                    ->clearDecorators()
-                                    ->setDecorators($fieldDecorators);                                            
-$this->formProject->sel_project_manager->setLabel('PROJECT_MANAGER')
-                      ->clearDecorators()
-                      ->setDecorators($fieldDecorators);
-$this->formProject->tarea_project_description->setLabel('PROJECT_DESCRIPTION')
-                      ->clearDecorators()
-                      ->setDecorators($tareaDecorators);
+        ;
+$this->formProject->inp_project_start_datepicker->setLabel('PROJECT_START_DATE');
+$this->formProject->inp_project_end_datepicker->setLabel('PROJECT_END_DATE');
+//$this->formProject->sel_project_manager->setLabel('PROJECT_MANAGER');
+//$this->formProject->sel_project_priority->setLabel('PROJECT_PRIORITY');
+$this->formProject->tarea_project_description->setLabel('PROJECT_DESCRIPTION');
+$this->formProject->hid_project_id->clearDecorators()
+                       ->setDecorators($buttonDecorators);
+if ($this->projectId === 0) {
 $this->formProject->submit_project_form->setLabel('SUBMIT')
                        ->clearDecorators()
                        ->setDecorators($buttonDecorators);
+} else {
+    $this->formProject->removeElement('submit_project_form');
+}
 ?>
 
+<div style="float:right; margin: 0; padding: 6px; line-height: 32px;">
+    <?php
+    //@TODO : elapsed time
+        echo $this->translate('PROJECT_ELAPSED_TIME') . ' : ';
+        echo '<span class="span-h1">';
+        echo '00:00:00';
+        echo '</span>';
+    ?>
+</div>
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
-
-<div class="article">
+<div class="action-content">
     <?= $this->formProject; ?>
 </div>
+
+
+<div class="article-btn">
+    <ul class="ul-btn-add">
+        <?php if ($this->projectId > 0) : ?>
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/note_icon.svg"
+                             style="width: 32px;" />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="/project/project/<?=$this->projectId?>/0">
+                            <?=$this->translate('ADD_A_NOTE');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/attachment_0_blue.png"
+                             style="width: 32px;"  />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="/project/project/<?=$this->projectId?>/file">
+                            <?=$this->translate('ATTACH_A_DOCUMENT');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <?php if (isset($this->userRole)) : ?>
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/modify_icon.svg"
+                             style="width: 32px;"  />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="/project/project/<?=$this->projectId?>">
+                            <?=$this->translate('MODIFY_PROJECT');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/lock_icon.svg"
+                             style="width: 32px;" />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="/project/project/<?=$this->projectId?>/close">
+                            <?=$this->translate('CLOSE_PROJECT');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <?php endif; ?>
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/alert_icon.svg"
+                             style="width: 32px;"  />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="/project/project/<?=$this->projectId?>/alert">
+                            <?=$this->translate('ALERT_PROJECT');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <?php endif; ?>
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/help_icon.svg"
+                             style="width: 32px;" />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="/project/help">
+                            <?=$this->translate('HELP_PROJECT');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    <?php if ($this->projectId == 0) : ?>
+    <div class="article">
+        <p>TODO : Explain...</p>
+    </div>
+    <?php endif; ?>
+</div>
+
