@@ -14,7 +14,7 @@ class Task_IndexController extends Zend_Controller_Action
     
     public function taskAction()
     {
-//        $this->view->userRole = true;
+        $this->view->userRole = true;
         $taskId = (int) $this->getRequest()->getParam('id');
         $task = new Task_Model_Task();
         
@@ -31,8 +31,8 @@ class Task_IndexController extends Zend_Controller_Action
                         $this->view->translate('TASK') . ' '  . $taskId
                     );
             $form->setDefault(
-                        'hid_task_id',
-                        $taskId
+                        'inp_task_id',
+                        '#' . $taskId
                     );
             $form->setDefault(
                         'sel_task_manager',
@@ -49,7 +49,12 @@ class Task_IndexController extends Zend_Controller_Action
             $this->view->pageTitle = $this->view->translate(
                         'NEW_TASK_TITLE'
                     );
-            //@TODO: get the last id +1 
+            //@TODO: get the last id +1
+            $form->setDefault(
+                        'inp_task_id',
+                        '#' . $taskId
+                    );
+            $form->inp_task_id->setAttrib('readonly','');
         }
         
         $form->setAction('')

@@ -14,6 +14,7 @@ class Project_IndexController extends Zend_Controller_Action
     
     public function projectAction()
     {
+        //$this->view->userRole = true;
         $projectId = (int) $this->getRequest()->getParam('id');
         $project = new Project_Model_Project();
         
@@ -25,7 +26,7 @@ class Project_IndexController extends Zend_Controller_Action
             $this->view->pageTitle = $this->view->translate(
                         'PROJECT'
                     ) . $projectId;
-            $this->view->pId = $projectId;
+            $this->view->projectId = $projectId;
             $form->setDefault(
                         'inp_project_name',
                         $this->view->translate('PROJECT'). ' ' . $projectId
@@ -38,11 +39,21 @@ class Project_IndexController extends Zend_Controller_Action
                         'tarea_project_description',
                         ''
                     );
-            
-            
+//            $form->setDefault(
+//                        'tarea_task_description',
+//                        ''
+//                    );
+            foreach ($form->getElements() as $elem) {
+                $elem->setAttrib('disabled','disabled');
+            }
         } else {
             $this->view->pageTitle = $this->view->translate(
                         'NEW_PROJECT_TITLE'
+                    );
+            //@TODO: get the last id +1
+            $form->setDefault(
+                        'inp_project_id',
+                        '#' . $projectId
                     );
         }
         
@@ -56,6 +67,7 @@ class Project_IndexController extends Zend_Controller_Action
         
         $this->view->projectId = $projectId;
         $this->view->formProject = $form;
+        
     }
     
 }

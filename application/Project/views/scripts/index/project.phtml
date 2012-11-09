@@ -1,59 +1,4 @@
 <?php
-$fieldDecorators = array(
-                        'ViewHelper',
-                        array(
-                            array('elt' => 'HtmlTag'),
-                            array(
-                                'tag'   => 'div',
-                                'class' => 'form-div-elt',
-                                'style' => 'display: inline;'
-                            )
-                        ),
-                        array(
-                            'Label',
-                            array(
-                                'class' => 'form-elt-label',
-                                'style' => 'padding-right: 30px;'
-                            ),
-//                            array(
-//                                'tag'   => 'div',
-//                                'class' => 'form-div-label'
-//                            )
-                        ),
-                        'Description',
-                        'Errors',
-                        array(
-                            array('row' => 'HtmlTag'),
-                            array(
-                                'tag'   => 'div',
-                                'class' => 'form-row'
-                            )
-                        )
-                    );
-$tareaDecorators = array(
-                        'ViewHelper',
-                        array(
-                            array('elt' => 'HtmlTag'),
-                            array(
-                                'tag'   => 'div',
-                                'class' => 'div-tarea'
-                            )
-                        ),
-                        array(
-                            'Label',
-                            array('class' => 'form-elt-label'),
-                        ),
-                        'Description',
-                        'Errors',
-                        array(
-                            array('row' => 'HtmlTag'),
-                            array(
-                                'tag'   => 'div',
-                                'class' => 'form-row'
-                            )
-                        )
-                    );
-
 $buttonDecorators = array(
                         'ViewHelper',
                         array(
@@ -70,7 +15,7 @@ $buttonDecorators = array(
 
 $this->formProject->inp_project_name->setLabel('PROJECT_NAME')
         ;
-$this->formProject->inp_project_start_datepicker->setLabel('PROJECT_START_DATE');
+//$this->formProject->inp_project_start_datepicker->setLabel('PROJECT_START_DATE');
 $this->formProject->inp_project_end_datepicker->setLabel('PROJECT_END_DATE');
 //$this->formProject->sel_project_manager->setLabel('PROJECT_MANAGER');
 //$this->formProject->sel_project_priority->setLabel('PROJECT_PRIORITY');

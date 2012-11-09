@@ -20,7 +20,8 @@ return array(
     'MODIFY_TASK'       => 'Éditer la tâche',
     
 // FORMS
-    'TASK_NAME'         => 'Titre :',
+    'TASK_ID'           => 'Identifiant :',
+    'TASK_NAME'         => 'Libellé :',
     'TASK_MANAGER'      => 'Responsable :',
     'TASK_PRIORITY'     => 'Priorité :',
     'TASK_DESCRIPTION'  => 'Déscription :',

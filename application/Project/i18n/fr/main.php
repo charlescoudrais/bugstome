@@ -8,22 +8,22 @@ return array(
     
     'CREATE_NEW_PROJECT'   => 'Nouveau projet',
     'PROJECT'              => 'Projet',
-    'PROJECT_START_DATE'   => 'Date de début',
-    'PROJECT_END_DATE'     => 'Date de fin',
+    'PROJECT_START_DATE'   => 'Crée le',
+    'PROJECT_END_DATE'     => 'Livrable le',
     
     'ADD_A_NOTE'           => 'Ajouter une note',
     'ADD_TIME'             => 'Ajouter du temps',
-    'CLOSE_PROJECT'        => 'Fermer cette tâche',
+    'CLOSE_PROJECT'        => 'Fermer ce projet',
     'HELP_PROJECT'         => 'Aide',
     'ALERT_PROJECT'        => 'Ajouter une alerte',
     'ATTACH_A_DOCUMENT'    => 'Joindre un document',
-    'MODIFY_PROJECT'       => 'Éditer la tâche',
+    'MODIFY_PROJECT'       => 'Éditer la projet',
     
 // FORMS
     'PROJECT_NAME'         => 'Titre :',
-    'PROJECT_MANAGER'      => 'Responsable :',
+    'PROJECT_MANAGER'      => 'Soumis par :',
     'PROJECT_PRIORITY'     => 'Priorité :',
-    'PROJECT_DESCRIPTION'  => 'Description :',
+    'PROJECT_DESCRIPTION'  => 'Déscription :',
     'SUBMIT'               => 'Enregistrer',
     
 // STATS

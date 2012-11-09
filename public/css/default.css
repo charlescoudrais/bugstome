@@ -333,6 +333,11 @@ dl.zend_form dd {
     height: 30px;
     line-height: 28px;
 }
+#inp_task_id, #inp_project_id {
+    width: 100px;
+    padding: 0 6px;
+    text-align: center;
+}
 #inp_task_name, #inp_project_name {
     width: 468px;
     padding: 0 6px;

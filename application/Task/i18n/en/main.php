@@ -4,7 +4,7 @@ return array(
 // GLOBALS
     'TASKS_TITLE'       => 'TASKS',
     'NEW_TASK_TITLE'    => 'NEW TASK',
-    'TASK_ELAPSED_TIME' => 'elapsed time',
+    'TASK_ELAPSED_TIME' => 'Elapsed time',
     
     'CREATE_NEW_TASK'   => 'New task',
     'TASK'              => 'Task',
@@ -20,7 +20,8 @@ return array(
     'MODIFY_TASK'       => 'Edit this task',
     
 // FORMS
-    'TASK_NAME'         => 'Title :',
+    'TASK_ID'           => 'Identifiant :',
+    'TASK_NAME'         => 'Label :',
     'TASK_MANAGER'      => 'Manager :',
     'TASK_PRIORITY'     => 'Priority :',
     'TASK_DESCRIPTION'  => 'Description :',
