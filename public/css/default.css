@@ -35,7 +35,7 @@ h4 { font-size: 12px; }
 h5 { font-size: 10px; }
 h6 { font-size:  8px; }
 
-h3.h3-dashboard {color: #79c4fb;}
+h3.h3-dashboard {color: #79c4fb; text-align: center;}
 span.span-h1 {font-size: 20px; color: #49a0df; /* #ff9900 */}
 
 
