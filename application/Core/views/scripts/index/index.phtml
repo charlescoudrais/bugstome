@@ -1,12 +1,21 @@
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
 <div class="article">
-    <p style="text-align: right">
-        <a class="button" href="/project/project/0">
-            <?=$this->translate('CREATE_NEW_PROJECT');?>
-        </a>
-        &nbsp;
-        <a class="button" href="/task/task/0">
-            <?=$this->translate('CREATE_NEW_TASK');?>
-        </a>
-    </p>
+    <table style="display: none;">
+        <tr>
+            <td style="padding: 4px;">
+                <img src="/img/icons_svg/task_icon.svg"
+                     style="width: 32px;"  />
+            </td>
+            <td>
+                <?= $this->translate('CREATE_NEW_PROJECT'); ?>
+            </td>
+            <td style="padding: 4px;">
+                <img src="/img/icons_svg/project_icon.svg"
+                     style="width: 32px;"  />
+            </td>
+            <td>
+                <?= $this->translate('CREATE_NEW_TASK'); ?>
+            </td>
+        </tr>`
+    </table>
 </div>

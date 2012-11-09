@@ -22,6 +22,7 @@ return array(
 // FORMS
     'TASK_ID'           => 'Identifiant :',
     'TASK_NAME'         => 'Libellé :',
+    'PROJECT_NAME'      => 'Projet :',
     'TASK_MANAGER'      => 'Responsable :',
     'TASK_PRIORITY'     => 'Priorité :',
     'TASK_DESCRIPTION'  => 'Déscription :',

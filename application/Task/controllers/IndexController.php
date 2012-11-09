@@ -31,6 +31,10 @@ class Task_IndexController extends Zend_Controller_Action
                         $this->view->translate('TASK') . ' '  . $taskId
                     );
             $form->setDefault(
+                        'inp_task_project',
+                        $this->view->translate('PROJECT') . ' NNN'
+                    );
+            $form->setDefault(
                         'inp_task_id',
                         '#' . $taskId
                     );
@@ -54,7 +58,12 @@ class Task_IndexController extends Zend_Controller_Action
                         'inp_task_id',
                         '#' . $taskId
                     );
+            $form->setDefault(
+                        'inp_task_project',
+                        ' NNN'
+                    );
             $form->inp_task_id->setAttrib('readonly','');
+            $form->inp_task_project->setAttrib('readonly','');
         }
         
         $form->setAction('')

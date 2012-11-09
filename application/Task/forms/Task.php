@@ -5,6 +5,7 @@ class Task_Form_Task extends Zend_Form
     {
         $taskId          = new Zend_Form_Element_Text('inp_task_id');
         $taskName        = new Zend_Form_Element_Text('inp_task_name');
+        $taskProject     = new Zend_Form_Element_Text('inp_task_project');
         $taskStartDate   = new Zend_Form_Element_Text(
                     'inp_task_start_datepicker'
                 );
@@ -48,6 +49,7 @@ class Task_Form_Task extends Zend_Form
         $taskDescription->addFilter(new Zend_Filter_StripTags());
         
         $this->addElement($taskId);
+        $this->addElement($taskProject);
         $this->addElement($taskName);
         $this->addElement($taskStartDate);
         $this->addElement($taskEndDate);

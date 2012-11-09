@@ -127,6 +127,9 @@ h1#sitename>a {
     margin-left: 100px;
     list-style-type: none;
 }
+#nav li:first-child {
+    border-left: 1px solid #505050;
+}
 #nav li {
     float: left;
     padding: 6px 6px 6px 10px;
@@ -348,6 +351,7 @@ dl.zend_form dd {
 #inp_task_end_datepicker-label {
     
 }
+#inp_task_id-element,
 #inp_task_start_datepicker-element, #inp_project_start_datepicker-element {
     float: left;
     width: 200px;
