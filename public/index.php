@@ -20,12 +20,17 @@ ini_set('include_path', ROOT_PATH . '/library/');
 set_exception_handler(
     function($exception)
     {
+        
         if ('development' === APPLICATION_ENV) {
-            print '<h1>Exception</h1>';
-            print '<pre>' . PHP_EOL;
-            print $exception->getMessage() . PHP_EOL;
-            print $exception->getTraceAsString() . PHP_EOL;
-            print '</pre>' . PHP_EOL;
+//            if ($exception->getMessage() == 'MSIE') {
+//                header('Location: /error/perso');
+//            } else {
+                print '<h1>Exception</h1>';
+                print '<pre>' . PHP_EOL;
+                print $exception->getMessage() . PHP_EOL;
+                //print $exception->getTraceAsString() . PHP_EOL;
+                print '</pre>' . PHP_EOL;
+//            }
         } else {
             print 'Exception error';
         }
@@ -50,6 +55,11 @@ set_error_handler(
 );
 // */
 require_once 'Zend/Loader/Autoloader.php';
+
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+if (strpos($userAgent, 'MSIE')) { //  strpos($userAgent, 'MSIE') && 
+    throw new Exception('This MSIE\'s version is not supported by application, sorry.');
+}
 
 $autoloader = Zend_Loader_Autoloader::getInstance();
 
