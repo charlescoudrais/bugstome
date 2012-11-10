@@ -44,7 +44,7 @@ set_error_handler(
         if ('development' === APPLICATION_ENV) {
             print '<h1>Error</h1>';
             print '<pre>' . PHP_EOL;
-            print $message . PHP_EOL;
+            print $code . ' / ' . $message . PHP_EOL;
             print '</pre>' . PHP_EOL;
         } else {
             //@TODO: SWITCH...
