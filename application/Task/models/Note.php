@@ -1,5 +1,5 @@
 <?php
-class Note_Model_Note
+class Task_Model_Note
 {
     /**
      *

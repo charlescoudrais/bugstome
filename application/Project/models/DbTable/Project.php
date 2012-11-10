@@ -6,7 +6,7 @@ class Project_Model_DbTable_Project extends Zend_Db_Table_Abstract
     {
         $options = array(
             'name' => 'projects',
-            'primary' => 'p_id', 
+            'primary' => 'project_id', 
         );
         
         parent::__construct($options);

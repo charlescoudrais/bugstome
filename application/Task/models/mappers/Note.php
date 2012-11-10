@@ -1,5 +1,5 @@
 <?php
-class Note_Model_Mapper_Note
+class Task_Model_Mapper_Note
 {
     public function find($id)
     {

@@ -6,7 +6,7 @@ class Task_Model_DbTable_Task extends Zend_Db_Table_Abstract
     {
         $options = array(
             'name' => 'tasks',
-            'primary' => 't_id', 
+            'primary' => 'task_id', 
         );
         
         parent::__construct($options);
