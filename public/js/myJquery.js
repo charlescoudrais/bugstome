@@ -28,10 +28,10 @@ $(document).ready(function(){
             opacity: 0.9
         },
         contents: '<ul class="ul-balloon">' +
-                  '<li><a href="/task/list">My Tasks</a></li>' +
                   '<li><a href="/project/list">My Projects</a></li>' +
+                  '<li><a href="/task/list">My Tasks</a></li>' +
+                  '<li><a href="/note/list">My Notes</a></li>' +
                   '<li><a href="">Help</a></li>' +
-                  '<li><a href="">etc...</a></li>' +
                   '</ul>' +
                   '<hr style="margin: 10px 0px 4px 0px;" />' +
                   '<ul class="ul-balloon">' +

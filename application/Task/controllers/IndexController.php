@@ -78,15 +78,4 @@ class Task_IndexController extends Zend_Controller_Action
         $this->view->formTask = $form;
         
     }
-    
-    public function noteAction()
-    {
-        $taskId = (int) $this->getRequest()->getParam('id');
-        $taskNb = (int) $this->getRequest()->getParam('nb');
-        $this->view->taskId = $taskId;
-        $this->view->taskNb = $taskNb;
-        $this->view->pageTitle = $this->view->translate(
-                        'TASK'
-                    ) . ' ' . $taskId . ', ' . 'Note' . ' ' . $taskNb;
-    }
 }

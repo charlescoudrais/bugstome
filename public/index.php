@@ -53,13 +53,13 @@ set_error_handler(
         exit(1);
     }
 );
-// */
-require_once 'Zend/Loader/Autoloader.php';
 
 $userAgent = $_SERVER['HTTP_USER_AGENT'];
 if (strpos($userAgent, 'MSIE')) { //  strpos($userAgent, 'MSIE') && 
     throw new Exception('This MSIE\'s version is not supported by application, sorry.');
 }
+// */
+require_once 'Zend/Loader/Autoloader.php';
 
 $autoloader = Zend_Loader_Autoloader::getInstance();
 

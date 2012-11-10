@@ -241,24 +241,24 @@ h1#sitename>a {
 }
 
 /* LISTS */
-.ul-projects, .ul-tasks {
+.ul-projects, .ul-tasks, .ul-notes {
     margin: 0;
     /*margin-left: 20px;*/
     padding: 0;
     list-style-type: none;
 }
-.ul-projects li, .ul-tasks li {
+.ul-projects li, .ul-tasks li, .ul-notes li {
     padding: 6px;
     height: 40px;
     border-bottom: 1px solid #ececec;
     line-height: 40px;
 }
-.ul-projects li a, .ul-tasks li a {
+.ul-projects li a, .ul-tasks li a, .ul-notes li a {
     font-size: 16px;
     font-weight: bold;
     color: #49a0df;
 }
-.ul-projects li a:hover, .ul-tasks li a:hover {
+.ul-projects li a:hover, .ul-tasks li a:hover, .ul-notes li a:hover {
     color: #1f6ba2;
 }
 

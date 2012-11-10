@@ -1,0 +1,13 @@
+<h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
+
+<br /><br />
+<div class="article">
+    <ul class="ul-notes">
+    <?php foreach ($this->notes as $noteId => $noteValue) : ?>
+        <li>
+        <?='<a href="/note/0/'.$noteId.'" 
+                 id="a-note-'.$noteId.'">'.$noteValue.'</a>'?>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+</div>

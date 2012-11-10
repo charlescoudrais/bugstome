@@ -1,0 +1,2 @@
+[Sat Nov 10 12:50:42 2012] [error] [client 127.0.0.1] PHP Notice:  Undefined index: note in /Users/charlescoudrais/www/bugsme/library/Zend/Controller/Dispatcher/Standard.php on line 397, referer: http://bugsme.mbp/index/index
+[Sat Nov 10 12:52:19 2012] [error] [client 127.0.0.1] PHP Notice:  Undefined index: note in /Users/charlescoudrais/www/bugsme/library/Zend/Controller/Dispatcher/Standard.php on line 397

@@ -1,4 +1,5 @@
 <?php
+// TASK-FR
 return array(
     
 // GLOBALS
@@ -32,6 +33,10 @@ return array(
     
 // NAVIGATION
     'NAV_TASK'          => 'Tâches',
-    
+
+// NOTES
+    'NAV_NOTE' => 'Notes',
+    'NOTE_NOTE_TITLE' => 'Note ',
+    'NOTE_LIST_TITLE' => 'Liste des notes',
     
 );
