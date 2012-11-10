@@ -23,6 +23,12 @@ h5 {font-size: 1.5em;}
 
 h6 {font-size: 1em;}
 
+table {
+    margin: 0; padding: 0;
+    background: none;
+    border: none; border-spacing: 0 0; border-collapse: separate;
+}
+td {vertical-align: middle;}
 ul {margin: 0; padding: 0; list-style-type: none;}
 
 .clear-both {

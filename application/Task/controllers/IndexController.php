@@ -39,6 +39,10 @@ class Task_IndexController extends Zend_Controller_Action
                         '#' . $taskId
                     );
             $form->setDefault(
+                        'sel_task_project',
+                        '1'
+                    );
+            $form->setDefault(
                         'sel_task_manager',
                         '1'
                     );
@@ -63,7 +67,7 @@ class Task_IndexController extends Zend_Controller_Action
                         ' NNN'
                     );
             $form->inp_task_id->setAttrib('readonly','');
-            $form->inp_task_project->setAttrib('readonly','');
+            $form->sel_task_project->setAttrib('readonly','');
         }
         
         $form->setAction('')

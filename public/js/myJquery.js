@@ -43,24 +43,58 @@ $(document).ready(function(){
     $('#nav li').each(function(iterator){
         $(this).on("click", function(){
             window.location = $(this).find('a').attr('href'); 
-        });
+        }); 
     });
     
     $('.ul-btn-add li').each(function(iterator){
+        var href = $(this).find('a').attr('href');
+        var options = {
+            delay: 0,
+            minLifetime: 0,
+            showDuration: 0,
+            showAnimation: null,
+            hideDuration: 0,
+            position: 'bottom',
+            offsetX: 0,
+            offsetY: 20,
+            css: {
+                padding: '10px 6px 10px 4px',
+                color: '#ffffff',
+                fontWeight: 'bold',
+                background: 'orange',
+                border: 'none',
+                boxShadow: "0px 0px 2px 0px #000000",
+                opacity: 1
+            },
+            contents: 'You need to fill the form before...'
+        }
+                
         $(this).on("click", function(){
-            window.location = $(this).find('a').attr('href'); 
-        });
-        $(this).css({
-           cursor: 'pointer'
+            window.location = href; 
         });
         //*
+        if (href == 'javascript: return false;') {
+            //*
+            $(this).balloon(options);
+            $(this).find('a').css({
+               textDecoration: 'none',
+               cursor: 'default'
+            });
+            // */ alert ('chco');
+        } else {
+            $(this).css({
+                cursor: 'pointer'
+            });
+        }
+        
         $(this).on("mouseover", function(){
-           $(this).css({
-               opacity: '0.9'
-           });
-           $(this).find('a').css({
-               textDecoration: 'underline'
-           });
+            $(this).css({
+                opacity: '0.8'
+            });
+            $(this).find('a').css({
+                textDecoration: 'underline',
+                cursor: 'pointre'
+            });
         });
         $(this).on("mouseout", function(){
            $(this).css({

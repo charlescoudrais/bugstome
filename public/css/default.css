@@ -52,6 +52,23 @@ a.add-links {
     font-size: 14px; text-decoration: none;
 }
 
+/* TABLE */
+.table-ul-btn-add {
+    border-collapse: collapse;
+}
+.td-ul-btn-add-a {
+    padding: 6px;
+    
+}
+.td-ul-btn-add-a img {
+    width: 32px;
+}
+.td-ul-btn-add-b {
+    padding: 6px;
+    text-align: left;
+}
+
+
 /* BUTTONS */
 .button {
     padding: 10px;
@@ -238,6 +255,12 @@ h1#sitename>a {
     color: #49a0df;
     text-align: center;
     border-bottom: 1px solid #ececec;
+}
+.div-time-elapsed-page-title {
+    float:right;
+    margin: 0;
+    padding: 6px;
+    line-height: 32px;
 }
 
 /* LISTS */
