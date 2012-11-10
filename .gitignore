@@ -14,3 +14,5 @@ application/Core/configs/application.ini
 nbproject/private/private.xml
 
 nbproject/project.xml
+
+public/custom_error_log
