@@ -16,3 +16,5 @@ nbproject/private/private.xml
 nbproject/project.xml
 
 public/custom_error_log
+
+public/error_log
