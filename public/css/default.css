@@ -91,7 +91,9 @@ a.add-links {
     /*vertical-align: baseline;*/
     border-bottom: 1px solid #ececec;
 }
-
+.article {
+    border: 1px solid #ececec;
+}
 p, .article {
     padding: 6px;
 }
