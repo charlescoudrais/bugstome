@@ -23,6 +23,7 @@ class Project_IndexController extends Zend_Controller_Action
         if ($projectId !== 0) {
             // @TODO: set values
             $project->getProjectMapper()->find($projectId);
+            
             $this->view->pageTitle = $this->view->translate(
                         'PROJECT'
                     ) . $projectId;

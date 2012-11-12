@@ -114,10 +114,10 @@ class Project_Model_Project
      */
     public function getProjectMapper()
     {
-        if (null === $this->mapper) {
-            $this->mapper = new Project_Model_Mapper_Project();
+        if (null === $this->projectMapper) {
+            $this->projectMapper = new Project_Model_Mapper_Project();
         }
-        return $this->mapper;
+        return $this->projectMapper;
     }
 
     /**
