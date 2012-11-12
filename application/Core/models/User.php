@@ -25,7 +25,7 @@ class Core_Model_User
     /**
      * @var Core_Model_Mapper_User
      */
-    private $mapper;
+    private $userMapper;
     
     
 	/**
@@ -133,15 +133,15 @@ class Core_Model_User
      */
 	public function getMapper()
     {
-        if (null === $this->mapper) {
-            $this->mapper = new Core_Model_Mapper_User();
+        if (null === $this->userMapper) {
+            $this->userMapper = new Core_Model_Mapper_User();
         }
-        return $this->mapper;
+        return $this->userMapper;
     }
     
     public function setMapper($mapper)
     {
-        $this->mapper = $mapper;
+        $this->userMapper = $mapper;
         return $this;
     }
 }

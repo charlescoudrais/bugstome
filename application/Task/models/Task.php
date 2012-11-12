@@ -70,12 +70,14 @@ class Task_Model_Task
     }
     
     public function getTaskMapper() {
-        $this->taskMapper = new Task_Model_Mapper_Task();
+        if (NULL === $this->taskMapper) {
+            $this->taskMapper = new Task_Model_Mapper_Task();
+        }
         return $this->taskMapper;
     }
 
     public function setTaskMapper($taskMapper) {
-        $this->taskMapper = new Task_Model_Mapper_Task();
+        $this->taskMapper = $taskMapper;
         return $this;
     }
 

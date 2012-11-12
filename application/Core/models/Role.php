@@ -13,7 +13,7 @@ class Core_Model_Role
     /**
      * @var Core_Model_Mapper_User
      */
-    private $mapper;
+    private $roleMapper;
     
     
 	/**
@@ -62,10 +62,10 @@ class Core_Model_Role
      */
 	public function getMapper()
     {
-        if (null === $this->mapper) {
-            $this->mapper = new Core_Model_Mapper_Role();
+        if (null === $this->roleMapper) {
+            $this->roleMapper = new Core_Model_Mapper_Role();
         }
-        return $this->mapper;
+        return $this->roleMapper;
     }
     
     /**
@@ -75,7 +75,7 @@ class Core_Model_Role
      */
     public function setMapper($mapper)
     {
-        $this->mapper = $mapper;
+        $this->roleMapper = $mapper;
         return $this;
     }
 }

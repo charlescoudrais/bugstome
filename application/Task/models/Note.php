@@ -95,13 +95,15 @@ class Task_Model_Note
     
     public function getNoteMapper()
     {
-        $this->noteMapper = new Note_Model_Mapper_Note();
+        if (NULL === $this->noteMapper) {
+            $this->noteMapper = new Note_Model_Mapper_Note();
+        }
         return $this->noteMapper;
     }
 
     public function setNoteMapper($noteMapper)
     {
-        $this->noteMapper = new Note_Model_Mapper_Note();
+        $this->noteMapper = $noteMapper;
         return $this;
     }
 

@@ -12,7 +12,7 @@ class Core_Model_Priority
     /**
      * @var Core_Model_Mapper_Priority
      */
-    private $mapper;
+    private $priorityMapper;
 	
     
     /**
@@ -61,10 +61,10 @@ class Core_Model_Priority
      */
 	public function getMapper()
     {
-        if (null === $this->mapper) {
-            $this->mapper = new Core_Model_Mapper_Priority();
+        if (null === $this->priorityMapper) {
+            $this->priorityMapper = new Core_Model_Mapper_Priority();
         }
-        return $this->mapper;
+        return $this->priorityMapper;
     }
     
     /**
@@ -74,7 +74,7 @@ class Core_Model_Priority
      */
     public function setMapper($mapper)
     {
-        $this->mapper = $mapper;
+        $this->priorityMapper = $mapper;
         return $this;
     }
 }
