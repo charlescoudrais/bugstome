@@ -1,6 +1,5 @@
-<?php 
-
-class Core_Model_Role
+<?php
+class Core_Model_Priority
 {
     /**
      * @var integer
@@ -11,24 +10,24 @@ class Core_Model_Role
      */
     private $name;
     /**
-     * @var Core_Model_Mapper_User
+     * @var Core_Model_Mapper_Priority
      */
     private $mapper;
+	
     
-    
-	/**
+    /**
      * 
-     * @return int
+     * @return integer
      */
     public function getId ()
     {
         return $this->id;
     }
-
-	/**
+    
+    /**
      * 
      * @param integer $id
-     * @return Core_Model_Role
+     * @return Core_Model_Priority
      */
     public function setId ($id)
     {
@@ -48,7 +47,7 @@ class Core_Model_Role
 	/**
      * 
      * @param string $name
-     * @return Core_Model_Role
+     * @return Core_Model_Priority
      */
     public function setName ($name)
     {
@@ -58,20 +57,20 @@ class Core_Model_Role
     
     /**
      * 
-     * @return Core_Model_Mapper_Role
+     * @return Core_Model_Mapper_Priority
      */
 	public function getMapper()
     {
         if (null === $this->mapper) {
-            $this->mapper = new Core_Model_Mapper_Role();
+            $this->mapper = new Core_Model_Mapper_Priority();
         }
         return $this->mapper;
     }
     
     /**
      * 
-     * @param Core_Model_Mapper_Role $mapper
-     * @return Core_Model_Role
+     * @param Core_Model_Mapper_Priority $mapper
+     * @return Core_Model_Priority
      */
     public function setMapper($mapper)
     {
@@ -79,11 +78,3 @@ class Core_Model_Role
         return $this;
     }
 }
-
-
-
-
-
-
-
-

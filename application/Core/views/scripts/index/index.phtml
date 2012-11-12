@@ -1,15 +1,12 @@
-<div class="article" style="border: 1px solid #ececec;">
-    
-    <div id="user-summary" 
-         style="float: left; width: 32%; border-right: 1px solid #ececec;">
+<div style="margin: 20px 0px; padding: 0px;">
+    <div id="user-summary">
         <table>
             <tr>
                 <td style="padding: 6px;">
                     <img src="/img/users/g_user.svg" style="width: 80px;" />
                 </td>
                 <td style="padding: 6px;">
-                    <h3 class="h3-dashboard"
-                        style="color: #D88E30;">USER_NAME</h3>
+                    <h3 class="h3-dashboard">USER_NAME</h3>
                     <div style="padding: 6px;">
                         hsqdghfqgqsg
                         <br />
@@ -21,23 +18,26 @@
             </tr>
         </table>
     </div>
-    <div id="user-activity-summary" style="margin-left: 34%; padding: 6px;">
+    <div id="user-activity-summary">
         <table>
             <tr>
-                <td style="padding: 6px;">
+                <td style="padding: 6px; text-align: right;">
                     <h3 class="h3-dashboard">LAST_ALERT :</h3>
                 </td>
                 <td style="padding: 6px;">
-                    hsqdghfqgqsg kfqshgiduqfghq fshjdsg 
-                    jsfqhgijg jsfqhdilgsdkfg 
+                    <?php
+                    echo $this->lastAlert;
+                    ?>
                 </td>
             </tr>
             <tr>
-                <td style="padding: 6px;">
+                <td style="padding: 6px; text-align: right;">
                     <h3 class="h3-dashboard">LAST_EDIT :</h3>
                 </td>
                 <td style="padding: 6px;">
-                    hsqdghfqgqsg kfqshgiduqfghq fshjdsg jsfqhgijg jsfqhdilgsdkfg 
+                    <?php
+                    echo $this->lastAlert;
+                    ?> 
                 </td>
             </tr>
         </table>
@@ -45,20 +45,40 @@
 </div>
 <div style="margin: 20px 0px; padding: 0px;">
     <div style="float: left; width: 32%; height: 200px; border: 1px solid #ececec;">
+        <h3 class="h3-dashboard heading">INBOX :</h3>
+        <ul class="ul-dashbord">
+            <li>
+                <span class="index-inbox-msg">Message ...</span>
+                <span class="index-inbox-date">
+                    <?= $this->lastAlert; ?>
+                </span>
+            </li>
+            <li>
+                <span class="index-inbox-msg">Message ...</span>
+                <span class="index-inbox-date">
+                    <?= $this->lastAlert; ?>
+                </span>
+            </li>
+            <li>
+                <span class="index-inbox-msg">Message ...</span>
+                <span class="index-inbox-date">
+                    <?= $this->lastAlert; ?>
+                </span>
+            </li>
+            <li>
+                <span class="index-inbox-msg">Message ...</span>
+                <span class="index-inbox-date">
+                    <?= $this->lastAlert; ?>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div style="float: right; width: 32%; height: 200px; border: 1px solid #ececec;">
         <h3 class="h3-dashboard heading">ACTIVE_PROJECT :</h3>
         <ul class="ul-dashbord">
             <li>Project #NNN</li>
             <li>Project #NNN</li>
             <li>Project #NNN</li>
-        </ul>
-    </div>
-    <div style="float: right; width: 32%; height: 200px; border: 1px solid #ececec;">
-        <h3 class="h3-dashboard heading">INBOX :</h3>
-        <ul class="ul-dashbord">
-            <li>Alert ...</li>
-            <li>Msg ...</li>
-            <li>Alert ...</li>
-            <li>Msg ...</li>
         </ul>
     </div>
     <div style="margin-left: 34%; margin-right: 34%; width: 32%; height: 200px; border: 1px solid #ececec;">

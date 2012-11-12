@@ -57,15 +57,15 @@ class Core_Model_Mapper_User
             'user_name'          => $user->getName(),
             'role_id'            => $user->getRole()->getId(),
             'user_password'      => $user->getPassword(),
-            'user_active'		  => (int) $user->getActive()
+            'user_active'		 => (int) $user->getActive()
         );
     }
     
     public function rowToObject($row)
     {
-         $roleRow = $row->findParentRow('Core_Model_DbTable_Role', 'Role');
+         $roleRow    = $row->findParentRow('Core_Model_DbTable_Role', 'Role');
          $roleMapper = new Core_Model_Mapper_Role();
-         $role = $roleMapper->rowToObject($roleRow);
+         $role       = $roleMapper->rowToObject($roleRow);
          
          $user = new Core_Model_User();
          $user->setId($row->user_id)

@@ -35,7 +35,7 @@ $(document).ready(function(){
                   '</ul>' +
                   '<hr style="margin: 10px 0px 4px 0px;" />' +
                   '<ul class="ul-balloon">' +
-                  '<li><a href="/user/user">My account</a></li>' +
+                  '<li><a href="/user/me">My account</a></li>' +
                   '<li><a href="" style="color: orange;">LOGOUT</a></li>' +
                   '</ul>'
     });
@@ -104,7 +104,6 @@ $(document).ready(function(){
                textDecoration: 'none'
            }); 
         });
-        // */
     });
 });
 

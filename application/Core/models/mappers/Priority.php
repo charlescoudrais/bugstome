@@ -1,5 +1,5 @@
-<?php 
-class Core_Model_Mapper_Role
+<?php
+class Core_Model_Mapper_Pririty
 {
     private $dbTable;
     
@@ -31,24 +31,24 @@ class Core_Model_Mapper_Role
     public function objectToRow($obj)
     {
         return array( 
-            'role_id'   => $obj->getId(),
-            'role_name' => $obj->getName(),
+            'priority_id'            => $obj->getId(),
+            'priority_name'          => $obj->getName(),
         );
     }
     
     public function rowToObject($row)
     {        
-         $obj = new Core_Model_Role();
+         $obj = new Core_Model_Priority();
          
-         $obj->setId($row->role_id)
-             ->setName($row->role_name);
+         $obj->setId($row->priority_id)
+             ->setName($row->priority_name);
          return $obj;
     }
     
     public function getDbTable()
     {
         if (null === $this->dbTable) {
-            $this->dbTable = new Core_Model_DbTable_Role();
+            $this->dbTable = new Core_Model_DbTable_Priority();
         }
         return $this->dbTable;
     }

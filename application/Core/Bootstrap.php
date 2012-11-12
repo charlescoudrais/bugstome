@@ -11,9 +11,11 @@ class Core_Bootstrap extends Zend_Application_Module_Bootstrap
            . 'routes.ini', APPLICATION_ENV
        );
        try {
-           Zend_Controller_Front::getInstance()->getRouter()->addConfig(
-                                                            $newConfig, 'routes'
-                                                        );
+           Zend_Controller_Front::getInstance()->getRouter()
+                                               ->addConfig(
+                                                        $newConfig,
+                                                        'routes'
+                                                       );
        } catch (Exception $e) {
            echo $e->getMessage();
        }

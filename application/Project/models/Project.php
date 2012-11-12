@@ -30,54 +30,104 @@ class Project_Model_Project
 
     /**
      * 
-     * @return type
+     * @return int
      */
-    public function getProjectId() {
+    public function getProjectId()
+    {
         return $this->projectId;
     }
     
-
-    public function setProjectId($projectId) {
+    /**
+     * 
+     * @param int $projectId
+     * @return Project_Model_Project
+     */
+    public function setProjectId($projectId)
+    {
         $this->projectId = $projectId;
         return $this;
     }
-
-    public function getProjectName() {
+    
+    /**
+     * 
+     * @return String
+     */
+    public function getProjectName()
+    {
         return $this->projectName;
     }
-
-    public function setProjectName($projectName) {
+    
+    /**
+     * 
+     * @param String $projectName
+     * @return Project_Model_Project
+     */
+    public function setProjectName($projectName)
+    {
         $this->projectName = $projectName;
         return $this;
     }
-
-    public function getProjectManager() {
+    
+    /**
+     * 
+     * @return String
+     */
+    public function getProjectManager()
+    {
         return $this->projectManager;
     }
-
-    public function setProjectManager($projectManager) {
+    
+    /**
+     * 
+     * @param String $projectManager
+     * @return Project_Model_Project
+     */
+    public function setProjectManager($projectManager)
+    {
         $this->projectManager = $projectManager;
         return $this;
     }
-
-    public function getProjectDescription() {
+    
+    /**
+     * 
+     * @return String
+     */
+    public function getProjectDescription()
+    {
         return $this->projectDescription;
     }
-
-    public function setProjectDescription($projectDescription) {
+    
+    /**
+     * 
+     * @param String $projectDescription
+     * @return Project_Model_Project
+     */
+    public function setProjectDescription($projectDescription)
+    {
         $this->projectDescription = $projectDescription;
         return $this;
     }
     
-    public function getProjectMapper() {
-        $this->projectMapper = new Project_Model_Mapper_Project();
-        return $this->projectMapper;
+    /**
+     * 
+     * @return Project_Model_Mapper_Project
+     */
+    public function getProjectMapper()
+    {
+        if (null === $this->mapper) {
+            $this->mapper = new Project_Model_Mapper_Project();
+        }
+        return $this->mapper;
     }
 
-    public function setProjectMapper($projectMapper) {
-        $this->projectMapper = new Project_Model_Mapper_Project();
+    /**
+     * 
+     * @param Project_Model_Mapper_Project $projectMapper
+     * @return Project_Model_Project
+     */
+    public function setProjectMapper($projectMapper)
+    {
+        $this->projectMapper = $projectMapper;
         return $this;
     }
-
-
 }

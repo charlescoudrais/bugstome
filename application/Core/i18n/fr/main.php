@@ -5,7 +5,8 @@ return array(
     'HOME_TITLE'      => 'DASHBOARD', 
     'STATS_TITLE'     => 'STATISTIQUES', 
     'USERS_TITLE'     => 'LISTE DES UTILISATEURS', 
-    'USER_TITLE'      => 'VOTRE COMPTE',
+    'USER_TITLE'      => 'NOUVEAU COMPTE',
+    'USER_MY_TITLE'   => 'MON COMPTE',
     
 // FORMS
     

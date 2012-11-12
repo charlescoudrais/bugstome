@@ -26,8 +26,11 @@ class Core_Model_User
      * @var Core_Model_Mapper_User
      */
     private $mapper;
+    
+    
 	/**
-     * @return the $id
+     * 
+     * @return int
      */
     public function getId ()
     {
@@ -35,7 +38,9 @@ class Core_Model_User
     }
 
 	/**
+     * 
      * @param integer $id
+     * @return Core_Model_User
      */
     public function setId ($id)
     {
@@ -44,7 +49,8 @@ class Core_Model_User
     }
 
 	/**
-     * @return the $name
+     * 
+     * @return String
      */
     public function getName ()
     {
@@ -52,7 +58,9 @@ class Core_Model_User
     }
 
 	/**
+     * 
      * @param string $name
+     * @return Core_Model_User
      */
     public function setName ($name)
     {
@@ -61,7 +69,8 @@ class Core_Model_User
     }
 
 	/**
-     * @return the $password
+     * 
+     * @return String
      */
     public function getPassword ()
     {
@@ -69,6 +78,7 @@ class Core_Model_User
     }
 
 	/**
+     * 
      * @param string $password
      */
     public function setPassword ($password)
@@ -78,7 +88,8 @@ class Core_Model_User
     }
 
     /**
-     * @return the $active
+     * 
+     * @return boolean
      */
     public function getActive ()
     {
@@ -86,7 +97,9 @@ class Core_Model_User
     }
 
 	/**
+     * 
      * @param boolean $active
+     * @return Core_Model_User
      */
     public function setActive ($active)
     {
@@ -95,7 +108,8 @@ class Core_Model_User
     }
 
 	/**
-     * @return the $role
+     * 
+     * @return Core_Model_Role
      */
     public function getRole ()
     {
@@ -103,14 +117,20 @@ class Core_Model_User
     }
 
 	/**
+     * 
      * @param Core_Model_Role $role
+     * @return Core_Model_User
      */
     public function setRole (Core_Model_Role $role)
     {
         $this->role = $role;
         return $this;
     }
-
+    
+    /**
+     * 
+     * @return Core_Model_Mapper_User
+     */
 	public function getMapper()
     {
         if (null === $this->mapper) {

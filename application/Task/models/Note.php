@@ -23,6 +23,11 @@ class Task_Model_Note
     private $noteDescription;
     /**
      *
+     * @var string 
+     */
+    private $noteDate;
+    /**
+     *
      * @var Note_Model_Mapper_Note 
      */
     private $noteMapper;
@@ -32,49 +37,70 @@ class Task_Model_Note
      * 
      * @return type
      */
-    public function getNoteId() {
+    public function getNoteId()
+    {
         return $this->noteId;
     }
     
 
-    public function setNoteId($noteId) {
+    public function setNoteId($noteId)
+    {
         $this->noteId = $noteId;
         return $this;
     }
 
-    public function getNoteName() {
+    public function getNoteName()
+    {
         return $this->noteName;
     }
 
-    public function setNoteName($noteName) {
+    public function setNoteName($noteName)
+    {
         $this->noteName = $noteName;
         return $this;
     }
 
-    public function getNoteManager() {
+    public function getNoteManager()
+    {
         return $this->noteManager;
     }
 
-    public function setNoteManager($noteManager) {
+    public function setNoteManager($noteManager)
+    {
         $this->noteManager = $noteManager;
         return $this;
     }
 
-    public function getNoteDescription() {
+    public function getNoteDescription()
+    {
         return $this->noteDescription;
     }
 
-    public function setNoteDescription($noteDescription) {
+    public function setNoteDescription($noteDescription)
+    {
         $this->noteDescription = $noteDescription;
         return $this;
     }
+
+    public function getNoteDate()
+    {
+        return $this->noteDate;
+    }
+
+    public function setNoteDate($date)
+    {
+        $this->noteDate = new Zend_Date($date);
+        return $this;
+    }
     
-    public function getNoteMapper() {
+    public function getNoteMapper()
+    {
         $this->noteMapper = new Note_Model_Mapper_Note();
         return $this->noteMapper;
     }
 
-    public function setNoteMapper($noteMapper) {
+    public function setNoteMapper($noteMapper)
+    {
         $this->noteMapper = new Note_Model_Mapper_Note();
         return $this;
     }
