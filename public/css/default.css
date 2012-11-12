@@ -433,13 +433,52 @@ dl.zend_form dd {
     width: 32%;
     height: 100px;
     border: 1px solid #ececec;
+    box-shadow: 0px 0px 2px #757575 ;
 }
 #user-activity-summary {
     margin-left: 34%;
     height: 100px;
     border: 1px solid #ececec;
+    box-shadow: 0px 0px 2px #757575;
 }
 
+#div-index-inbox-msg {
+    float: left;
+    width: 32%;
+    height: 200px;
+    border: 1px solid #ececec;
+    box-shadow: 0px 0px 2px #757575;
+}
+#div-index-active-project {
+    float: right;
+    width: 32%;
+    height: 200px;
+    border: 1px solid #ececec;
+    box-shadow: 0px 0px 2px #757575;
+}
+#div-index-active-task {
+    margin-left: 34%;
+    margin-right: 34%;
+    width: 32%;
+    height: 200px;
+    border: 1px solid #ececec;
+    box-shadow: 0px 0px 2px #757575;
+}
 .index-inbox-msg {
     padding-right: 30px;
+    box-shadow: 0px 0px 2px #757575;
+}
+
+#tb-index-bottom-links {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.td-index-bottom-link-a {
+    padding: 4px 6px;
+    text-align: center;
+}
+.td-index-bottom-link-b {
+    padding: 4px 60px 4px 6px;
+    text-align: center;
 }

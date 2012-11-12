@@ -44,7 +44,7 @@
     </div>
 </div>
 <div style="margin: 20px 0px; padding: 0px;">
-    <div style="float: left; width: 32%; height: 200px; border: 1px solid #ececec;">
+    <div id="div-index-inbox-msg">
         <h3 class="h3-dashboard heading">INBOX :</h3>
         <ul class="ul-dashbord">
             <li>
@@ -73,7 +73,7 @@
             </li>
         </ul>
     </div>
-    <div style="float: right; width: 32%; height: 200px; border: 1px solid #ececec;">
+    <div id="div-index-active-project">
         <h3 class="h3-dashboard heading">ACTIVE_PROJECT :</h3>
         <ul class="ul-dashbord">
             <li>Project #NNN</li>
@@ -81,7 +81,7 @@
             <li>Project #NNN</li>
         </ul>
     </div>
-    <div style="margin-left: 34%; margin-right: 34%; width: 32%; height: 200px; border: 1px solid #ececec;">
+    <div id="div-index-active-task">
         <h3 class="h3-dashboard heading">ACTIVE_TASK :</h3>
         <ul class="ul-dashbord">
             <li>Task #NNN</li>
@@ -91,44 +91,44 @@
     </div>
 </div>
 
-<div class="article" style="border: 1px solid #ececec;">
-    <table style="width: 100%; margin: 0; padding: 0;">
+<div class="article" style="border: 1px solid #ececec; box-shadow: 0px 0px 2px #757575">
+    <table id="tb-index-bottom-links">
         <tr>
-            <td style="padding: 4px 6px; text-align: center;">
+            <td class="td-index-bottom-link-a">
                 <img src="/img/icons_svg/b_folder_icon.svg"
                      style="width: 48px;"  />
             </td>
-            <td style="padding: 4px 60px 4px 6px; text-align: center; border-right: 1px solid #ececec;">
+            <td class="td-index-bottom-link-b" style="border-right: 1px solid #ccc;">
                 <a class="add-links"
                    href="/project/project/0">
                     <?=$this->translate('CREATE_NEW_PROJECT');?>
                 </a>
             </td>
-            <td style="padding: 4px 6px; text-align: center;">
+            <td class="td-index-bottom-link-a">
                 <img src="/img/icons_svg/b_task_icon.svg"
                      style="width: 48px;"  />
             </td>
-            <td style="padding: 4px 60px 4px 6px; text-align: center; border-right: 1px solid #ececec;">
+            <td class="td-index-bottom-link-b" style="border-right: 1px solid #ccc;">
                 <a class="add-links"
                    href="/task/task/0">
                     <?=$this->translate('CREATE_NEW_TASK');?>
                 </a>
             </td>
-            <td style="padding: 4px 6px; text-align: center;">
+            <td class="td-index-bottom-link-a">
                 <img src="/img/icons_svg/note_icon.svg"
                      style="width: 48px;"  />
             </td>
-            <td style="padding: 4px 60px 4px 6px; text-align: center; border-right: 1px solid #ececec;">
+            <td class="td-index-bottom-link-b" style="border-right: 1px solid #ccc;">
                 <a class="add-links"
                    href="/note/0/0">
                     <?=$this->translate('ADD_A_NOTE');?>
                 </a>
             </td>
-            <td style="padding: 4px 6px; text-align: center;">
+            <td class="td-index-bottom-link-a">
                 <img src="/img/icons_svg/alert_icon.svg"
                      style="width: 48px;"  />
             </td>
-            <td style="padding: 4px 60px 4px 6px; text-align: center;">
+            <td class="td-index-bottom-link-b">
                 <a class="add-links"
                    href="/notify/0/0">
                     <?=$this->translate('ALERT_TASK');?>

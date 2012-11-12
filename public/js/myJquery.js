@@ -100,11 +100,25 @@ $(document).ready(function(){
            $(this).css({
                opacity: '1'
            });
-           $(this).find('a').css({
+           $(this).find("a").css({
                textDecoration: 'none'
            }); 
         });
     });
+    
+    $(".td-index-bottom-link-a, .td-index-bottom-link-b").each( function() {
+       $(this).on('mouseover', function() {
+           $(this).css({
+              cursor: 'pointer' 
+           });
+       });
+       $(this).on('mouseovut', function() {
+           
+       });
+       $(this).on('click', function() {
+           window.location = $(this).find("a").attr('href');
+       });
+    }); 
 });
 
     
