@@ -72,7 +72,6 @@ $(document).ready(function(){
         $(this).on("click", function(){
             window.location = href; 
         });
-        //*
         if (href == 'javascript: return false;') {
             //*
             $(this).balloon(options);
@@ -107,6 +106,20 @@ $(document).ready(function(){
     });
     
     $(".td-index-bottom-link-a, .td-index-bottom-link-b").each( function() {
+       $(this).on('mouseover', function() {
+           $(this).css({
+              cursor: 'pointer' 
+           });
+       });
+       $(this).on('mouseovut', function() {
+           
+       });
+       $(this).on('click', function() {
+           window.location = $(this).find("a").attr('href');
+       });
+    });
+    
+    $(".td-to-project-link-a, .td-to-project-link-b, .td-to-task-link-a, .td-to-task-link-b").each( function() {
        $(this).on('mouseover', function() {
            $(this).css({
               cursor: 'pointer' 

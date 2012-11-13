@@ -1,4 +1,19 @@
-<h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
+<table class="tb-to-task-links">
+    <tr>
+        <td class="td-to-task-link-a">
+            <img src="/img/icons_svg/w_task_icon.svg"
+                 style="width: 22px;"  />
+        </td>
+        <td class="td-to-task-link-b" style="font-size: 12px;">
+            <a class="add-links"
+               href="/task/task/0" style="color: #ffffff; font-size: 12px;">
+                <?=$this->translate('CREATE_NEW_TASK');?>
+            </a>
+        </td>
+    </tr>
+</table>
+<?php
+/*
 <div class="article">
     <p style="text-align: right">
         <a class="button" href="/task/task/0">
@@ -6,6 +21,9 @@
         </a>
     </p>
 </div>
+ 
+// */
+?>
 <br /><br />
 <div class="article">
     <ul class="ul-tasks">

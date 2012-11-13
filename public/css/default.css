@@ -499,6 +499,27 @@ dl.zend_form dd {
     width: 160px;
     text-align: left;
 }
+
+.tb-to-project-links, .tb-to-task-links {
+    /*width: 236px;*/
+    margin: 0;
+    background-color: #49a0df;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px 1px #cccccc
+}
+.tb-to-project-links:hover, .tb-to-task-links:hover {
+    background-color: #1f6ba2;
+}
+.td-to-project-link-a, .td-to-task-link-a {
+    padding: 4px 2px 4px 0px;
+    width: 30px;
+    text-align: right;
+}
+.td-to-project-link-b, .td-to-task-link-b {
+    padding: 4px 0px 4px 2px;
+    width: 100px;
+    text-align: left;
+}
 .article .tb-index-bottom-links:first-child {
  
 }

@@ -1,4 +1,19 @@
-<h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
+<table class="tb-to-project-links">
+    <tr>
+        <td class="td-to-project-link-a">
+            <img src="/img/icons_svg/w_folder_icon.svg"
+                 style="width: 22px;"  />
+        </td>
+        <td class="td-to-project-link-b" style="font-size: 12px;">
+            <a class="add-links"
+               href="/project/project/0" style="color: #ffffff; font-size: 12px;">
+                <?=$this->translate('CREATE_NEW_PROJECT');?>
+            </a>
+        </td>
+    </tr>
+</table>
+<?php
+/*
 <div class="article">
     <p style="text-align: right">
         <a class="button" href="/project/project/0">
@@ -6,6 +21,9 @@
         </a>
     </p>
 </div>
+ 
+// */
+?>
 <br /><br />
 <div class="article">
     <ul class="ul-projects">
