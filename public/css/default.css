@@ -111,9 +111,10 @@ a.add-links {
     border-bottom: 1px solid #ececec;
 }
 .article {
-    border: 1px solid #ececec;
+    /*border: 1px solid #ececec;*/
+    /*padding: 6px;*/
 }
-p, .article {
+p {
     padding: 6px;
 }
 
@@ -271,12 +272,23 @@ h1#sitename>a {
     /*margin-left: 20px;*/
     padding: 0;
     list-style-type: none;
+    box-shadow: 0px 0px 2px 1px #cccccc;
 }
 .ul-projects li, .ul-tasks li, .ul-notes li {
     padding: 6px;
     height: 40px;
     border-bottom: 1px solid #ececec;
     line-height: 40px;
+}
+.ul-projects li:last-child, .ul-tasks li:last-child, .ul-notes li:last-child {
+    padding: 6px;
+    height: 40px;
+    border-bottom: none;
+    line-height: 40px;
+}
+.ul-projects li:hover, .ul-tasks li:hover, .ul-notes li:hover {
+    background-color: #f4f4f4;
+    /*cursor: pointer;*/
 }
 .ul-projects li a, .ul-tasks li a, .ul-notes li a {
     font-size: 16px;
@@ -313,15 +325,14 @@ input[type=submit]:hover {
     opacity: 0.9;
     cursor: default;
  }
- textarea {
-    height: 80px;
-    width: 480px;
-    background-color: #efefef;
-    border: 2px solid #ececec;
-    border-radius: 2px;
- }
- select {
-     
+textarea {
+   height: 80px;
+   width: 480px;
+   background-color: #efefef;
+   border: 2px solid #ececec;
+   border-radius: 2px;
+}
+select {
     padding: 6px;
     min-width: 164px;
     -webkit-appearance: listbox;
@@ -432,52 +443,65 @@ dl.zend_form dd {
     float: left;
     width: 32%;
     height: 100px;
-    border: 1px solid #ececec;
-    box-shadow: 0px 0px 2px #757575 ;
+    /*background-color: #f5f5f5;*/
+    /*background-color: rgba(0, 0, 0, .2);*/
+    /*background-clip: padding-box;*/
+    /*border: solid transparent;;*/
+    /*border: 1px solid #ececec;*/
+    box-shadow: 0px 0px 2px 1px #cccccc;
+    /*box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, .1),inset 10px 10px -10px rgba(0, 0, 0, .07);*/
 }
 #user-activity-summary {
     margin-left: 34%;
     height: 100px;
-    border: 1px solid #ececec;
-    box-shadow: 0px 0px 2px #757575;
+    box-shadow: 0px 0px 2px 1px #cccccc;
 }
 
 #div-index-inbox-msg {
     float: left;
     width: 32%;
     height: 200px;
-    border: 1px solid #ececec;
-    box-shadow: 0px 0px 2px #757575;
+    box-shadow: 0px 0px 2px 1px #cccccc;
 }
 #div-index-active-project {
     float: right;
     width: 32%;
     height: 200px;
-    border: 1px solid #ececec;
-    box-shadow: 0px 0px 2px #757575;
+    box-shadow: 0px 0px 2px 1px #cccccc;
 }
 #div-index-active-task {
     margin-left: 34%;
     margin-right: 34%;
     width: 32%;
     height: 200px;
-    border: 1px solid #ececec;
-    box-shadow: 0px 0px 2px #757575;
+    box-shadow: 0px 0px 2px 1px #cccccc;
 }
 .index-inbox-msg {
     padding-right: 30px;
 }
 
-#tb-index-bottom-links {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.tb-index-bottom-links {
+    float: left;
+    width: 236px;
+    margin: 0 18px 0 0px;
+    box-shadow: 0px 0px 2px 1px #cccccc;
+}
+.tb-index-bottom-links:hover {
+    background-color: #f4f4f4;
 }
 .td-index-bottom-link-a {
-    padding: 4px 6px;
-    text-align: center;
+    padding: 10px 4px 10px 0px;
+    width: 80px;
+    text-align: right;
 }
 .td-index-bottom-link-b {
-    padding: 4px 60px 4px 6px;
-    text-align: center;
+    padding: 10px 0px 10px 4px;
+    width: 160px;
+    text-align: left;
+}
+.article .tb-index-bottom-links:first-child {
+ 
+}
+.article .tb-index-bottom-links:last-child {
+    margin: 0;
 }
