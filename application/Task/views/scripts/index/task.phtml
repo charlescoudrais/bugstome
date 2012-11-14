@@ -72,9 +72,9 @@ echo '</span>';
         <?php
         //@TODO : Tempory treatment, refactor, move...
         $disabledNote = ($this->taskId === 0)
-            ? 'javascript: return false;' : '/note/'.$this->taskId.'/0';
+            ? 'javascript: var i = 0; return false;' : '/note/'.$this->taskId.'/0';
         $disabledAttach = ($this->taskId === 0)
-            ? 'javascript: return false;' : '/attach/file/'.$this->taskId.'/0';
+            ? 'javascript: var i = 0; return false;' : '/attach/file/'.$this->taskId.'/0';
         ?>
         <li>
             <table class="table-ul-btn-add">
@@ -172,7 +172,7 @@ echo '</span>';
                     </td>
                     <td class="td-ul-btn-add-b">
                         <a class="add-links"
-                           href="/help/task">
+                           href="javascript: return false;">
                             <?=$this->translate('HELP_TASK');?>
                         </a>
                     </td>

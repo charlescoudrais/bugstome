@@ -72,7 +72,7 @@ $(document).ready(function(){
         $(this).on("click", function(){
             window.location = href; 
         });
-        if (href == 'javascript: return false;') {
+        if (href == 'javascript: var i = 0; return false;') {
             //*
             $(this).balloon(options);
             $(this).find('a').css({
@@ -88,19 +88,21 @@ $(document).ready(function(){
         
         $(this).on("mouseover", function(){
             $(this).css({
-                opacity: '0.8'
+                backgroundColor: '#f5f5f5'
             });
             $(this).find('a').css({
                 textDecoration: 'underline',
-                cursor: 'pointre'
+                cursor: 'pointre',
+                color: '#1f6ba2'
             });
         });
         $(this).on("mouseout", function(){
            $(this).css({
-               opacity: '1'
+               background: 'none'
            });
            $(this).find("a").css({
-               textDecoration: 'none'
+               textDecoration: 'none',
+               color: '#49a0df'
            }); 
         });
     });
@@ -108,11 +110,13 @@ $(document).ready(function(){
     $(".td-index-bottom-link-a, .td-index-bottom-link-b").each( function() {
        $(this).on('mouseover', function() {
            $(this).css({
-              cursor: 'pointer' 
+              cursor: 'pointer'
            });
        });
-       $(this).on('mouseovut', function() {
-           
+       $(this).on('mouseout', function() {
+           $(this).css({
+              cursor: 'normal' 
+           });
        });
        $(this).on('click', function() {
            window.location = $(this).find("a").attr('href');
@@ -125,13 +129,30 @@ $(document).ready(function(){
               cursor: 'pointer' 
            });
        });
-       $(this).on('mouseovut', function() {
-           
+       $(this).on('mouseout', function() {
+           $(this).css({
+              cursor: 'normal' 
+           });
        });
        $(this).on('click', function() {
            window.location = $(this).find("a").attr('href');
        });
     }); 
+    
+    // POPUP
+    $('.ul-btn-add li:last-child').on('click', function() {
+       $('#popup').slideDown(100);
+    });
+//    $('#popup-close-btn').on('mouseover', function() {
+//        $(this).css({
+//            cursor: 'pointer' 
+//        }); 
+//    });
+    $('#popup-close-btn a').on('click', function() {
+       $('#popup').slideUp(100);
+       return false;
+    });
+    
 });
 
     
