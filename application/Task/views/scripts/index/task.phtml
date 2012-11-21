@@ -29,6 +29,16 @@ if ($this->taskId === 0) {
 } else {
     $this->formTask->removeElement('submit_task_form');
 }
+//$this->formTask->setDecorators(
+//        array(
+//            'FormElements',
+//            array( 'FormErrors', array(
+//                'placement'       => 'prepend',
+//                'markupListStart' => '<div class="alert-message info">',
+//                'markupListEnd'   => '</div>'
+//            ))
+//        )
+//    ); 
 ?>
 
 <div class="div-time-elapsed-page-title">
@@ -36,7 +46,7 @@ if ($this->taskId === 0) {
 //@TODO : elapsed time
 echo $this->translate('TASK_ELAPSED_TIME') . ' : ';
 echo '<span class="span-h1">';
-echo '00:00:00';
+echo ($this->elapsed) ? $this->elapsed : '00:00:00';
 echo '</span>';
 ?>
 </div>
@@ -72,9 +82,11 @@ echo '</span>';
         <?php
         //@TODO : Tempory treatment, refactor, move...
         $disabledNote = ($this->taskId === 0)
-            ? 'javascript: var i = 0; return false;' : '/note/'.$this->taskId.'/0';
+            ? 'javascript: var i = 0; return false;' 
+            : '/note/'.$this->taskId.'/0';
         $disabledAttach = ($this->taskId === 0)
-            ? 'javascript: var i = 0; return false;' : '/attach/file/'.$this->taskId.'/0';
+            ? 'javascript: var i = 0; return false;' 
+            : '/attach/file/'.$this->taskId.'/0';
         ?>
         <li>
             <table class="table-ul-btn-add">

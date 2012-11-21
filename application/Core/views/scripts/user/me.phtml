@@ -1,1 +1,50 @@
-<h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
+<h1 class="h1-page-title"><?//= $this->pageTitle; ?></h1>
+
+<?php
+$datearray = array(
+        'year'   => 2011,
+        'month'  => 9,
+        'day'    => 17,
+        'hour'   => 16,
+        'minute' => 24,
+        'second' => 00
+    );
+$date1 = new Zend_Date($datearray);
+$date2 = new Zend_Date();
+
+print 'date 1 :' . $date1->get() . "<br />";
+print $date1->getIso(). "<br />";
+print 'date 2 :' . $date2->get() . "<br />";
+print $date2->getIso(). "<br />";
+echo "<hr />";
+print 'date compare : ' . $date2->compare($date1->get());
+echo '<hr />';
+
+$dateSub   = $date2->sub($date1);
+$dayNum    = $dateSub->toValue(ZEND_DATE::DAY) . "<br />";
+$monthNum  = $dateSub->toValue(ZEND_DATE::MONTH) . "<br />";
+$yearNum   = $dateSub->toValue(ZEND_DATE::YEAR) . "<br />";
+$hourNum   = $dateSub->toValue(ZEND_DATE::HOUR) . "<br />";
+$minuteNum = $dateSub->toValue(ZEND_DATE::MINUTE) . "<br />";
+$secondNum = $dateSub->toValue(ZEND_DATE::SECOND) . "<br />";
+echo $dateSub->getTimeStamp() . "<br />";
+echo '<hr />';
+echo 'il y a ' . $dayNum . ' jour(s) et '
+               . $monthNum . ' mois';
+if ($yearNum > 1970) 
+    echo ' et ' . ($yearNum - 1970) . ' an(s)' ;
+
+echo ' et ' . $hourNum . ' heure(s), ';
+
+echo '<hr />';
+print 'il y a plus de ' 
+        . round($dateSub->getTimestamp() / (3600 * 24)) . ' jour(s) <br />';
+print 'il y a plus de ' 
+        . round($dateSub->getTimestamp() / (3600)) . ' heure(s) <br />';
+print 'il y a plus de ' 
+        . round($dateSub->getTimestamp() / (60)) . ' minutes(s) <br />';
+
+echo '<pre>';
+//var_dump($dateSub);
+print_r($this->result);
+echo '</pre>';

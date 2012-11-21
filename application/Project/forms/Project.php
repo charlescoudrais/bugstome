@@ -41,7 +41,7 @@ class Project_Form_Project extends Zend_Form
                     ->addValidator(
                        //@TODO: date format
                        //array('format' => 'YYYY-MM-DD')
-                       new Zend_Validate_Date(array())
+                       new Zend_Validate_Date('dd-mm-yy')
                     );
 //        $projectManager->setMultiOptions(array('User 1', 'User 2', 'User 3'));
 //        $projectPriority->setMultiOptions(array('Low', 'Normal', 'Urgent'));

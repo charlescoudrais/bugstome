@@ -20,7 +20,19 @@ class Task_IndexController extends Zend_Controller_Action
         
         $form = new Task_Form_Task();
         
+        $time1 = new Zend_Date();
+        $time2 = new Zend_Date();
+        $timeElapsed = $time1->compare($time2);
+        
         if ($taskId !== 0) {
+//            $time1 = new Zend_Date();
+//            $time1->setDate(time()+86400, 'dd-mm-YY');
+//            $time2 = new Zend_Date();
+//            $time2->setDate(time(), 'dd-mm-YY');
+//            $timeElapsed = $time1->compare($time2);
+//            echo $time1;
+//            echo $time2;
+//            echo $timeElapsed;
             // @TODO: set values
             $task->getTaskMapper()->find($taskId);
             $this->view->pageTitle = $this->view->translate(

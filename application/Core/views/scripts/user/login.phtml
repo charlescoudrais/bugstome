@@ -1,0 +1,39 @@
+<?php
+$buttonDecorators = array(
+    'ViewHelper',
+    array(
+        array(
+            'row' => 'HtmlTag',
+            'class' => 'sub'
+        ),
+        array(
+            'tag'   => 'div',
+            'class' => 'form-row-submit offset-label'
+        )
+    )
+);
+
+$this->formLogin->username->setLabel('USER_LOGIN');
+$this->formLogin->password->setLabel('USER_PASSWORD');
+
+if (true) {
+    $this->formLogin->doLogin->setLabel('SUBMIT')
+                             ->clearDecorators()
+                             ->setDecorators($buttonDecorators);
+} else {
+    $this->formLogin->removeElement('submit_task_form');
+}
+?>
+
+<div id="div-overlay">
+    <div id="div-form-login">
+        <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
+        <?= $this->formLogin; ?>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("input[type=text]").focus();
+    });
+</script>

@@ -6,7 +6,7 @@ class Core_Model_Mapper_Role
     public function find($id)
     {
         $rowSet = $this->getDbTable()->find($id);
-        $row = $rowSet->current();
+        $row    = $rowSet->current();
         if (0 === count($row)) {
             return false;
         }
@@ -39,9 +39,7 @@ class Core_Model_Mapper_Role
     public function rowToObject($row)
     {        
          $obj = new Core_Model_Role();
-         
-         $obj->setId($row->role_id)
-             ->setName($row->role_name);
+         $obj->setId($row->role_id)->setName($row->role_name);
          return $obj;
     }
     

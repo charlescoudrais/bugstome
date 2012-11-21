@@ -16,7 +16,7 @@ define('ROOT_PATH', dirname(__DIR__));
  */
 ini_set('include_path', ROOT_PATH . '/library/');
 
-//*
+/*
 set_exception_handler(
     function($exception)
     {

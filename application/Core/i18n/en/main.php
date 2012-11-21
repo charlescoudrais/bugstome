@@ -2,23 +2,26 @@
 return array(
     
 // GLOBALS
-    'HOME_TITLE'         => 'DASHBOARD', 
-    'STATS_TITLE'        => 'STATISTICS', 
-    'USERS_TITLE'        => 'USERS LIST',
-    'USER_TITLE'         => 'NEW ACCOUNT',
-    'USER_MY_TITLE'      => 'MY ACCOUNT',
+    'HOME_TITLE'    => 'DASHBOARD', 
+    'STATS_TITLE'   => 'STATISTICS', 
+    'USERS_TITLE'   => 'USERS LIST',
+    'USER_TITLE'    => 'NEW ACCOUNT',
+    'USER_MY_TITLE' => 'MY ACCOUNT',
+    'LOGIN_TITLE'   => 'BUGSME : Identification',
     
 // FORMS
+    'USER_LOGIN'    => 'Mail adress',
+    'USER_PASSWORD' => 'Password',
     
 // STATS
     
 // NAVIGATION
-    'NAV_HOME'    => 'Dashboard',
-    'NAV_STAT'    => 'Statistics',
+    'NAV_HOME'      => 'Dashboard',
+    'NAV_STAT'      => 'Statistics',
     
 // USER
-    'YOUR_PARAMS' => 'My account',
-    'USER_LIST'   => 'Users list',
+    'YOUR_PARAMS'   => 'My account',
+    'USER_LIST'     => 'Users list',
     
 // TEAM
     'THE_TEAM'      => 'The Team',

@@ -36,14 +36,20 @@ $(document).ready(function(){
                   '<hr style="margin: 10px 0px 4px 0px;" />' +
                   '<ul class="ul-balloon">' +
                   '<li><a href="/user/me">My account</a></li>' +
-                  '<li><a href="" style="color: orange;">LOGOUT</a></li>' +
+                  '<li><a href="/user/logout" style="color: orange;">LOGOUT</a></li>' +
                   '</ul>'
     });
     
     $('#nav li').each(function(iterator){
         $(this).on("click", function(){
             window.location = $(this).find('a').attr('href'); 
-        }); 
+        });
+        $(this).on("mouseover", function(){
+            $(this).find('ul').show();
+        });
+        $(this).on("mouseout", function(){
+            $(this).find('ul').hide();
+        });
     });
     
     $('.ul-btn-add li').each(function(iterator){
@@ -105,9 +111,14 @@ $(document).ready(function(){
                color: '#49a0df'
            }); 
         });
-    });
+    }); 
     
-    $(".td-index-bottom-link-a, .td-index-bottom-link-b").each( function() {
+    $(
+        ".td-index-bottom-link-a, .td-index-bottom-link-b ,"
+        + ".td-to-project-link-a, .td-to-project-link-b, "
+        + ".td-to-task-link-a, .td-to-task-link-b, "
+        + ".li-tasks, .li-projects"
+    ).each( function() {
        $(this).on('mouseover', function() {
            $(this).css({
               cursor: 'pointer'
@@ -123,31 +134,21 @@ $(document).ready(function(){
        });
     });
     
-    $(".td-to-project-link-a, .td-to-project-link-b, .td-to-task-link-a, .td-to-task-link-b").each( function() {
-       $(this).on('mouseover', function() {
-           $(this).css({
-              cursor: 'pointer' 
-           });
-       });
-       $(this).on('mouseout', function() {
-           $(this).css({
-              cursor: 'normal' 
-           });
-       });
-       $(this).on('click', function() {
-           window.location = $(this).find("a").attr('href');
-       });
-    }); 
-    
     // POPUP
     $('.ul-btn-add li:last-child').on('click', function() {
        $('#popup').slideDown(100);
     });
-//    $('#popup-close-btn').on('mouseover', function() {
-//        $(this).css({
-//            cursor: 'pointer' 
-//        }); 
-//    });
+    
+    $('#popup-close-btn').on('mouseover', function() {
+        $(this).css({
+            cursor: 'pointer' 
+        });
+    });
+    
+    $('#popup-close-btn').on('click', function() {
+        $('#popup-close-btn a').click();
+    });
+    
     $('#popup-close-btn a').on('click', function() {
        $('#popup').slideUp(100);
        return false;

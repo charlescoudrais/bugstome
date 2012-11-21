@@ -27,7 +27,7 @@ class Core_Model_Mapper_User
         return $users;
     }    
     
-    public function save(Core_Model_User $user)
+    public function save($user)
     {
         $row = $this->objectToRow($user);
         

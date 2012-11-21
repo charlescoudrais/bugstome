@@ -121,7 +121,7 @@ class Core_Model_User
      * @param Core_Model_Role $role
      * @return Core_Model_User
      */
-    public function setRole (Core_Model_Role $role)
+    public function setRole ($role)
     {
         $this->role = $role;
         return $this;

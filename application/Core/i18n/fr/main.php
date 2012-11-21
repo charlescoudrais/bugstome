@@ -2,13 +2,16 @@
 return array(
     
 // GLOBALS
-    'HOME_TITLE'      => 'DASHBOARD', 
-    'STATS_TITLE'     => 'STATISTIQUES', 
-    'USERS_TITLE'     => 'LISTE DES UTILISATEURS', 
-    'USER_TITLE'      => 'NOUVEAU COMPTE',
-    'USER_MY_TITLE'   => 'MON COMPTE',
+    'HOME_TITLE'    => 'DASHBOARD', 
+    'STATS_TITLE'   => 'STATISTIQUES', 
+    'USERS_TITLE'   => 'LISTE DES UTILISATEURS', 
+    'USER_TITLE'    => 'NOUVEAU COMPTE',
+    'USER_MY_TITLE' => 'MON COMPTE',
+    'LOGIN_TITLE'   => 'BUGSME : Identification',
     
 // FORMS
+    'USER_LOGIN'    => 'Adresse mail',
+    'USER_PASSWORD' => 'Mot de passe',
     
 // STATS
     

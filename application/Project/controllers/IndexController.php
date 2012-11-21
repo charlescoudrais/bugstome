@@ -22,6 +22,14 @@ class Project_IndexController extends Zend_Controller_Action
         
         if ($projectId !== 0) {
             // @TODO: set values
+            $endDate = new Zend_Date(array(
+                'year'   => 2011,
+                'month'  => 9,
+                'day'    => 17,
+                'hour'   => 16,
+                'minute' => 24,
+                'second' => 00
+            ));
             $project->getProjectMapper()->find($projectId);
             
             $this->view->pageTitle = $this->view->translate(
@@ -40,13 +48,15 @@ class Project_IndexController extends Zend_Controller_Action
                         'tarea_project_description',
                         ''
                     );
-//            $form->setDefault(
-//                        'tarea_task_description',
-//                        ''
-//                    );
+            $form->setDefault(
+                        'inp_project_end_datepicker',
+                        $endDate
+                    );
+            
             foreach ($form->getElements() as $elem) {
                 $elem->setAttrib('disabled','disabled');
             }
+            
         } else {
             $this->view->pageTitle = $this->view->translate(
                         'NEW_PROJECT_TITLE'

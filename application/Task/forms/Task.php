@@ -44,7 +44,9 @@ class Task_Form_Task extends Zend_Form
                     ->addValidator(
                        new Zend_Validate_Date(array())
                     );
-        $taskProject->setMultiOptions(array('Project 1', 'Project 2', 'Project 3'));
+        $taskProject->setMultiOptions(
+                    array('Project 1', 'Project 2', 'Project 3')
+                );
         $taskManager->setMultiOptions(array('User 1', 'User 2', 'User 3'));
         $taskPriority->setMultiOptions(array('Low', 'Normal', 'Urgent'));
         $taskDescription->addFilter(new Zend_Filter_StripTags());

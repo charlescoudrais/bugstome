@@ -5,10 +5,10 @@ class Core_Model_DbTable_User extends Zend_Db_Table_Abstract
     public function __construct()
     {
         $options = array(
-            'name' => 'users',
-            'primary' => 'user_id', 
-            'referenceMap' => array(
-                'Role' => array(
+            'name'          => 'users',
+            'primary'       => 'user_id', 
+            'referenceMap'  => array(
+                'Role'      => array(
                     'columns'       => array('role_id'),
                     'refTableClass' => 'Core_Model_DbTable_Role',
                     'refColumns'    => array('role_id'),

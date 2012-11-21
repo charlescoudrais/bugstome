@@ -12,23 +12,12 @@
         </td>
     </tr>
 </table>
-<?php
-/*
-<div class="article">
-    <p style="text-align: right">
-        <a class="button" href="/project/project/0">
-            <?=$this->translate('CREATE_NEW_PROJECT');?>
-        </a>
-    </p>
-</div>
- 
-// */
-?>
-<br /><br />
+
+<br />
 <div class="article">
     <ul class="ul-projects">
     <?php foreach ($this->projects as $projectId => $projectValue) : ?>
-        <li>
+        <li class="li-projects">
         <?='<a href="/project/project/'.$projectId.'" 
                  id="a-project-'.$projectId.'">'.$projectValue.'</a>'?>
         </li>

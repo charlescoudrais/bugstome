@@ -12,23 +12,12 @@
         </td>
     </tr>
 </table>
-<?php
-/*
-<div class="article">
-    <p style="text-align: right">
-        <a class="button" href="/task/task/0">
-            <?=$this->translate('CREATE_NEW_TASK');?>
-        </a>
-    </p>
-</div>
- 
-// */
-?>
-<br /><br />
+
+<br />
 <div class="article">
     <ul class="ul-tasks">
     <?php foreach ($this->tasks as $taskId => $taskValue) : ?>
-        <li>
+        <li class="li-tasks">
         <?='<a href="/task/task/'.$taskId.'" 
                  id="a-task-'.$taskId.'">'.$taskValue.'</a>'?>
         </li>

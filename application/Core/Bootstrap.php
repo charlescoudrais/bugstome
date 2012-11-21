@@ -53,13 +53,13 @@ class Core_Bootstrap extends Zend_Application_Module_Bootstrap
         $translator->addTranslation($options);
     }
     
-    /*
     protected function _initPlugins()
     {
         $fc = Zend_Controller_Front::getInstance();
-        $fc->registerPlugin(new Core_Plugin_Auth);
+        $fc->registerPlugin(new Core_Plugin_User);
     }
     
+    /*
     protected function _initModuleAcl()
     {
         $acl = Zend_Registry::get('My_Acl');
@@ -90,4 +90,5 @@ class Core_Bootstrap extends Zend_Application_Module_Bootstrap
         $acl->allow('User', 'CoreUserList');
     }
     // */
+    
 }
