@@ -621,3 +621,12 @@ dl.zend_form dd {
     width: 69%;
     font-size: 14px;
 }
+#div-form-login-footer {
+    clear: both;
+    padding: 6px;
+    text-align: right;
+    border-top: 1px solid #ececec;
+}
+#div-form-login .form-row-submit {
+    padding-right: 10px;
+}
