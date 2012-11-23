@@ -6,13 +6,15 @@
                     <img src="/img/users/g_user.svg" style="width: 80px;" />
                 </td>
                 <td style="padding: 6px;">
-                    <h3 class="h3-dashboard">USER_NAME</h3>
+                    <h3 class="h3-dashboard">
+                        <?= $this->userName; ?>
+                    </h3>
                     <div style="padding: 6px;">
-                        hsqdghfqgqsg
+                        Role : <?= $this->userRole; ?>
                         <br />
-                        kfqshgiduqfghq
+                        Role : <?= $this->userRole; ?>
                         <br />
-                        fshjdsg
+                        Role : <?= $this->userRole; ?>
                     </div>
                 </td>
             </tr>
@@ -25,9 +27,7 @@
                     <h3 class="h3-dashboard">LAST_ALERT :</h3>
                 </td>
                 <td style="padding: 6px;">
-                    <?php
-                    echo $this->lastAlert;
-                    ?>
+                    <?= $this->lastAlert; ?>
                 </td>
             </tr>
             <tr>
@@ -35,9 +35,7 @@
                     <h3 class="h3-dashboard">LAST_EDIT :</h3>
                 </td>
                 <td style="padding: 6px;">
-                    <?php
-                    echo $this->lastAlert;
-                    ?> 
+                    <?= $this->lastAlert; ?> 
                 </td>
             </tr>
         </table>
@@ -101,7 +99,7 @@
             <td class="td-index-bottom-link-b">
                 <a class="add-links"
                    href="/project/project/0">
-                    <?=$this->translate('CREATE_NEW_PROJECT');?>
+                    <?= $this->translate('CREATE_NEW_PROJECT'); ?>
                 </a>
             </td>
         </tr>
@@ -115,7 +113,7 @@
             <td class="td-index-bottom-link-b">
                 <a class="add-links"
                    href="/task/task/0">
-                    <?=$this->translate('CREATE_NEW_TASK');?>
+                    <?= $this->translate('CREATE_NEW_TASK'); ?>
                 </a>
             </td>
         </tr>
@@ -129,7 +127,7 @@
             <td class="td-index-bottom-link-b">
                 <a class="add-links"
                    href="/note/0/0">
-                    <?=$this->translate('ADD_A_NOTE');?>
+                    <?= $this->translate('ADD_A_NOTE'); ?>
                 </a>
             </td>
         </tr>
@@ -143,7 +141,7 @@
             <td class="td-index-bottom-link-b">
                 <a class="add-links"
                    href="/notify/0/0">
-                    <?=$this->translate('ALERT_TASK');?>
+                    <?= $this->translate('ALERT_TASK'); ?>
                 </a>
             </td>
         </tr>

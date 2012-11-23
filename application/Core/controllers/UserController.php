@@ -34,12 +34,20 @@ class UserController extends Zend_Controller_Action
     
     public function listAction()
     {
-         $this->view->pageTitle = $this->view->translate('USERS_TITLE');
+        $user                  = new Core_Model_User();
+        $userService           = new Core_Service_UserApi();
+        $this->view->users     = $userService->fetchUsers();
+        $this->view->pageTitle = $this->view->translate('USERS_TITLE');
     }
     
     public function meAction()
     {
+        $auth                  = Zend_Auth::getInstance();
+        $user                  = new Core_Model_User();
+        $userService           = new Core_Service_UserApi();
         $this->view->pageTitle = $this->view->translate('USER_MY_TITLE');
+        $this->view->mySession = $auth->getStorage()->read($user);
+        $this->view->me        = $userService->findById($this->view->mySession);
     }
     
     public function userAction()

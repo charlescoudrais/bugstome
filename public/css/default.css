@@ -556,6 +556,15 @@ dl.zend_form dd {
     margin: 0;
 }
 
+.tb-user-me, .tb-users-list {
+    
+}
+.tb-user-me td, .tb-user-me th
+.tb-users-list td, .tb-users-list th {
+    padding: 6px;
+    border: 1px solid #ececec;
+}
+
 /* POPUP */
 #popup {
     display: none;

@@ -1,6 +1,26 @@
 <h1 class="h1-page-title"><?//= $this->pageTitle; ?></h1>
 
+<div class="article">
+    <table class="tb-user-me">
+        <?php foreach ($this->me as $key => $val) : ?>
+        <tr>
+        <td><?= $key ?></td>
+        <td>
+        <?php
+            echo ($key == 'user_password')
+                    ? str_repeat('*', 14)
+                    : $val ;
+        ?>
+        </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
+
+<br /><br /><br /><br />
+
 <?php
+/*
 $datearray = array(
         'year'   => 2011,
         'month'  => 9,
@@ -48,3 +68,5 @@ echo '<pre>';
 //var_dump($dateSub);
 print_r($this->result);
 echo '</pre>';
+
+// */
