@@ -16,15 +16,14 @@ class Project_IndexController extends Zend_Controller_Action
     {
         //$this->view->userRole = true;
         $projectId = (int) $this->getRequest()->getParam('id');
-        $project = new Project_Model_Project();
+        $project   = new Project_Model_Project();
+        $form      = new Project_Form_Project();
         
-        $form = new Project_Form_Project();
-        
-        if ($projectId !== 0) {
+        if ($projectId !== 0) :
             // @TODO: set values
             $endDate = new Zend_Date(array(
-                'year'   => 2011,
-                'month'  => 9,
+                'year'   => 2012,
+                'month'  => 10,
                 'day'    => 17,
                 'hour'   => 16,
                 'minute' => 24,
@@ -32,10 +31,7 @@ class Project_IndexController extends Zend_Controller_Action
             ));
             $project->getProjectMapper()->find($projectId);
             
-            $this->view->pageTitle = $this->view->translate(
-                        'PROJECT'
-                    ) . $projectId;
-            $this->view->projectId = $projectId;
+            $form->removeElement('submit_project_form');
             $form->setDefault(
                         'inp_project_name',
                         $this->view->translate('PROJECT'). ' ' . $projectId
@@ -54,29 +50,37 @@ class Project_IndexController extends Zend_Controller_Action
                     );
             
             foreach ($form->getElements() as $elem) {
-                $elem->setAttrib('disabled','disabled');
+                $elem->setAttrib('disabled', 'disabled');
             }
             
-        } else {
             $this->view->pageTitle = $this->view->translate(
-                        'NEW_PROJECT_TITLE'
-                    );
+                        'PROJECT'
+                    ) . $projectId;
+            $this->view->projectId = $projectId;
+            
+            
+        else :
             //@TODO: get the last id +1
             $form->setDefault(
                         'inp_project_id',
                         '#' . $projectId
                     );
-        }
+            
+            $this->view->pageTitle = $this->view->translate(
+                        'NEW_PROJECT_TITLE'
+                    );
+            
+        endif;
         
-        $form->setAction('')
-             ->setMethod('post');
+        $form->setAction('')->setMethod('post');
+        
         if ($this->getRequest()->isPost()) {
             if ($form->isValid($this->getRequest()->getPost())) {
 
             }
         }
         
-        $this->view->projectId = $projectId;
+        $this->view->projectId   = $projectId;
         $this->view->formProject = $form;
         
     }

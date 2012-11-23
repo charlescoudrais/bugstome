@@ -13,22 +13,29 @@ $buttonDecorators = array(
     )
 );
 
-$this->formTask->inp_task_name->setLabel('TASK_NAME');
-$this->formTask->sel_task_project->setLabel('PROJECT_NAME');
-$this->formTask->inp_task_id->setLabel('TASK_ID');
-$this->formTask->inp_task_start_datepicker->setLabel('TASK_START_DATE');
-$this->formTask->inp_task_end_datepicker->setLabel('TASK_END_DATE');
-$this->formTask->sel_task_manager->setLabel('TASK_MANAGER');
-$this->formTask->sel_task_priority->setLabel('TASK_PRIORITY');
-$this->formTask->tarea_task_description->setLabel('TASK_DESCRIPTION');
+$this->formTask->inp_task_name
+               ->setLabel('TASK_NAME');
+$this->formTask->sel_task_project
+               ->setLabel('PROJECT_NAME');
+$this->formTask->inp_task_id
+               ->setLabel('TASK_ID');
+$this->formTask->inp_task_start_datepicker
+               ->setLabel('TASK_START_DATE');
+$this->formTask->inp_task_end_datepicker
+               ->setLabel('TASK_END_DATE');
+$this->formTask->sel_task_manager
+               ->setLabel('TASK_MANAGER');
+$this->formTask->sel_task_priority
+               ->setLabel('TASK_PRIORITY');
+$this->formTask->tarea_task_description
+               ->setLabel('TASK_DESCRIPTION');
 
 if ($this->taskId === 0) {
     $this->formTask->submit_task_form->setLabel('SUBMIT')
                                      ->clearDecorators()
                                      ->setDecorators($buttonDecorators);
-} else {
-    $this->formTask->removeElement('submit_task_form');
 }
+
 //$this->formTask->setDecorators(
 //        array(
 //            'FormElements',

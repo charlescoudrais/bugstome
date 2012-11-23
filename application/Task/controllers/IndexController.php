@@ -24,7 +24,7 @@ class Task_IndexController extends Zend_Controller_Action
         $time2 = new Zend_Date();
         $timeElapsed = $time1->compare($time2);
         
-        if ($taskId !== 0) {
+        if ($taskId !== 0) :
 //            $time1 = new Zend_Date();
 //            $time1->setDate(time()+86400, 'dd-mm-YY');
 //            $time2 = new Zend_Date();
@@ -35,9 +35,7 @@ class Task_IndexController extends Zend_Controller_Action
 //            echo $timeElapsed;
             // @TODO: set values
             $task->getTaskMapper()->find($taskId);
-            $this->view->pageTitle = $this->view->translate(
-                        'TASK'
-                    ) . $taskId;
+            
             $form->setDefault(
                         'inp_task_name',
                         $this->view->translate('TASK') . ' '  . $taskId
@@ -63,12 +61,17 @@ class Task_IndexController extends Zend_Controller_Action
 //                        ''
 //                    );
             foreach ($form->getElements() as $elem) {
-                $elem->setAttrib('disabled','disabled');
+                $elem->setAttrib('disabled', 'disabled');
             }
-        } else {
+            
+            $form->removeElement('submit_task_form');
+            
             $this->view->pageTitle = $this->view->translate(
-                        'NEW_TASK_TITLE'
-                    );
+                        'TASK'
+                    ) . $taskId;
+            
+        else :
+            
             //@TODO: get the last id +1
             $form->setDefault(
                         'inp_task_id',
@@ -78,9 +81,14 @@ class Task_IndexController extends Zend_Controller_Action
                         'inp_task_project',
                         ' NNN'
                     );
-            $form->inp_task_id->setAttrib('readonly','');
-            $form->sel_task_project->setAttrib('readonly','');
-        }
+            
+            $form->inp_task_id->setAttrib('readonly', '');
+            $form->sel_task_project->setAttrib('readonly', '');
+            $this->view->pageTitle = $this->view->translate(
+                        'NEW_TASK_TITLE'
+                    );
+            
+        endif;
         
         $form->setAction('')
              ->setMethod('post');
