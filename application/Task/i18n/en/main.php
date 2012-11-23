@@ -6,6 +6,7 @@ return array(
     'TASKS_TITLE'       => 'TASKS',
     'NEW_TASK_TITLE'    => 'NEW TASK',
     'TASK_ELAPSED_TIME' => 'Elapsed time',
+    'TASK_LIST'         => 'Tasks list',
     
     'CREATE_NEW_TASK'   => 'New task',
     'TASK'              => 'Task',

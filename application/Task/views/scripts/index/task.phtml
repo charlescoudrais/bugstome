@@ -49,22 +49,34 @@ if ($this->taskId === 0) {
 ?>
 
 <div class="div-time-elapsed-page-title">
-<?php
-//@TODO : elapsed time
-echo $this->translate('TASK_ELAPSED_TIME') . ' : ';
-echo '<span class="span-h1">';
-echo ($this->elapsed) ? $this->elapsed : '00:00:00';
-echo '</span>';
-?>
+    <?php
+    //@TODO : elapsed time
+    echo $this->translate('TASK_ELAPSED_TIME') . ' : ';
+    echo '<span class="span-h1">';
+    echo ($this->elapsed) ? $this->elapsed : '00:00:00';
+    echo '</span>';
+    ?>
 </div>
 
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
 
 <div class="action-content">
-<?= $this->formTask; ?>
+    
+    <div><?= $this->formTask; ?></div>
+    <?php if ($this->taskId > 0) : ?>
+    <div>
+        <h3><?= $this->translate('NOTE_LIST_TITLE') ?></h3>
+        <ul>
+            <li>.....</li>
+            <li>.....</li>
+            <li>.....</li>
+            <li>.....</li>
+        </ul>
+    </div>
+    <?php endif; ?>
 </div>
 
-
+<!-- MENU //-->
 <div class="article-btn">
     <ul class="ul-btn-add">
     <?php if ($this->userRole <= 3) : ?>

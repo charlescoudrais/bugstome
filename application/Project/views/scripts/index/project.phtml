@@ -44,10 +44,22 @@ if ($this->projectId === 0) {
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
 
 <div class="action-content">
-    <?= $this->formProject; ?>
+    
+    <div><?= $this->formProject; ?></div>
+    
+    <div>
+        <h3><?= $this->translate('TASK_LIST') ?></h3>
+        <ul>
+            <li>.....</li>
+            <li>.....</li>
+            <li>.....</li>
+            <li>.....</li>
+        </ul>
+    </div>
+    
 </div>
 
-
+<!-- MENU //-->
 <div class="article-btn">
     <ul class="ul-btn-add">
         <?php if ($this->projectId > 0) : ?>
