@@ -4,6 +4,7 @@ class ErrorController extends Zend_Controller_Action
     public function errorAction()
     {
         $this->view->pageTitle = "Error";
+        //*
         $errorHandler = $this->_getParam('error_handler');
         
         switch ($errorHandler->type) {
@@ -36,6 +37,8 @@ class ErrorController extends Zend_Controller_Action
         
         $this->view->messageDev = $errorHandler->exception->getMessage();
         $this->view->trace = $errorHandler->exception->getTraceAsString();
+        
+        // */
     }
     
     public function persoAction()
