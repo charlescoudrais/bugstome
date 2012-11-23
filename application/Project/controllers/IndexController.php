@@ -29,6 +29,12 @@ class Project_IndexController extends Zend_Controller_Action
                 'minute' => 24,
                 'second' => 00
             ));
+            $tasks = array(
+                1 => 'Task 1',
+                2 => 'Task 2',
+                3 => 'Task 3'
+            );
+            
             $project->getProjectMapper()->find($projectId);
             
             $form->removeElement('submit_project_form');
@@ -57,9 +63,10 @@ class Project_IndexController extends Zend_Controller_Action
                         'PROJECT'
                     ) . $projectId;
             $this->view->projectId = $projectId;
-            
-            
+            $this->view->tasks     = $tasks;
+        
         else :
+            
             //@TODO: get the last id +1
             $form->setDefault(
                         'inp_project_id',

@@ -36,6 +36,12 @@ h4 { font-size: 12px; }
 h5 { font-size: 10px; }
 h6 { font-size:  8px; }
 
+h2.h2-project-tasks, h2.h2-task-notes {
+    margin-bottom: 16px;
+    color: #d88e30;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
 h3.h3-dashboard {color: #d88e30; text-align: left;}
 span.span-h1 {font-size: 20px; color: #49a0df; /* #ff9900 */}
 h3.heading {
@@ -119,6 +125,17 @@ a.add-links {
     /*box-shadow: 0px 0px 2px 1px #cccccc;*/
     border: 1px solid #ececec;
 }
+.div-project-tasks, .div-task-notes {
+    margin: auto;
+    width: 96%;
+}
+ul.ul-project-tasks, ul.ul-task-notes {
+
+}
+ul.ul-project-tasks li, ul.ul-task-notes li {
+    
+}
+
 .article {
     /*border: 1px solid #ececec;*/
     /*padding: 6px;*/
@@ -490,20 +507,20 @@ dl.zend_form dd {
 #div-index-inbox-msg {
     float: left;
     width: 32%;
-    height: 200px;
+    /*height: 200px;*/
     box-shadow: 0px 0px 2px 1px #cccccc;
 }
 #div-index-active-project {
     float: right;
     width: 32%;
-    height: 200px;
+    /*height: 200px;*/
     box-shadow: 0px 0px 2px 1px #cccccc;
 }
 #div-index-active-task {
     margin-left: 34%;
     margin-right: 34%;
     width: 32%;
-    height: 200px;
+    /*height: 200px;*/
     box-shadow: 0px 0px 2px 1px #cccccc;
 }
 .index-inbox-msg {

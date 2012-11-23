@@ -63,17 +63,20 @@ if ($this->taskId === 0) {
 <div class="action-content">
     
     <div><?= $this->formTask; ?></div>
+    
     <?php if ($this->taskId > 0) : ?>
-    <div>
-        <h3><?= $this->translate('NOTE_LIST_TITLE') ?></h3>
-        <ul>
-            <li>.....</li>
-            <li>.....</li>
-            <li>.....</li>
-            <li>.....</li>
+    <div class="div-task-notes">
+        <h2 class="h2-task-notes">
+            <?= $this->translate('NOTE_LIST_TITLE') ?>
+        </h2>
+        <ul class="ul-task-notes">
+            <?php foreach ($this->notes as $noteId => $noteValue) : ?>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<?= $noteValue ?></li>
+            <?php endforeach; ?>
         </ul>
     </div>
     <?php endif; ?>
+    
 </div>
 
 <!-- MENU //-->

@@ -47,15 +47,16 @@ if ($this->projectId === 0) {
     
     <div><?= $this->formProject; ?></div>
     
-    <div>
-        <h3><?= $this->translate('TASK_LIST') ?></h3>
-        <ul>
-            <li>.....</li>
-            <li>.....</li>
-            <li>.....</li>
-            <li>.....</li>
+    <?php if ($this->projectId > 0) : ?>
+    <div class="div-project-tasks">
+        <h2 class="h2-project-tasks"><?= $this->translate('TASK_LIST') ?></h2>
+        <ul class="ul-project-tasks">
+            <?php foreach ($this->tasks as $taskId => $taskValue) : ?>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;<?= $taskValue ?></li>
+            <?php endforeach; ?>
         </ul>
     </div>
+    <?php endif; ?>
     
 </div>
 

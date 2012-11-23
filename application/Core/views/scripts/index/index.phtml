@@ -1,4 +1,5 @@
 <div style="margin: 20px 0px; padding: 0px;">
+    
     <div id="user-summary">
         <table>
             <tr>
@@ -20,6 +21,7 @@
             </tr>
         </table>
     </div>
+    
     <div id="user-activity-summary">
         <table>
             <tr>
@@ -40,56 +42,78 @@
             </tr>
         </table>
     </div>
+    
 </div>
+
 <div style="margin: 20px 0px; padding: 0px;">
+    
     <div id="div-index-inbox-msg">
+        
         <h3 class="h3-dashboard heading">INBOX :</h3>
+        
         <ul class="ul-dashbord">
+            <?php for ($i = 0; $i < 3; $i++) : ?>
             <li>
                 <span class="index-inbox-msg">Message ...</span>
                 <span class="index-inbox-date">
                     <?= $this->lastAlert; ?>
                 </span>
             </li>
-            <li>
-                <span class="index-inbox-msg">Message ...</span>
-                <span class="index-inbox-date">
-                    <?= $this->lastAlert; ?>
-                </span>
-            </li>
-            <li>
-                <span class="index-inbox-msg">Message ...</span>
-                <span class="index-inbox-date">
-                    <?= $this->lastAlert; ?>
-                </span>
-            </li>
-            <li>
-                <span class="index-inbox-msg">Message ...</span>
-                <span class="index-inbox-date">
-                    <?= $this->lastAlert; ?>
-                </span>
-            </li>
+            <?php endfor; ?>
         </ul>
+        
+        <div>
+            <img src="/img/graph-exemple.png" width="100%" /> 
+        </div>
+        
     </div>
+    
     <div id="div-index-active-project">
+        
         <h3 class="h3-dashboard heading">ACTIVE_PROJECT :</h3>
+        
         <ul class="ul-dashbord">
-            <li>Project #NNN</li>
-            <li>Project #NNN</li>
-            <li>Project #NNN</li>
+            <?php for ($i = 0; $i < 3; $i++) : ?>
+            <li>
+                <span class="index-inbox-msg">Project ...</span>
+                <span class="index-inbox-date">
+                    <?= $this->lastAlert; ?>
+                </span>
+            </li>
+            <?php endfor; ?>
         </ul>
+        
+        <div>
+            <img src="/img/graph-exemple.png" width="100%" /> 
+        </div>
+        
     </div>
+    
     <div id="div-index-active-task">
+        
         <h3 class="h3-dashboard heading">ACTIVE_TASK :</h3>
+        
         <ul class="ul-dashbord">
-            <li>Task #NNN</li>
-            <li>Task #NNN</li>
-            <li>Task #NNN</li>
+            <?php for ($i = 0; $i < 3; $i++) : ?>
+            <li>
+                <span class="index-inbox-msg">Task ...</span>
+                <span class="index-inbox-date">
+                    <?= $this->lastAlert; ?>
+                </span>
+            </li>
+            <?php endfor; ?>
         </ul>
+        
+        <div>
+            <img src="/img/graph-exemple.png" width="100%" /> 
+        </div>
+        
     </div>
+    
 </div>
 
 <div class="article">
+    
     <table class="tb-index-bottom-links">
         <tr>
             <td class="td-index-bottom-link-a">
@@ -104,6 +128,7 @@
             </td>
         </tr>
     </table>
+    
     <table class="tb-index-bottom-links">
         <tr>
             <td class="td-index-bottom-link-a">
@@ -118,6 +143,7 @@
             </td>
         </tr>
     </table>
+    
     <table class="tb-index-bottom-links">
         <tr>
             <td class="td-index-bottom-link-a">
@@ -132,6 +158,7 @@
             </td>
         </tr>
     </table>
+    
     <table class="tb-index-bottom-links">
         <tr>
             <td class="td-index-bottom-link-a">
@@ -146,4 +173,5 @@
             </td>
         </tr>
     </table>
+    
 </div>

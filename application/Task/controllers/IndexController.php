@@ -33,6 +33,13 @@ class Task_IndexController extends Zend_Controller_Action
 //            echo $time1;
 //            echo $time2;
 //            echo $timeElapsed;
+            
+            $notes = array(
+                1 => 'Notes 1',
+                2 => 'Notes 2',
+                3 => 'Notes 3'
+            );
+            
             // @TODO: set values
             $task->getTaskMapper()->find($taskId);
             
@@ -69,6 +76,7 @@ class Task_IndexController extends Zend_Controller_Action
             $this->view->pageTitle = $this->view->translate(
                         'TASK'
                     ) . $taskId;
+            $this->view->notes     = $notes;
             
         else :
             
@@ -98,7 +106,7 @@ class Task_IndexController extends Zend_Controller_Action
             }
         }
         
-        $this->view->taskId = $taskId;
+        $this->view->taskId   = $taskId;
         $this->view->formTask = $form;
         
     }
