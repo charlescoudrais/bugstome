@@ -3,17 +3,22 @@ class Project_IndexController extends Zend_Controller_Action
 {
     public function listAction()
     {
-        $this->view->pageTitle   = $this->view->translate('PROJECTS_TITLE');
+        $this->_initLayout();
         
-        $this->view->projects = array(
+        $projects = array(
             1 => 'Project 1',
             2 => 'Project 2',
             3 => 'Project 3'
         );
+        
+        $this->view->pageTitle = $this->view->translate('PROJECTS_TITLE');
+        $this->view->projects  = $projects;
     }
     
     public function projectAction()
     {
+        $this->_initLayout();
+        
         //$this->view->userRole = true;
         $projectId = (int) $this->getRequest()->getParam('id');
         $project   = new Project_Model_Project();
@@ -83,13 +88,30 @@ class Project_IndexController extends Zend_Controller_Action
         
         if ($this->getRequest()->isPost()) {
             if ($form->isValid($this->getRequest()->getPost())) {
-
+                
             }
         }
         
         $this->view->projectId   = $projectId;
         $this->view->formProject = $form;
         
+    }
+    
+    private function _initLayout($path = null)
+    {
+        if ($path === NULL) {
+            $path = ROOT_PATH . DIRECTORY_SEPARATOR
+                    . 'application' . DIRECTORY_SEPARATOR
+                    . 'Project' . DIRECTORY_SEPARATOR
+                    . 'views' . DIRECTORY_SEPARATOR
+                    . 'layouts';
+        }
+        
+        $this->_helper->layout()
+                      ->setLayoutPath($path)
+                      ->setLayout('layout');
+        
+        return TRUE;
     }
     
 }

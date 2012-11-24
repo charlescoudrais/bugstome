@@ -8,6 +8,7 @@ return array(
     
     'CREATE_NEW_PROJECT'   => 'Nouveau projet',
     'PROJECT'              => 'Projet',
+    'Project'              => 'Projet',
     'PROJECT_START_DATE'   => 'Crée le',
     'PROJECT_END_DATE'     => 'Livrable le',
     

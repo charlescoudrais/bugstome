@@ -43,12 +43,14 @@ h2.h2-project-tasks, h2.h2-task-notes {
     border-bottom: 1px solid #ececec;
 }
 h3.h3-dashboard {color: #d88e30; text-align: left;}
-span.span-h1 {font-size: 20px; color: #49a0df; /* #ff9900 */}
 h3.heading {
     background-color: #ececec;
     color: #49a0df;
     border-bottom: 1px solid #ececec;
 }
+
+span.span-h1 {font-size: 20px; color: #49a0df; /* #ff9900 */}
+span.span-italic-small { font-size: 9px; color: #909090; font-style: italic; }
 
 
 /* LINKS */

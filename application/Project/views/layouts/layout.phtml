@@ -1,0 +1,90 @@
+<?php
+    echo $this->doctype() . PHP_EOL;
+?>
+<html>
+<head>
+<?php
+    echo $this->headMeta()->setCharset('utf-8') . PHP_EOL;
+    echo $this->headTitle('BUGS ME | Créations 2C') . PHP_EOL;
+    echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
+    echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
+    echo $this->headLink()->setStylesheet(
+                '/css/smoothness/jquery-ui-1.9.1.custom.css'
+            ) . PHP_EOL;
+    echo $this->headScript()->setFile(
+                '/js/library/jquery-1.8.2.js'
+            ) . PHP_EOL;
+    echo $this->headScript()->setFile(
+                '/js/library/jquery-ui-1.9.1.custom.min.js'
+            ) . PHP_EOL;
+    echo $this->headScript()->setFile(
+                '/js/library/jquery.balloon.min.js'
+            ) . PHP_EOL;
+    echo $this->headScript()->setFile('/js/myJquery.js') . PHP_EOL;
+?>
+    
+</head>
+<body>
+    
+    <div id="header">
+        <div id="header-top">
+            <h1 id="sitename">
+                <a href="/index/index">BUGS ME | Créations 2C</a>
+            </h1> 
+        </div>
+        <div id="nav">
+            <div id="nav-content">
+                <div id="user-links" class="balloon" title="balloon content">
+                    <?php
+                        $auth = Zend_Auth::getInstance();
+                        $user = new Core_Model_User();
+                        if ($auth->getStorage()->read($user)) {
+                            echo ucfirst(
+                                    $auth->getStorage()->read($user)->getName()
+                                );
+                        } else {
+                            echo 'John DOE';
+                        }
+                    ?>
+                    &nbsp;(user links)
+                </div>
+                <?php echo $this->navigation(); ?>
+                <div class="clear-both"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notification"></div>
+    
+    <div id="main">
+        <?php echo $this->layout()->content . PHP_EOL;?>
+    </div>
+
+    <div id="footer">
+        <p style="margin-: auto; width: 1000px;">
+             <img src="/img/icons_svg/b_c2c.svg" 
+                  alt="Une création 2C" style="width: 24px;" />
+             <!--<span class="span-italic-small">CharlesCoudrais</span>-->
+             &nbsp;&nbsp; <!-- &copy; //-->
+             <img src="/img/PoweredBy_ZF_4LightBG.png" 
+                  alt="Powered by Zend Framework" />
+        </p>
+    </div>
+    <div id="popup">
+        <div style="height: 500px">
+            <h1 class="h1-page-title">PROJECT HELP</h1>
+            <p>
+                CONTENT
+                <br />
+            </p>
+            <p>
+                <br />
+                @TODO: Ajax Treatment...
+            </p>
+        </div>
+        <div id="popup-close-btn">
+            <a href="">CLOSE</a>
+        </div>
+    </div>
+</body>
+</html>

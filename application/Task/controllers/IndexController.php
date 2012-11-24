@@ -3,21 +3,27 @@ class Task_IndexController extends Zend_Controller_Action
 {
     public function listAction()
     {
+        $this->_initLayout();
+        
+        $tasks = array(
+                1 => 'Task 1',
+                2 => 'Task 2',
+                3 => 'Task 3'
+            );
+        
+        $this->view->tasks = $tasks;
         $this->view->pageTitle = $this->view->translate('TASKS_TITLE');
         
-        $this->view->tasks = array(
-            1 => 'Task 1',
-            2 => 'Task 2',
-            3 => 'Task 3'
-        );
     }
     
     public function taskAction()
     {
+        
+        $this->_initLayout();
+        
         $this->view->userRole = true;
         $taskId = (int) $this->getRequest()->getParam('id');
         $task = new Task_Model_Task();
-        
         $form = new Task_Form_Task();
         
         $time1 = new Zend_Date();
@@ -109,5 +115,22 @@ class Task_IndexController extends Zend_Controller_Action
         $this->view->taskId   = $taskId;
         $this->view->formTask = $form;
         
+    }
+    
+    private function _initLayout($path = null)
+    {
+        if ($path === NULL) {
+            $path = ROOT_PATH . DIRECTORY_SEPARATOR
+                    . 'application' . DIRECTORY_SEPARATOR
+                    . 'Task' . DIRECTORY_SEPARATOR
+                    . 'views' . DIRECTORY_SEPARATOR
+                    . 'layouts';
+        }
+        
+        $this->_helper->layout()
+                      ->setLayoutPath($path)
+                      ->setLayout('layout');
+        
+        return TRUE;
     }
 }

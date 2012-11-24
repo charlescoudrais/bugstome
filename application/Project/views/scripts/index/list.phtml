@@ -6,8 +6,9 @@
         </td>
         <td class="td-to-project-link-b" style="font-size: 12px;">
             <a class="add-links"
-               href="/project/project/0" style="color: #ffffff; font-size: 12px;">
-                <?=$this->translate('CREATE_NEW_PROJECT');?>
+               href="/project/project/0"
+               style="color: #ffffff; font-size: 12px;">
+                <?= $this->translate('CREATE_NEW_PROJECT'); ?>
             </a>
         </td>
     </tr>
@@ -16,11 +17,19 @@
 <br />
 <div class="article">
     <ul class="ul-projects">
-    <?php foreach ($this->projects as $projectId => $projectValue) : ?>
+    <?php
+        $i = 0;
+        foreach ($this->projects as $projectId => $projectValue) :
+    ?>
         <li class="li-projects">
         <?='<a href="/project/project/'.$projectId.'" 
-                 id="a-project-'.$projectId.'">'.$projectValue.'</a>'?>
+                 id="a-project-'.$projectId.'">'
+                        . $this->translate('Project') . ' - ' . $i
+                        .'</a>'?>
         </li>
-    <?php endforeach; ?>
+    <?php
+    $i++;
+    endforeach;
+    ?>
     </ul>
 </div>
