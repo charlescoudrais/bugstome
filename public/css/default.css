@@ -10,6 +10,7 @@ body {
     color: #696969;
     font-family: Helvetica, sans-serif;
     font-size: 13px;
+    /*background-image: url(/img/bg/index.png);*/
 }
 
 #footer {
@@ -287,11 +288,17 @@ ul.navigation>li>ul a {
     min-width: 180px;
     list-style-type: none;
 }
-.ul-balloon li {
+li.li-balloon {
     padding: 6px;
+    cursor: pointer;
+    border-bottom: 1px solid #505050;
 }
-.ul-balloon li a {
+li.li-balloon a {
     color: #00ff33;
+}
+li.li-balloon-separator {
+    padding: 6px;
+    border-bottom: none;
 }
 
 /* PAGES */

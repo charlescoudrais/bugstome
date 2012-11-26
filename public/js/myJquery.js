@@ -2,44 +2,55 @@
  * My application jquery functions, listeners and events...
  */
 
-$(function() {
-    $( ".datepicker" ).datepicker({ 
-        regional: "Fr",
-        constrainInput: true,
-        //currentText: "Now",
-        dateFormat: "dd-mm-yy",
-        minDate: "-0"
-    });
-});
+
     
 $(document).ready(function(){
-    
-    $('#user-links').balloon({
+   
+   $('#user-links').balloon({
         position: 'bottom',
         offsetX: -30,
         offsetY: 6,
+        tipSize: 20,
         css: {
-            minWidth: "100px",
+            minWidth: "300px",
             padding: '10px 6px 10px 4px',
             color: '#00ff33',
             background: '#696969',
-            border: '1px solid #505050',
-            boxShadow: "0px 0px 2px 1px #606060",
+            border: '3px solid #efefef',
+            borderRadius: '1px',
+            boxShadow: "0px 0px 2px 0px #606060",
             opacity: 0.9
         },
-        contents: '<ul class="ul-balloon">' +
-                  '<li><a href="/project/list">My Projects</a></li>' +
-                  '<li><a href="/task/list">My Tasks</a></li>' +
-                  '<li><a href="/note/list">My Notes</a></li>' +
-                  '<li><a href="">Help</a></li>' +
-                  '</ul>' +
-                  '<hr style="margin: 10px 0px 4px 0px;" />' +
-                  '<ul class="ul-balloon">' +
-                  '<li><a href="/user/me">My account</a></li>' +
-                  '<li><a href="/user/logout" style="color: orange;">LOGOUT</a></li>' +
-                  '</ul>'
+        contents: '<ul class="ul-balloon">'
+                    + '<li class="li-balloon">'
+                      + '<a href="/project/list">My Projects</a>'
+                    + '</li>'
+                    + '<li class="li-balloon">'
+                      + '<a href="/task/list">My Tasks</a>'
+                    + '</li>'
+                    + '<li class="li-balloon">'
+                      + '<a href="/note/list">My Notes</a>'
+                    + '</li>'
+                    + '<li class="li-balloon">'
+                      + '<a href="">Help</a>'
+                    + '</li>'
+                    + '<li class="li-balloon li-balloon-separator">'
+                      + '&nbsp;'
+                    + '</li>'
+                    + '<li class="li-balloon">'
+                        + '<a href="/user/me">My account</a>'
+                    + '</li>'
+                    + '<li class="li-balloon">'
+                        + '<a href="/user/logout" style="color: orange;">LOGOUT</a>'
+                    + '</li>'
+                  + '</ul>'
     });
     
+    $('li-balloon').each(function(i){
+        $(this).on("click", function(){
+            window.location = $(this).find('a').attr('href'); 
+        });
+    });
     $('#nav li').each(function(iterator){
         $(this).on("click", function(){
             window.location = $(this).find('a').attr('href'); 
@@ -55,7 +66,7 @@ $(document).ready(function(){
     $('.ul-btn-add li').each(function(iterator){
         var href = $(this).find('a').attr('href');
         var options = {
-            delay: 0,
+            /*delay: 0,
             minLifetime: 0,
             showDuration: 0,
             showAnimation: null,
@@ -71,6 +82,22 @@ $(document).ready(function(){
                 border: 'none',
                 boxShadow: "0px 0px 2px 0px #000000",
                 opacity: 1
+            },*/
+            position: 'left',
+            offsetX: 0,
+            offsetY: 0,
+            tipSize: 16,
+            showAnimation: null,
+            hideDuration: 0,
+            css: {
+                minWidth: "100px",
+                padding: '10px 6px 10px 4px',
+                color: 'maroon',
+                background: 'orange',
+                border: '2px solid maroon',
+                borderRadius: '1px',
+                boxShadow: "0px 0px 2px 0px #606060",
+                opacity: 0.9
             },
             contents: 'You need to fill the form before...'
         }

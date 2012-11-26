@@ -9,13 +9,19 @@
     echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
     echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
     echo $this->headLink()->setStylesheet(
-                '/css/smoothness/jquery-ui-1.9.1.custom.css'
+                '/css/pikaday.css'
             ) . PHP_EOL;
     echo $this->headScript()->setFile(
                 '/js/library/jquery-1.8.2.js'
             ) . PHP_EOL;
     echo $this->headScript()->setFile(
-                '/js/library/jquery-ui-1.9.1.custom.min.js'
+                '/js/library/moment.min.js'
+            ) . PHP_EOL;
+    echo $this->headScript()->setFile(
+                '/js/library/pikaday.jquery.js'
+            ) . PHP_EOL;
+    echo $this->headScript()->setFile(
+                '/js/myPikaday.js'
             ) . PHP_EOL;
     echo $this->headScript()->setFile(
                 '/js/library/jquery.balloon.min.js'
