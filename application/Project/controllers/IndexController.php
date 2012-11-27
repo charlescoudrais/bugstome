@@ -5,14 +5,14 @@ class Project_IndexController extends Zend_Controller_Action
     {
         $this->_initLayout();
         
-        $projects = array(
-            1 => 'Project 1',
-            2 => 'Project 2',
-            3 => 'Project 3'
-        );
+        $project               = new Project_Model_Project(); 
+        $projects              = array();
+        $projectCollection     = $project->getProjectMapper()->fetchAll();
+//        $projects              = $project->getProjectMapper()
+//                                         ->objectToRow($projectCollection);
         
         $this->view->pageTitle = $this->view->translate('PROJECTS_TITLE');
-        $this->view->projects  = $projects;
+        $this->view->projects  = $projectCollection;
     }
     
     public function projectAction()
@@ -26,6 +26,8 @@ class Project_IndexController extends Zend_Controller_Action
         
         if ($projectId !== 0) :
             // @TODO: set values
+//            $thisProject = new Project_Model_Project;
+            $thisProject = $project->getProjectMapper()->find($projectId);
             $endDate = new Zend_Date(array(
                 'year'   => 2012,
                 'month'  => 10,
@@ -40,12 +42,10 @@ class Project_IndexController extends Zend_Controller_Action
                 3 => 'Task 3'
             );
             
-            $project->getProjectMapper()->find($projectId);
-            
             $form->removeElement('submit_project_form');
             $form->setDefault(
                         'inp_project_name',
-                        $this->view->translate('PROJECT'). ' ' . $projectId
+                        $thisProject->getProjectTitle()
                     );
             $form->setDefault(
                         'sel_project_manager',
@@ -53,20 +53,19 @@ class Project_IndexController extends Zend_Controller_Action
                     );
             $form->setDefault(
                         'tarea_project_description',
-                        ''
+                        $thisProject->getProjectDescription()
                     );
             $form->setDefault(
                         'inp_project_end_datepicker',
-                        $endDate
+                        $thisProject->getProjectEnd()
                     );
             
             foreach ($form->getElements() as $elem) {
                 $elem->setAttrib('disabled', 'disabled');
             }
             
-            $this->view->pageTitle = $this->view->translate(
-                        'PROJECT'
-                    ) . $projectId;
+            $this->view->pageTitle = '#' . $thisProject->getProjectId() 
+                                      . ' - ' . $thisProject->getProjectTitle();
             $this->view->projectId = $projectId;
             $this->view->tasks     = $tasks;
         

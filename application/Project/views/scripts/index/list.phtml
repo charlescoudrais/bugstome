@@ -19,13 +19,33 @@
     <ul class="ul-projects">
     <?php
         $i = 0;
-        foreach ($this->projects as $projectId => $projectValue) :
+        foreach ($this->projects as $projectValue) :
     ?>
         <li class="li-projects">
-        <?='<a href="/project/project/'.$projectId.'" 
-                 id="a-project-'.$projectId.'">'
-                        . $this->translate('Project') . ' - ' . $i
-                        .'</a>'?>
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 60%;">
+                        <?='<a href="/project/project/'
+                                        .$projectValue->getProjectId().'" 
+                                 id="a-project-'
+                                        .$projectValue->getProjectId().'">'
+                                        . $projectValue->getProjectTitle()
+                                        .'</a>'?>
+                    </td>
+                    <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
+                        <?php
+                        echo $this->translate('PROJECT_START_DATE') . ' : ';
+                        echo $projectValue->getProjectStart();
+                        ?>
+                    </td>
+                    <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
+                        <?php
+                        echo $this->translate('PROJECT_END_DATE') . ' : ';
+                        echo $projectValue->getProjectEnd();
+                        ?>
+                    </td>
+                </tr>
+            </table>
         </li>
     <?php
     $i++;

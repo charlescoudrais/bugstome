@@ -10,7 +10,17 @@ class Project_Model_Project
      *
      * @var string 
      */
-    private $projectName;
+    private $projectTitle;
+    /**
+     *
+     * @var string 
+     */
+    private $projectStart;
+    /**
+     *
+     * @var string 
+     */
+    private $projectEnd;
     /**
      *
      * @var string 
@@ -52,9 +62,9 @@ class Project_Model_Project
      * 
      * @return String
      */
-    public function getProjectName()
+    public function getProjectTitle()
     {
-        return $this->projectName;
+        return $this->projectTitle;
     }
     
     /**
@@ -62,13 +72,49 @@ class Project_Model_Project
      * @param String $projectName
      * @return Project_Model_Project
      */
-    public function setProjectName($projectName)
+    public function setProjectTitle($projectTitle)
     {
-        $this->projectName = $projectName;
+        $this->projectTitle = $projectTitle;
         return $this;
     }
     
     /**
+     * 
+     * @return string
+     */
+    public function getProjectStart() {
+        return $this->projectStart;
+    }
+
+    /**
+     * 
+     * @param String $projectStart
+     * @return Project_Model_Project
+     */
+    public function setProjectStart($projectStart) {
+        $this->projectStart = $projectStart;
+        return $this;
+    }
+
+    /**
+     * 
+     * @return string
+     */
+    public function getProjectEnd() {
+        return $this->projectEnd;
+    }
+    
+    /**
+     * 
+     * @param string
+     * @return Project_Model_Project
+     */
+    public function setProjectEnd($projectEnd) {
+        $this->projectEnd = $projectEnd;
+        return $this;
+    }
+
+        /**
      * 
      * @return String
      */
@@ -130,4 +176,5 @@ class Project_Model_Project
         $this->projectMapper = $projectMapper;
         return $this;
     }
+    
 }
