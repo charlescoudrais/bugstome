@@ -105,4 +105,5 @@ class Task_Model_Mapper_Task
         $this->dbTable = $dbTable;
         return $this;
     }
+    
 }

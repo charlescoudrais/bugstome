@@ -31,8 +31,8 @@ class Core_Model_Mapper_Pririty
     public function objectToRow($obj)
     {
         return array( 
-            'priority_id'            => $obj->getId(),
-            'priority_name'          => $obj->getName(),
+            'priority_id'   => $obj->getId(),
+            'priority_name' => $obj->getName(),
         );
     }
     
