@@ -20,9 +20,10 @@ class Project_IndexController extends Zend_Controller_Action
         $this->_initLayout();
         
         //$this->view->userRole = true;
-        $projectId = (int) $this->getRequest()->getParam('id');
-        $project   = new Project_Model_Project();
-        $form      = new Project_Form_Project();
+        $projectId    = (int) $this->getRequest()->getParam('id');
+        $project      = new Project_Model_Project();
+        $form         = new Project_Form_Project();
+        $lastInsertId = $project->getProjectMapper()->lastInsertId();
         
         if ($projectId !== 0) :
             // @TODO: set values
@@ -71,15 +72,15 @@ class Project_IndexController extends Zend_Controller_Action
         
         else :
             
-            //@TODO: get the last id +1
             $form->setDefault(
                         'inp_project_id',
-                        '#' . $projectId
+                        $lastInsertId
                     );
             
-            $this->view->pageTitle = $this->view->translate(
-                        'NEW_PROJECT_TITLE'
-                    );
+            $this->view->pageTitle = '#' . $lastInsertId . ' - ' 
+                                        . $this->view->translate(
+                                                    'NEW_PROJECT_TITLE'
+                                                );
             
         endif;
         

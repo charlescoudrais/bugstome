@@ -3,6 +3,20 @@ class Project_Model_Mapper_Project
 {
     private $dbTable;
     
+    public function lastInsertId()
+    {
+        $sql = "SELECT MAX(project_id) AS id FROM projects";
+        $rowSet = $this->getDbTable()->getAdapter()->query($sql);
+        if (0 === count($rowSet)) {
+            return false;
+        }
+        foreach ($rowSet as $row) {
+             $res = $row['id'] + 1;
+             break;
+        }
+        return $res;
+    }
+    
     public function find($id)
     {
         $rowSet = $this->getDbTable()->find($id);
