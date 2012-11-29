@@ -18,8 +18,30 @@
     <ul class="ul-tasks">
     <?php foreach ($this->tasks as $taskId => $taskValue) : ?>
         <li class="li-tasks">
-        <?='<a href="/task/task/'.$taskId.'" 
-                 id="a-task-'.$taskId.'">'.$taskValue.'</a>'?>
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 60%;">
+                        <?='<a href="/task/task/'.$taskId.'" 
+                                 id="a-task-'.$taskId.'">'.$taskValue.'</a>'?>
+                    </td>
+                    <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
+                        <?php
+                        echo $this->translate('TASK_CREATE_DATE') . ' ';
+                        echo '<span style="color: #49A0DF">'
+                             //. $taskValue->getTaskStart()
+                             . '</span>';
+                        ?>
+                    </td>
+                    <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
+                        <?php
+                        echo $this->translate('PROJECT_NAME') . ' ';
+                        echo '<span style="color: orange">'
+                             //. $taskValue->getProjectId()
+                             . '</span>';
+                        ?>
+                    </td>
+                </tr>
+            </table>
         </li>
     <?php endforeach; ?>
     </ul>

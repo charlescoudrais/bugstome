@@ -37,12 +37,7 @@ h4 { font-size: 12px; }
 h5 { font-size: 10px; }
 h6 { font-size:  8px; }
 
-h2.h2-project-tasks, h2.h2-task-notes {
-    margin-bottom: 16px;
-    color: #d88e30;
-    border-top: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
-}
+
 h3.h3-dashboard {color: #d88e30; text-align: left;}
 h3.heading {
     background-color: #ececec;
@@ -127,16 +122,6 @@ a.add-links {
     border-radius: 3px;
     /*box-shadow: 0px 0px 2px #cccccc;*/
     border: 1px solid #ececec;
-}
-.div-project-tasks, .div-task-notes {
-    margin: auto;
-    width: 96%;
-}
-ul.ul-project-tasks, ul.ul-task-notes {
-
-}
-ul.ul-project-tasks li, ul.ul-task-notes li {
-    
 }
 
 .article {
@@ -316,35 +301,35 @@ li.li-balloon-separator {
 }
 
 /* LISTS */
-.ul-projects, .ul-tasks, .ul-notes {
+.ul-notes {
     margin: 0;
     /*margin-left: 20px;*/
     padding: 0;
     list-style-type: none;
     box-shadow: 0px 0px 2px #cccccc;
 }
-.ul-projects li, .ul-tasks li, .ul-notes li {
+.ul-notes li {
     padding: 6px;
     height: 40px;
     border-bottom: 1px solid #ececec;
     line-height: 40px;
 }
-.ul-projects li:last-child, .ul-tasks li:last-child, .ul-notes li:last-child {
+.ul-notes li:last-child {
     padding: 6px;
     height: 40px;
     border-bottom: none;
     line-height: 40px;
 }
-.ul-projects li:hover, .ul-tasks li:hover, .ul-notes li:hover {
+.ul-notes li:hover {
     background-color: #f4f4f4;
     /*cursor: pointer;*/
 }
-.ul-projects li a, .ul-tasks li a, .ul-notes li a {
+.ul-notes li a {
     font-size: 16px;
     font-weight: bold;
     color: #49a0df;
 }
-.ul-projects li a:hover, .ul-tasks li a:hover, .ul-notes li a:hover {
+.ul-notes li a:hover {
     color: #1f6ba2;
 }
 

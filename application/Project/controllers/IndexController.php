@@ -22,13 +22,15 @@ class Project_IndexController extends Zend_Controller_Action
         //$this->view->userRole = true;
         $projectId    = (int) $this->getRequest()->getParam('id');
         $project      = new Project_Model_Project();
+        $task         = new Task_Model_Task();
         $form         = new Project_Form_Project();
         $lastInsertId = $project->getProjectMapper()->lastInsertId();
         
         if ($projectId !== 0) :
             // @TODO: set values
-//            $thisProject = new Project_Model_Project;
             $thisProject = $project->getProjectMapper()->find($projectId);
+            $tasks       = $task->getTaskMapper()->fetchAll();
+            
             $endDate = new Zend_Date(array(
                 'year'   => 2012,
                 'month'  => 10,
@@ -37,13 +39,17 @@ class Project_IndexController extends Zend_Controller_Action
                 'minute' => 24,
                 'second' => 00
             ));
-            $tasks = array(
-                1 => 'Task 1',
-                2 => 'Task 2',
-                3 => 'Task 3'
-            );
+//            $tasks = array(
+//                1 => 'Task 1',
+//                2 => 'Task 2',
+//                3 => 'Task 3'
+//            );
             
             $form->removeElement('submit_project_form');
+            $form->setDefault(
+                        'hid_project_id',
+                        $thisProject->getProjectId()
+                    );
             $form->setDefault(
                         'inp_project_name',
                         $thisProject->getProjectTitle()
@@ -65,22 +71,21 @@ class Project_IndexController extends Zend_Controller_Action
                 $elem->setAttrib('disabled', 'disabled');
             }
             
-            $this->view->pageTitle = '#' . $thisProject->getProjectId() 
-                                      . ' - ' . $thisProject->getProjectTitle();
+            $this->view->pageTitle = $thisProject->getProjectTitle()
+                                        . ' ( #' . $thisProject->getProjectId()
+                                        . ' )';
             $this->view->projectId = $projectId;
             $this->view->tasks     = $tasks;
         
         else :
             
             $form->setDefault(
-                        'inp_project_id',
+                        'hid_project_id',
                         $lastInsertId
                     );
             
-            $this->view->pageTitle = '#' . $lastInsertId . ' - ' 
-                                        . $this->view->translate(
-                                                    'NEW_PROJECT_TITLE'
-                                                );
+            $this->view->pageTitle = $this->view->translate('NEW_PROJECT_TITLE')
+                                        . ' ( #' . $lastInsertId . ' )';
             
         endif;
         

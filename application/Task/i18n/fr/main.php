@@ -10,8 +10,7 @@ return array(
     
     'CREATE_NEW_TASK'   => 'Nouvelle tâche',
     'TASK'              => 'Tâche',
-    'TASK_START_DATE'   => 'Date de début :',
-    'TASK_END_DATE'     => 'Date de fin :',
+    'TASK_CREATE_DATE'  => 'Créée le : ',
     
     'ADD_A_NOTE'        => 'Ajouter une note',
     'ADD_TIME'          => 'Ajouter du temps',
@@ -25,6 +24,8 @@ return array(
     'TASK_ID'           => 'Identifiant :',
     'TASK_NAME'         => 'Libellé :',
     'PROJECT_NAME'      => 'Projet :',
+    'TASK_START_DATE'   => 'Date de début :',
+    'TASK_END_DATE'     => 'Date de fin :',
     'TASK_MANAGER'      => 'Responsable :',
     'TASK_PRIORITY'     => 'Priorité :',
     'TASK_DESCRIPTION'  => 'Déscription :',

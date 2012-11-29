@@ -24,7 +24,7 @@
         <li class="li-projects">
             <table style="width: 100%">
                 <tr>
-                    <td style="width: 60%;">
+                    <td style="width: 56%;">
                         <?='<a href="/project/project/'
                                         .$projectValue->getProjectId().'" 
                                  id="a-project-'
@@ -34,15 +34,25 @@
                     </td>
                     <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
                         <?php
-                        echo $this->translate('PROJECT_START_DATE') . ' : ';
-                        echo $projectValue->getProjectStart();
+                        echo $this->translate('PROJECT_START_DATE') . ' ';
+                        echo '<span style="color: #49A0DF">'
+                             . $projectValue->getProjectStart()
+                             . '</span>';
                         ?>
                     </td>
                     <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
                         <?php
-                        echo $this->translate('PROJECT_END_DATE') . ' : ';
-                        echo $projectValue->getProjectEnd();
+                        echo $this->translate('PROJECT_END_DATE') . ' ';
+                        echo '<span style="color: orange">'
+                             . $projectValue->getProjectEnd()
+                             . '</span>';
                         ?>
+                    </td>
+                    <td style="width: 4%; text-align: center;">
+                        <!--<img src="/img/state_medium.png"--> 
+                        <img src="/img/state_low.png" 
+                             alt="state low"
+                             style="width: 12px;" />
                     </td>
                 </tr>
             </table>
