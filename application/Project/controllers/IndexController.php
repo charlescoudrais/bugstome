@@ -27,23 +27,16 @@ class Project_IndexController extends Zend_Controller_Action
         $lastInsertId = $project->getProjectMapper()->lastInsertId();
         
         if ($projectId !== 0) :
-            // @TODO: set values
+            
             $thisProject = $project->getProjectMapper()->find($projectId);
             $tasks       = $task->getTaskMapper()->fetchAll();
             
-            $endDate = new Zend_Date(array(
-                'year'   => 2012,
-                'month'  => 10,
-                'day'    => 17,
-                'hour'   => 16,
-                'minute' => 24,
-                'second' => 00
-            ));
-//            $tasks = array(
-//                1 => 'Task 1',
-//                2 => 'Task 2',
-//                3 => 'Task 3'
-//            );
+            $startDate = new Zend_Date(
+                        $thisProject->getProjectStart()
+                    );
+            $endDate = new Zend_Date(
+                        $thisProject->getProjectEnd()
+                    );
             
             $form->removeElement('submit_project_form');
             $form->setDefault(
@@ -63,12 +56,20 @@ class Project_IndexController extends Zend_Controller_Action
                         $thisProject->getProjectDescription()
                     );
             $form->setDefault(
+                        'inp_project_start_datepicker',
+                        $startDate->toString('dd-MM-Y H:m:s')
+                        //$startDate->getTimestamp()
+                    );
+            $form->getElement('inp_project_end_datepicker')
+                    ->setAttrib('class', null);
+            $form->setDefault(
                         'inp_project_end_datepicker',
-                        $thisProject->getProjectEnd()
+                        $endDate->toString('dd-MM-Y H:m:s')
                     );
             
+            
             foreach ($form->getElements() as $elem) {
-                $elem->setAttrib('disabled', 'disabled');
+                $elem->setAttrib('disabled', 'disabled' );
             }
             
             $this->view->pageTitle = $thisProject->getProjectTitle()
@@ -79,10 +80,18 @@ class Project_IndexController extends Zend_Controller_Action
         
         else :
             
+            $creationDate = new Zend_Date();
+        
             $form->setDefault(
                         'hid_project_id',
                         $lastInsertId
                     );
+            $form->setDefault(
+                        'inp_project_start_datepicker',
+                        $creationDate->toString('dd-MM-Y H:m:s')
+                    );
+            $form->getElement('inp_project_start_datepicker')
+                 ->setAttrib('disabled', 'disabled');
             
             $this->view->pageTitle = $this->view->translate('NEW_PROJECT_TITLE')
                                         . ' ( #' . $lastInsertId . ' )';

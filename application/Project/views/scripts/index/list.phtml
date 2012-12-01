@@ -20,6 +20,8 @@
     <?php
         $i = 0;
         foreach ($this->projects as $projectValue) :
+            $startDate = new Zend_Date($projectValue->getProjectStart());
+            $endDate   = new Zend_Date($projectValue->getProjectEnd());
     ?>
         <li class="li-projects">
             <table style="width: 100%">
@@ -36,7 +38,7 @@
                         <?php
                         echo $this->translate('PROJECT_START_DATE') . ' ';
                         echo '<span style="color: #49A0DF">'
-                             . $projectValue->getProjectStart()
+                             . $startDate->toString('dd-MM-Y')
                              . '</span>';
                         ?>
                     </td>
@@ -44,7 +46,7 @@
                         <?php
                         echo $this->translate('PROJECT_END_DATE') . ' ';
                         echo '<span style="color: orange">'
-                             . $projectValue->getProjectEnd()
+                             . $endDate->toString('dd-MM-Y')
                              . '</span>';
                         ?>
                     </td>

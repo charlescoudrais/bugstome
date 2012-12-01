@@ -8,6 +8,9 @@ class Project_Form_Project extends Zend_Form
 //        $projectStartDate   = new Zend_Form_Element_Text(
 //                    'inp_project_start_datepicker'
 //                );
+        $projectStartDate     = new Zend_Form_Element_Text(
+                    'inp_project_start_datepicker'
+                );
         $projectEndDate     = new Zend_Form_Element_Text(
                     'inp_project_end_datepicker'
                 );
@@ -22,6 +25,9 @@ class Project_Form_Project extends Zend_Form
                 );
         $projectSubmit      = new Zend_Form_Element_Submit(
                     'submit_project_form'
+                );
+        $projectSubmitFalse = new Zend_Form_Element_Hidden(
+                    'hid_submit_false'
                 );
         
         $projectName->setRequired(true)
@@ -49,11 +55,12 @@ class Project_Form_Project extends Zend_Form
         
         $this->addElement($projectId);
         $this->addElement($projectName);
-//        $this->addElement($projectStartDate);
+        $this->addElement($projectStartDate);
         $this->addElement($projectEndDate);
 //        $this->addElement($projectManager);
 //        $this->addElement($projectPriority);
         $this->addElement($projectDescription);
+        $this->addElement($projectSubmitFalse);
         $this->addElement($projectSubmit);
       
     }

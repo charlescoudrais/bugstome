@@ -6,11 +6,6 @@
         Purpose of the stylesheet follows.
 */
 
-.div-project-tasks {
-    margin: auto;
-    width: 96%;
-}
-
 .ul-projects {
     margin: 0;
     /*margin-left: 20px;*/
@@ -79,14 +74,34 @@ h2.h2-project-tasks {
     width: 468px;
     padding: 0 6px;
 }
+#inp_project_start_datepicker-label {
+    /*width: 184px;*/
+}
+#inp_project_end_datepicker-label {
+    /*width: 184px;*/
+}
 #inp_project_start_datepicker-element {
+    /*width: 184px;*/
     float: left;
-    width: 200px;
+    width: 188px;
+}
+#inp_project_end_datepicker-element {
+    float: left;
+    width: 188px;
+    /*padding: 0 6px;*/
 }
 #inp_project_start_datepicker {
-    /*padding-left: 6px;*/
+    padding: 0 6px;
+}
+#inp_project_end_datepicker {
+    padding: 0 6px;
 }
 #tarea_project_description-element {
     height: 100px;
+}
+
+.div-project-tasks {
+    margin: auto;
+    width: 96%;
 }
 

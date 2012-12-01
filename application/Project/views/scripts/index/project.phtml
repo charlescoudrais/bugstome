@@ -15,6 +15,8 @@ $buttonDecorators = array(
 
 $this->formProject->inp_project_name
                   ->setLabel('PROJECT_NAME');
+$this->formProject->inp_project_start_datepicker
+                  ->setLabel('PROJECT_START_DATE');
 $this->formProject->inp_project_end_datepicker
                   ->setLabel('PROJECT_END_DATE');
 $this->formProject->tarea_project_description
@@ -22,13 +24,16 @@ $this->formProject->tarea_project_description
 $this->formProject->hid_project_id
                   ->clearDecorators()
                   ->setDecorators($buttonDecorators);
+$this->formProject->hid_submit_false
+                  ->setLabel('');
 
 if ($this->projectId === 0) {
     $this->formProject->submit_project_form
                       ->setLabel('SUBMIT')
                       ->clearDecorators()
                       ->setDecorators($buttonDecorators);
-}
+} 
+
 ?>
 
 <div style="float:right; margin: 0; padding: 6px; line-height: 32px;">

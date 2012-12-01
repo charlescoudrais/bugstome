@@ -24,7 +24,7 @@ return array(
     'TASK_ID'           => 'Identifiant :',
     'TASK_NAME'         => 'Libellé :',
     'PROJECT_NAME'      => 'Projet :',
-    'TASK_START_DATE'   => 'Date de début :',
+    'TASK_START_DATE'   => 'Date :',
     'TASK_END_DATE'     => 'Date de fin :',
     'TASK_MANAGER'      => 'Responsable :',
     'TASK_PRIORITY'     => 'Priorité :',

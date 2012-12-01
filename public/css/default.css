@@ -408,6 +408,7 @@ dl.zend_form {
 }
 .errors {
     color: red;
+    /*z-index: 99;*/
 }
 dl.zend_form dt {
     float: left;
@@ -426,12 +427,12 @@ dl.zend_form dd {
     height: 30px;
     line-height: 28px;
 }
-#inp_task_id, #inp_project_id {
+#inp_task_id {
     width: 100px;
     padding: 0 6px;
     text-align: center;
 }
-#inp_task_name, #inp_project_name {
+#inp_task_name {
     width: 468px;
     padding: 0 6px;
 }
@@ -442,17 +443,17 @@ dl.zend_form dd {
     
 }
 #inp_task_id-element,
-#inp_task_start_datepicker-element, #inp_project_start_datepicker-element {
+#inp_task_start_datepicker-element {
     float: left;
     width: 200px;
 }
-#inp_task_start_datepicker, #inp_project_start_datepicker {
+#inp_task_start_datepicker {
     /*padding-left: 6px;*/
 }
 #inp_task_end_datepicker-element {
     
 }
-#tarea_task_description-element, #tarea_project_description-element {
+#tarea_task_description-element {
     height: 100px;
 }
 /* .form-div-label {
