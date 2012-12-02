@@ -17,9 +17,11 @@ class Project_IndexController extends Zend_Controller_Action
     
     public function projectAction()
     {
+        $auth = Zend_Auth::getInstance();
+        $user = new Core_Model_User();
+        
         $this->_initLayout();
         
-        //$this->view->userRole = true;
         $projectId    = (int) $this->getRequest()->getParam('id');
         $project      = new Project_Model_Project();
         $task         = new Task_Model_Task();
@@ -106,6 +108,10 @@ class Project_IndexController extends Zend_Controller_Action
             }
         }
         
+        $this->view->userRole    = $auth->getStorage()
+                                        ->read($user)
+                                        ->getRole()
+                                        ->getId();
         $this->view->projectId   = $projectId;
         $this->view->formProject = $form;
         

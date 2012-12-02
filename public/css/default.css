@@ -416,9 +416,10 @@ dl.zend_form dt {
     height: 29px;
     line-height: 28px;
     
-    color: #49a0df;
+    color: #696969;
+    /*color: #49a0df;*/
     font-size: 14px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 dl.zend_form dd {
     padding: 0px;

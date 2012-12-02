@@ -18,10 +18,11 @@ class Task_IndexController extends Zend_Controller_Action
     
     public function taskAction()
     {
+        $auth = Zend_Auth::getInstance();
+        $user = new Core_Model_User();
         
         $this->_initLayout();
         
-        $this->view->userRole = true;
         $taskId = (int) $this->getRequest()->getParam('id');
         $task = new Task_Model_Task();
         $form = new Task_Form_Task();
@@ -79,6 +80,10 @@ class Task_IndexController extends Zend_Controller_Action
             
             $form->removeElement('submit_task_form');
             
+            $this->view->userRole  = $auth->getStorage()
+                                          ->read($user)
+                                          ->getRole()
+                                          ->getId();
             $this->view->pageTitle = $this->view->translate(
                         'TASK'
                     ) . $taskId;

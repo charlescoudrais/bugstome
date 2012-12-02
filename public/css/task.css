@@ -60,7 +60,11 @@ h2.h2-task-notes {
     /*height: 20px;*/
     list-style-type: square;
 }
-
+.li-task-note a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #49a0df;
+}
 .li-task-nonote {
     padding: 6px;
     height: 40px;
@@ -69,7 +73,13 @@ h2.h2-task-notes {
     color: orange;
     font-weight: bold;
 }
+.li-task-nonote a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #49a0df;
+}
 
+/* FORM */
 #inp_task_id {
     width: 100px;
     padding: 0 6px;
@@ -99,3 +109,4 @@ h2.h2-task-notes {
 #tarea_task_description-element {
     height: 100px;
 }
+/* END FORM */
