@@ -81,6 +81,7 @@ INSERT INTO `bugsme`.`users`(
 	`user_name`,
     `user_mail`,
 	`user_password`,
+	`user_function`,
 	`user_active`,
 	`role_id`)
 VALUES
@@ -89,6 +90,7 @@ VALUES
 	'Admin',
     'admin@test.fr',
 	'5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8',
+	'Administrator',
 	1,
 	1
 )

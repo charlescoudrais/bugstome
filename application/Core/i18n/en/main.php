@@ -13,6 +13,8 @@ return array(
     'DASHBOARD_ACTIVE_PROJECTS' => 'Active projects',
     'LAST_ALERT'                => 'Alert',
     'LAST_EDIT'                 => 'Action',
+    'CANCEL'                    => 'Cancel',
+    'BACKWARD'                  => 'Go back',
     
 // FORMS
     'USER_LOGIN'                => 'Mail adress',

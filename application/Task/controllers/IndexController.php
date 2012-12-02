@@ -23,13 +23,14 @@ class Task_IndexController extends Zend_Controller_Action
         
         $this->_initLayout();
         
-        $taskId = (int) $this->getRequest()->getParam('id');
-        $task = new Task_Model_Task();
-        $form = new Task_Form_Task();
+        $taskId        = (int) $this->getRequest()->getParam('id');
+        $taskProjectId = (int) $this->getRequest()->getParam('pid');
+        $task          = new Task_Model_Task();
+        $form          = new Task_Form_Task();
         
-        $time1 = new Zend_Date();
-        $time2 = new Zend_Date();
-        $timeElapsed = $time1->compare($time2);
+        $time1         = new Zend_Date();
+        $time2         = new Zend_Date();
+        $timeElapsed   = $time1->compare($time2);
         
         if ($taskId !== 0) :
 //            $time1 = new Zend_Date();
@@ -64,7 +65,7 @@ class Task_IndexController extends Zend_Controller_Action
                     );
             $form->setDefault(
                         'sel_task_project',
-                        '1'
+                        $taskProjectId
                     );
             $form->setDefault(
                         'sel_task_manager',
@@ -91,18 +92,33 @@ class Task_IndexController extends Zend_Controller_Action
             
         else :
             
+            $startDate = new Zend_Date();
+            
             //@TODO: get the last id +1
             $form->setDefault(
                         'inp_task_id',
-                        '#' . $taskId
+                        '#' . 'lasttaskId+1'
                     );
             $form->setDefault(
-                        'inp_task_project',
-                        ' NNN'
+                        'sel_task_project',
+                        $taskProjectId
                     );
+            $form->setDefault(
+                        'inp_task_start_datepicker',
+                        $startDate->toString('dd-MM-Y H:m:s')
+                    );
+            $form->getElement('inp_task_start_datepicker')
+                 ->setAttribs(
+                            array(
+                                'disabled' => 'disabled',
+                                'class'=> null
+                            )
+                         );
+//            $form->getElement('inp_project_end_datepicker')
+//                    ->setAttrib('class', null);
             
             $form->inp_task_id->setAttrib('readonly', '');
-            $form->sel_task_project->setAttrib('readonly', '');
+            $form->sel_task_project->setAttrib('disabled', 'disabled');
             $this->view->pageTitle = $this->view->translate(
                         'NEW_TASK_TITLE'
                     );

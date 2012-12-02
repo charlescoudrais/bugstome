@@ -28,7 +28,7 @@ class Project_IndexController extends Zend_Controller_Action
         $form         = new Project_Form_Project();
         $lastInsertId = $project->getProjectMapper()->lastInsertId();
         
-        if ($projectId !== 0) :
+        if ($projectId != 0) :
             
             $thisProject = $project->getProjectMapper()->find($projectId);
             $tasks       = $task->getTaskMapper()->fetchAll();
@@ -81,7 +81,8 @@ class Project_IndexController extends Zend_Controller_Action
             $this->view->tasks     = $tasks;
         
         else :
-            
+            $this->view->pageTitle = 'NO ID';
+        /*    
             $creationDate = new Zend_Date();
         
             $form->setDefault(
@@ -97,7 +98,7 @@ class Project_IndexController extends Zend_Controller_Action
             
             $this->view->pageTitle = $this->view->translate('NEW_PROJECT_TITLE')
                                         . ' ( #' . $lastInsertId . ' )';
-            
+        // */    
         endif;
         
         $form->setAction('')->setMethod('post');
@@ -115,6 +116,92 @@ class Project_IndexController extends Zend_Controller_Action
         $this->view->projectId   = $projectId;
         $this->view->formProject = $form;
         
+    }
+    
+    public function modifyAction()
+    {
+        $auth = Zend_Auth::getInstance();
+        $user = new Core_Model_User();
+        
+        $this->_initLayout();
+        
+        $projectId    = (int) $this->getRequest()->getParam('id');
+        $project      = new Project_Model_Project();
+        $task         = new Task_Model_Task();
+        $form         = new Project_Form_Project();
+        
+        $thisProject  = $project->getProjectMapper()->find($projectId);
+        
+        $startDate    = new Zend_Date(
+                            $thisProject->getProjectStart()
+                        );
+        $endDate      = new Zend_Date(
+                            $thisProject->getProjectEnd()
+                        );
+
+        $form->setDefault(
+                    'hid_project_id',
+                    $thisProject->getProjectId()
+                );
+        $form->setDefault(
+                    'inp_project_name',
+                    $thisProject->getProjectTitle()
+                );
+        $form->setDefault(
+                    'sel_project_manager',
+                    '1'
+                );
+        $form->setDefault(
+                    'tarea_project_description',
+                    $thisProject->getProjectDescription()
+                );
+        $form->setDefault(
+                    'inp_project_start_datepicker',
+                    $startDate->toString('dd-MM-Y H:m:s')
+                );
+        $form->getElement('inp_project_start_datepicker')
+             ->setAttrib('disabled', 'disabled');
+        
+        $form->setDefault(
+                    'inp_project_end_datepicker',
+                    $endDate->toString('dd-MM-Y H:m:s')
+                );
+        
+        $this->view->pageTitle   = $thisProject->getProjectTitle()
+                                    . ' ( #' . $thisProject->getProjectId()
+                                    . ' )';
+        $this->view->projectId   = $projectId;
+        $this->view->formProject = $form;
+    }
+    
+    public function createAction()
+    {
+        $auth = Zend_Auth::getInstance();
+        $user = new Core_Model_User();
+        
+        $this->_initLayout();
+        
+        $project      = new Project_Model_Project();
+        $task         = new Task_Model_Task();
+        $form         = new Project_Form_Project();
+        $lastInsertId = $project->getProjectMapper()->lastInsertId();
+        
+        $creationDate = new Zend_Date();
+        
+            $form->setDefault(
+                        'hid_project_id',
+                        $lastInsertId
+                    );
+            $form->setDefault(
+                        'inp_project_start_datepicker',
+                        $creationDate->toString('dd-MM-Y H:m:s')
+                    );
+            $form->getElement('inp_project_start_datepicker')
+                 ->setAttrib('disabled', 'disabled');
+            
+            $this->view->pageTitle = $this->view->translate('NEW_PROJECT_TITLE')
+                                        . ' ( #' . $lastInsertId . ' )';
+        $this->view->formProject = $form;
     }
     
     private function _initLayout($path = null)

@@ -15,20 +15,17 @@ class IndexController extends Zend_Controller_Action
         $auth      = Zend_Auth::getInstance();
         $user      = new Core_Model_User();
         $lastAlert = new Task_Model_Note();
+        $thisUser  = $auth->getStorage()->read($user);
         
         $lastAlert->setNoteDate($dateArray);
         
         $lastAlertDate = new Zend_Date($lastAlert->getNoteDate());
         $lastEditDate  = new Zend_Date($lastAlert->getNoteDate());
         
-        $this->view->pageTitle = $this->view->translate('HOME_TITLE');
-        $this->view->userName  = ucfirst(
-                    $auth->getStorage()->read($user)->getName()
-                );
-        $this->view->userRole  = $auth->getStorage()
-                                      ->read($user)
-                                      ->getRole()
-                                      ->getName();
+        $this->view->pageTitle     = $this->view->translate('HOME_TITLE');
+        $this->view->userName      = ucfirst($thisUser->getName());
+        $this->view->userRole      = $thisUser->getRole()->getName();
+        $this->view->userFunction  = $thisUser->getFunction();
         $this->view->lastAlertDate = $lastAlertDate->toString('dd-MM-Y H:m:s');
         $this->view->lastEditDate  = $lastEditDate->toString('dd-MM-Y H:m:s');
         $this->view->lastAlert     = 'Alert description...';

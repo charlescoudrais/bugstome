@@ -58,6 +58,7 @@ class Core_Model_Mapper_User
             'user_mail'          => $user->getMail(),
             'role_id'            => $user->getRole()->getId(),
             'user_password'      => $user->getPassword(),
+            'user_function'      => $user->getFunction(),
             'user_active'		 => (int) $user->getActive()
         );
     }
@@ -74,7 +75,8 @@ class Core_Model_Mapper_User
               ->setMail($row->user_mail)
               ->setRole($role)
               ->setActive($row->user_active)
-              ->setPassword($row->user_password);
+              ->setPassword($row->user_password)
+              ->setFunction($row->user_function);
          return $user;
     }
     

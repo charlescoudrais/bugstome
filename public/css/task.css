@@ -46,6 +46,7 @@
 h2.h2-task-notes {
     margin-bottom: 16px;
     color: #d88e30;
+    text-align: center;
     border-top: 1px solid #ececec;
     border-bottom: 1px solid #ececec;
 }

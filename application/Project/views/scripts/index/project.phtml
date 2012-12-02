@@ -76,7 +76,7 @@ if ($this->projectId === 0) {
                             </td>
                             <td style="padding: 4px;">
                                 <a class="add-links"
-                                   href="/task/task/0"
+                                   href="/task/<?= $this->projectId ?>/0"
                                    style="color: #D98E2B; font-size: 16px;">
                                     <?=$this->translate('CREATE_NEW_TASK');?>
                                 </a>
@@ -106,7 +106,7 @@ if ($this->projectId === 0) {
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
-                           href="/task/task/0"
+                           href="/task/<?= $this->projectId ?>/0"
                            style="color: #D98E2B; font-size: 16px;">
                             <?=$this->translate('CREATE_NEW_TASK');?>
                         </a>
@@ -123,7 +123,7 @@ if ($this->projectId === 0) {
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
-                           href="/project/project/<?=$this->projectId?>/0">
+                           href="/note/<?=$this->projectId?>/0">
                             <?=$this->translate('ADD_A_NOTE');?>
                         </a>
                     </td>
@@ -140,7 +140,7 @@ if ($this->projectId === 0) {
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
-                           href="/project/project/<?=$this->projectId?>">
+                           href="/project/modify/<?=$this->projectId?>">
                             <?=$this->translate('MODIFY_PROJECT');?>
                         </a>
                     </td>

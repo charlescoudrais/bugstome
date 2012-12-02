@@ -19,6 +19,10 @@ class Core_Model_User
      */
     private $password;
     /**
+     * @var string
+     */
+    private $function;
+    /**
      * @var boolean
      */
     private $active;
@@ -108,6 +112,26 @@ class Core_Model_User
     public function setPassword ($password)
     {
         $this->password = (string) $password;
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getFunction()
+    {
+        return $this->function;
+    }
+    
+    /**
+     * 
+     * @param string $function
+     * @return Core_Model_User
+     */
+    public function setFunction($function)
+    {
+        $this->function = $function;
         return $this;
     }
 

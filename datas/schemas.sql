@@ -25,6 +25,7 @@ CREATE TABLE `users` (
   `user_name` varchar(45) NOT NULL,
   `user_mail` varchar(70) NOT NULL,
   `user_password` char(42) NOT NULL,
+  `user_function` varchar(45) NOT NULL DEFAULT 'N.R.',
   `user_active` tinyint(4) NOT NULL DEFAULT '0',
   `role_id` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`user_id`),
