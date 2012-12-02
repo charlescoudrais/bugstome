@@ -55,6 +55,7 @@ class Core_Model_Mapper_User
         return array( 
             'user_id'            => $user->getId(),
             'user_name'          => $user->getName(),
+            'user_mail'          => $user->getMail(),
             'role_id'            => $user->getRole()->getId(),
             'user_password'      => $user->getPassword(),
             'user_active'		 => (int) $user->getActive()
@@ -70,6 +71,7 @@ class Core_Model_Mapper_User
          $user = new Core_Model_User();
          $user->setId($row->user_id)
               ->setName($row->user_name)
+              ->setMail($row->user_mail)
               ->setRole($role)
               ->setActive($row->user_active)
               ->setPassword($row->user_password);

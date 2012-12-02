@@ -13,6 +13,10 @@ class Core_Model_User
     /**
      * @var string
      */
+    private $mail;
+    /**
+     * @var string
+     */
     private $password;
     /**
      * @var boolean
@@ -65,6 +69,26 @@ class Core_Model_User
     public function setName ($name)
     {
         $this->name = (string) $name;
+        return $this;
+    }
+
+	/**
+     * 
+     * @return String
+     */
+    public function getMail ()
+    {
+        return $this->mail;
+    }
+
+	/**
+     * 
+     * @param string $mail
+     * @return Core_Model_User
+     */
+    public function setMail ($mail)
+    {
+        $this->mail = (string) $mail;
         return $this;
     }
 

@@ -23,10 +23,12 @@ $$
 CREATE TABLE `users` (
   `user_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `user_name` varchar(45) NOT NULL,
+  `user_mail` varchar(70) NOT NULL,
   `user_password` char(42) NOT NULL,
   `user_active` tinyint(4) NOT NULL DEFAULT '0',
   `role_id` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_mail` (`user_mail`),
   KEY `fk_role_id` (`role_id`),
   CONSTRAINT `fk_role_id` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8

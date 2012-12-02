@@ -85,7 +85,7 @@ class Core_Service_UserApi
         }
         
         $this->authAdapter->setTableName('users');
-        $this->authAdapter->setIdentityColumn('user_name');
+        $this->authAdapter->setIdentityColumn('user_mail');
         $this->authAdapter->setCredentialColumn('user_password');
         $this->authAdapter->setCredentialTreatment('SHA1(?) AND user_active = 1');
         return $this->authAdapter;
