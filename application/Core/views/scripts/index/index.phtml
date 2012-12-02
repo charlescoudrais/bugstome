@@ -25,19 +25,29 @@
     <div id="user-activity-summary">
         <table>
             <tr>
-                <td style="padding: 6px; text-align: right;">
-                    <h3 class="h3-dashboard">LAST_ALERT :</h3>
+                <td style="padding: 6px; text-align: right; width: 100px;">
+                    <h3 class="h3-dashboard">
+                        <?= $this->translate('LAST_ALERT') ?>
+                    </h3>
                 </td>
-                <td style="padding: 6px;">
-                    <?= $this->lastAlert; ?>
+                <td style="width: 400px;">
+                    Alert Description...
+                </td>
+                <td style="padding: 6px; font-size: 0.8em; font-style: italic;">
+                    <?= $this->lastAlertDate; ?>
                 </td>
             </tr>
             <tr>
                 <td style="padding: 6px; text-align: right;">
-                    <h3 class="h3-dashboard">LAST_EDIT :</h3>
+                    <h3 class="h3-dashboard">
+                        <?= $this->translate('LAST_EDIT') ?>
+                    </h3>
                 </td>
-                <td style="padding: 6px;">
-                    <?= $this->lastAlert; ?> 
+                <td style="width: 400px;">
+                    Edit Description...
+                </td>
+                <td style="padding: 6px; font-size: 0.8em; font-style: italic;">
+                    <?= $this->lastEditDate; ?> 
                 </td>
             </tr>
         </table>
@@ -49,7 +59,9 @@
     
     <div id="div-index-inbox-msg">
         
-        <h3 class="h3-dashboard heading">INBOX :</h3>
+        <h3 class="h3-dashboard heading">
+            <?= $this->translate('DASHBOARD_INBOX') ?>
+        </h3>
         
         <ul class="ul-dashbord">
             <?php for ($i = 0; $i < 3; $i++) : ?>
@@ -70,7 +82,9 @@
     
     <div id="div-index-active-project">
         
-        <h3 class="h3-dashboard heading">DASHBOARD_ACTIVE_PROJECTS :</h3>
+        <h3 class="h3-dashboard heading">
+            <?= $this->translate('DASHBOARD_ACTIVE_PROJECTS') ?>
+        </h3>
         
         <ul class="ul-dashbord">
             <?php for ($i = 0; $i < 3; $i++) : ?>
@@ -91,7 +105,9 @@
     
     <div id="div-index-active-task">
         
-        <h3 class="h3-dashboard heading">DASHBOARD_ACTIVE_TASKS :</h3>
+        <h3 class="h3-dashboard heading">
+            <?= $this->translate('DASHBOARD_ACTIVE_TASKS') ?>
+        </h3>
         
         <ul class="ul-dashbord">
             <?php for ($i = 0; $i < 3; $i++) : ?>

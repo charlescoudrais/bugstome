@@ -8,9 +8,11 @@ return array(
     'USER_TITLE'                => 'NOUVEAU COMPTE',
     'USER_MY_TITLE'             => 'MON COMPTE',
     'LOGIN_TITLE'               => 'BUGSME : Identification',
-    'DASHBOARD_INBOX'           => 'Messagerie',
+    'DASHBOARD_INBOX'           => 'Notifications',
     'DASHBOARD_ACTIVE_TASKS'    => 'Tâches en cours',
     'DASHBOARD_ACTIVE_PROJECTS' => 'Projets en cours',
+    'LAST_ALERT'                => 'Alerte',
+    'LAST_EDIT'                 => 'Action',
     
 // FORMS
     'USER_LOGIN'                => 'Adresse mail',
