@@ -92,12 +92,17 @@ class Task_IndexController extends Zend_Controller_Action
             
         else :
             
-            $startDate = new Zend_Date();
+            $project     = new Project_Model_Project();
+            $thisProject = $project->getProjectMapper()->find($taskProjectId);
+            $startDate   = new Zend_Date();
+            $endDate     = new Zend_Date(
+                                $thisProject->getProjectEnd()
+                            );
             
             //@TODO: get the last id +1
             $form->setDefault(
                         'inp_task_id',
-                        '#' . 'lasttaskId+1'
+                        '#' . 'lastTaskId+1'
                     );
             $form->setDefault(
                         'sel_task_project',
@@ -107,6 +112,10 @@ class Task_IndexController extends Zend_Controller_Action
                         'inp_task_start_datepicker',
                         $startDate->toString('dd-MM-Y H:m:s')
                     );
+            $form->setDefault(
+                        'inp_task_end_datepicker',
+                        $endDate->toString('dd-MM-Y H:m:s')
+                    );
             $form->getElement('inp_task_start_datepicker')
                  ->setAttribs(
                             array(
@@ -114,8 +123,17 @@ class Task_IndexController extends Zend_Controller_Action
                                 'class'=> null
                             )
                          );
-//            $form->getElement('inp_project_end_datepicker')
-//                    ->setAttrib('class', null);
+            $form->getElement('inp_task_end_datepicker')
+                 ->setAttribs(
+                            array(
+                                'disabled' => 'disabled',
+                                'class'=> null
+                            )
+                         );
+            $form->setDefault(
+                        'inp_task_end_datepicker',
+                        $endDate->toString('dd-MM-Y H:m:s')
+                    );
             
             $form->inp_task_id->setAttrib('readonly', '');
             $form->sel_task_project->setAttrib('disabled', 'disabled');
