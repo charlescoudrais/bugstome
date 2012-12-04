@@ -66,7 +66,7 @@ class Task_IndexController extends Zend_Controller_Action
                     );
             $form->setDefault(
                         'sel_task_project',
-                        $taskProjectId
+                        $taskProjectId - 1
                     );
             $form->setDefault(
                         'sel_task_manager',
