@@ -31,6 +31,7 @@ class Task_IndexController extends Zend_Controller_Action
         $time1         = new Zend_Date();
         $time2         = new Zend_Date();
         $timeElapsed   = $time1->compare($time2);
+        $lastInsertId = $task->getTaskMapper()->lastInsertId();
         
         if ($taskId !== 0) :
 //            $time1 = new Zend_Date();
@@ -94,6 +95,7 @@ class Task_IndexController extends Zend_Controller_Action
             
             $project     = new Project_Model_Project();
             $thisProject = $project->getProjectMapper()->find($taskProjectId);
+            $hisProject = (int) $this->getRequest()->getParam('pid');
             $startDate   = new Zend_Date();
             $endDate     = new Zend_Date(
                                 $thisProject->getProjectEnd()
@@ -102,11 +104,11 @@ class Task_IndexController extends Zend_Controller_Action
             //@TODO: get the last id +1
             $form->setDefault(
                         'inp_task_id',
-                        '#' . 'lastTaskId+1'
+                        '#' . $lastInsertId
                     );
             $form->setDefault(
                         'sel_task_project',
-                        $taskProjectId
+                        $hisProject
                     );
             $form->setDefault(
                         'inp_task_start_datepicker',

@@ -5,16 +5,13 @@ class Project_Form_Project extends Zend_Form
     {
         $projectId          = new Zend_Form_Element_Hidden('hid_project_id');
         $projectName        = new Zend_Form_Element_Text('inp_project_name');
-//        $projectStartDate   = new Zend_Form_Element_Text(
-//                    'inp_project_start_datepicker'
-//                );
-        $projectStartDate     = new Zend_Form_Element_Text(
+        $projectStartDate   = new Zend_Form_Element_Text(
                     'inp_project_start_datepicker'
                 );
         $projectEndDate     = new Zend_Form_Element_Text(
                     'inp_project_end_datepicker'
                 );
-        $projectManager     = new Zend_Form_Element_Select(
+        $projectUser        = new Zend_Form_Element_Select(
                     'sel_project_manager'
                 );
         $projectPriority    = new Zend_Form_Element_Select(
@@ -50,14 +47,14 @@ class Project_Form_Project extends Zend_Form
                        new Zend_Validate_Date('dd-mm-yy')
                     );
 //        $projectManager->setMultiOptions(array('User 1', 'User 2', 'User 3'));
-//        $projectPriority->setMultiOptions(array('Low', 'Normal', 'Urgent'));
+        $projectPriority->setMultiOptions(array('Low', 'Normal', 'Urgent'));
         $projectDescription->addFilter(new Zend_Filter_StripTags());
         
         $this->addElement($projectId);
         $this->addElement($projectName);
         $this->addElement($projectStartDate);
         $this->addElement($projectEndDate);
-//        $this->addElement($projectManager);
+//        $this->addElement($projectUser);
 //        $this->addElement($projectPriority);
         $this->addElement($projectDescription);
         $this->addElement($projectSubmitFalse);

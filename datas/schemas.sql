@@ -38,10 +38,12 @@ $$
 CREATE TABLE `projects` (
   `project_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `project_title` varchar(45) NOT NULL,
+  `project_start` varchar(45) NOT NULL,
   `project_end` varchar(45) NOT NULL,
-  `project_description` text NOT NULL,
+  `project_description` varchar(500) NOT NULL,
+  `user_id` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`project_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
 $$
 
 CREATE TABLE `tasks` (

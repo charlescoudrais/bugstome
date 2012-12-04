@@ -73,6 +73,7 @@ class Project_Model_Mapper_Project
             'project_start'       => $project->getProjectStart(),
             'project_end'         => $project->getProjectEnd(),
             'project_description' => $project->getProjectDescription(),
+            'user_id'             => $project->getProjectUser(),
         );
     }
     
@@ -84,7 +85,8 @@ class Project_Model_Mapper_Project
                  ->setProjectTitle($row->project_title)
                  ->setProjectStart($row->project_start)
                  ->setProjectEnd($row->project_end)
-                 ->setProjectDescription($row->project_description);
+                 ->setProjectDescription($row->project_description)
+                 ->setProjectUser($row->user_id);
          return $project;
     }
     

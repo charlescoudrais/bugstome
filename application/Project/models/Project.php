@@ -25,7 +25,7 @@ class Project_Model_Project
      *
      * @var string 
      */
-    private $projectManager;
+    private $projectUser;
     /**
      *
      * @var string 
@@ -118,19 +118,19 @@ class Project_Model_Project
      * 
      * @return String
      */
-    public function getProjectManager()
+    public function getProjectUser()
     {
-        return $this->projectManager;
+        return $this->projectUser;
     }
     
     /**
      * 
-     * @param String $projectManager
+     * @param String $projectUser
      * @return Project_Model_Project
      */
-    public function setProjectManager($projectManager)
+    public function setProjectUser($projectUser)
     {
-        $this->projectManager = $projectManager;
+        $this->projectUser = $projectUser;
         return $this;
     }
     

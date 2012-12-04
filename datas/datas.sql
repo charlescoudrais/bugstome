@@ -76,14 +76,16 @@ VALUES(
 $$
 
 -- Users
-INSERT INTO `bugsme`.`users`(
-	`user_id`,
-	`user_name`,
+INSERT INTO `bugsme`.`users`
+(
+    `user_id`,
+    `user_name`,
     `user_mail`,
-	`user_password`,
-	`user_function`,
-	`user_active`,
-	`role_id`)
+    `user_password`,
+    `user_function`,
+    `user_active`,
+    `role_id`
+)
 VALUES
 (
 	1,
@@ -95,4 +97,24 @@ VALUES
 	1
 )
 $$
+
+-- Projects
+INSERT INTO `bugsme`.`projects`
+(
+    `project_id`,
+    `project_title`,
+    `project_start`,
+    `project_end`,
+    `project_description`,
+    `user_id`
+)
+VALUES
+(
+    1,
+    'My first project.',
+    '19-10-2012 22:50:15',
+    '21-12-2012 23:59:12',
+    'This is an exemple project...By Créations 2C',
+    1
+)
 
