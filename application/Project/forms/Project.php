@@ -20,6 +20,8 @@ class Project_Form_Project extends Zend_Form
         $projectDescription = new Zend_Form_Element_Textarea(
                     'tarea_project_description'
                 );
+//        $projectDescription->setOptions(array('cols' => '4', 'rows' => '4'));
+                  
         $projectSubmit      = new Zend_Form_Element_Submit(
                     'submit_project_form'
                 );
@@ -46,15 +48,28 @@ class Project_Form_Project extends Zend_Form
                        //array('format' => 'YYYY-MM-DD')
                        new Zend_Validate_Date('dd-mm-yy')
                     );
-//        $projectManager->setMultiOptions(array('User 1', 'User 2', 'User 3'));
-        $projectPriority->setMultiOptions(array('Low', 'Normal', 'Urgent'));
+        
+        $projectUser->setMultiOptions(
+                        array(
+                                1 => 'User 1',
+                                2 => 'User 2',
+                                3 => 'User 3'
+                            )
+                    );
+        $projectPriority->setMultiOptions(
+                array(
+                    1 => 'Low',
+                    2 => 'Normal',
+                    3 => 'Urgent'
+                    )
+                );
         $projectDescription->addFilter(new Zend_Filter_StripTags());
         
         $this->addElement($projectId);
         $this->addElement($projectName);
+        $this->addElement($projectUser);
         $this->addElement($projectStartDate);
         $this->addElement($projectEndDate);
-//        $this->addElement($projectUser);
 //        $this->addElement($projectPriority);
         $this->addElement($projectDescription);
         $this->addElement($projectSubmitFalse);

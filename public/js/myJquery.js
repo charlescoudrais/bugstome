@@ -46,7 +46,7 @@ $(document).ready(function(){
                   + '</ul>'
     });
     
-    $('li-balloon').each(function(i) {
+    $('li-balloon').each(function(i){
         $(this).on("click", function(){
             window.location = $(this).find('a').attr('href'); 
         });

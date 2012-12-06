@@ -4,6 +4,8 @@ class Task_IndexController extends Zend_Controller_Action
     public function listAction()
     {
         $this->_initLayout();
+        $project  = new Project_Model_Project();
+        $projects = $project->getProjectMapper()->fetchAll();
         
         $tasks = array(
                 1 => 'Task 1',
@@ -12,7 +14,9 @@ class Task_IndexController extends Zend_Controller_Action
             );
         
         $this->view->tasks = $tasks;
+        $this->view->projects = $projects;
         $this->view->pageTitle = $this->view->translate('TASKS_TITLE');
+//        $this->view->projectId = $hisProject;
         
     }
     
@@ -48,6 +52,13 @@ class Task_IndexController extends Zend_Controller_Action
                 2 => 'Notes 2',
                 3 => 'Notes 3'
             );
+            $project     = new Project_Model_Project();
+            $hisProject = (int) $this->getRequest()->getParam('pid');
+            $thisProject = $project->getProjectMapper()->find($hisProject);
+            $startDate   = new Zend_Date();
+            $endDate     = new Zend_Date(
+                                $thisProject->getProjectEnd()
+                            );
             
             // @TODO: set values
             $task->getTaskMapper()->find($taskId);
@@ -57,17 +68,17 @@ class Task_IndexController extends Zend_Controller_Action
                         $this->view->translate('TASK') . ' '  . $taskId
                     );
             $form->setDefault(
-                        'inp_task_project',
-                        $this->view->translate('PROJECT') . ' NNN'
+                        'sel_task_project',
+                        $hisProject - 1
                     );
             $form->setDefault(
                         'inp_task_id',
                         '#' . $taskId
                     );
-            $form->setDefault(
-                        'sel_task_project',
-                        $taskProjectId - 1
-                    );
+//            $form->setDefault(
+//                        'sel_task_project',
+//                        $taskProjectId - 1
+//                    );
             $form->setDefault(
                         'sel_task_manager',
                         '1'
@@ -94,12 +105,10 @@ class Task_IndexController extends Zend_Controller_Action
         else :
             
             $project     = new Project_Model_Project();
-            $thisProject = $project->getProjectMapper()->find($taskProjectId);
             $hisProject = (int) $this->getRequest()->getParam('pid');
+            $thisProject = $project->getProjectMapper()->lastInsertId();
             $startDate   = new Zend_Date();
-            $endDate     = new Zend_Date(
-                                $thisProject->getProjectEnd()
-                            );
+            $endDate     = new Zend_Date();
             
             //@TODO: get the last id +1
             $form->setDefault(
@@ -114,10 +123,10 @@ class Task_IndexController extends Zend_Controller_Action
                         'inp_task_start_datepicker',
                         $startDate->toString('dd-MM-Y H:m:s')
                     );
-            $form->setDefault(
-                        'inp_task_end_datepicker',
-                        $endDate->toString('dd-MM-Y H:m:s')
-                    );
+//            $form->setDefault(
+//                        'inp_task_end_datepicker',
+//                        $endDate->toString('dd-MM-Y H:m:s')
+//                    );
             $form->getElement('inp_task_start_datepicker')
                  ->setAttribs(
                             array(
@@ -132,13 +141,8 @@ class Task_IndexController extends Zend_Controller_Action
                                 'class'=> null
                             )
                          );
-            $form->setDefault(
-                        'inp_task_end_datepicker',
-                        $endDate->toString('dd-MM-Y H:m:s')
-                    );
-            
             $form->inp_task_id->setAttrib('readonly', '');
-            $form->sel_task_project->setAttrib('disabled', 'disabled');
+//            $form->sel_task_project->setAttrib('disabled', 'disabled');
             $this->view->pageTitle = $this->view->translate(
                         'NEW_TASK_TITLE'
                     );
@@ -153,8 +157,9 @@ class Task_IndexController extends Zend_Controller_Action
             }
         }
         
-        $this->view->taskId   = $taskId;
-        $this->view->formTask = $form;
+        $this->view->taskId    = $taskId;
+        //$this->view->projectId = $hisProject;
+        $this->view->formTask  = $form;
         
     }
     

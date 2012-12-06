@@ -47,15 +47,15 @@ class Project_IndexController extends Zend_Controller_Action
                     );
             $form->setDefault(
                         'inp_project_name',
-                        $thisProject->getProjectTitle()
+                        utf8_encode($thisProject->getProjectTitle())
                     );
             $form->setDefault(
                         'sel_project_manager',
-                        '1'
+                        $thisProject->getProjectUser()
                     );
             $form->setDefault(
                         'tarea_project_description',
-                        $thisProject->getProjectDescription()
+                        utf8_encode($thisProject->getProjectDescription())
                     );
             $form->setDefault(
                         'inp_project_start_datepicker',

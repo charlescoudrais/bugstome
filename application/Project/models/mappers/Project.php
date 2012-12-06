@@ -27,6 +27,10 @@ class Project_Model_Mapper_Project
         return $this->rowToObject($row);
     }
     
+    /**
+     * 
+     * @return Array $projects
+     */
     public function fetchAll()
     {
         $rowSet = $this->getDbTable()->fetchAll();
@@ -34,8 +38,10 @@ class Project_Model_Mapper_Project
             return false;
         }
         $projects = array();
+        $i = 1;
         foreach ($rowSet as $row) {
-             $projects[] = $this->rowToObject($row);
+             $projects[$i] = $this->rowToObject($row);
+             $i ++;
         }
         return $projects;
     }    

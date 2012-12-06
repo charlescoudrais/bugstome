@@ -35,13 +35,25 @@
     /*cursor: pointer;*/
 }
 .ul-tasks li a {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #49a0df;
+}
+.ul-tasks li.li-notasks a {
+    font-size: 20px;
     font-weight: bold;
     color: #49a0df;
 }
 .ul-tasks li a:hover {
     color: #1f6ba2;
 }
+.ul-tasks li.li-notasks {
+    background-color: #ffffff;
+}
+.ul-tasks li.li-notasks:hover {
+    background-color: none;
+}
+
 
 h2.h2-task-notes {
     margin-bottom: 16px;
@@ -78,6 +90,29 @@ h2.h2-task-notes {
     font-size: 14px;
     font-weight: bold;
     color: #49a0df;
+}
+
+.tb-to-task-links {
+    /*width: 236px;*/
+    margin: 0;
+    background-color: #49a0df;
+    /*border-radius: 3px 3px 0px 0px;*/
+    /*box-shadow: 0px 0px 2px #cccccc*/
+}
+.tb-to-task-links:hover {
+    background-color: #1f6ba2;
+}
+.td-to-task-link-a {
+    padding: 2px 0px 0px 2px;
+    height: 24px;
+    width: 30px;
+    text-align: right;
+}
+.td-to-task-link-b {
+    padding: 2px 0px 0px 2px;
+    height: 24px;
+    width: 100px;
+    text-align: left;
 }
 
 /* FORM */

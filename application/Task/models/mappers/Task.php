@@ -34,8 +34,10 @@ class Task_Model_Mapper_Task
             return false;
         }
         $tasks = array();
+        $i = 1;
         foreach ($rowSet as $row) {
-             $tasks[] = $this->rowToObject($row);
+             $tasks[$i] = $this->rowToObject($row);
+             $i ++;
         }
         return $tasks;
     }    
@@ -52,7 +54,7 @@ class Task_Model_Mapper_Task
             $this->getDbTable()
                  ->update(
                       $row, 
-                      array( 'task_id = ?' => $task->getId())
+                      array('task_id = ?' => $task->getId())
                   );
             return $task->getId();
         }

@@ -428,35 +428,7 @@ dl.zend_form dd {
     height: 30px;
     line-height: 28px;
 }
-#inp_task_id {
-    width: 100px;
-    padding: 0 6px;
-    text-align: center;
-}
-#inp_task_name {
-    width: 468px;
-    padding: 0 6px;
-}
-#inp_task_start_datepicker-label {
-    
-}
-#inp_task_end_datepicker-label {
-    
-}
-#inp_task_id-element,
-#inp_task_start_datepicker-element {
-    float: left;
-    width: 200px;
-}
-#inp_task_start_datepicker {
-    /*padding-left: 6px;*/
-}
-#inp_task_end_datepicker-element {
-    
-}
-#tarea_task_description-element {
-    height: 100px;
-}
+
 /* .form-div-label {
      display: inline;
      height: 26px;
@@ -543,26 +515,7 @@ dl.zend_form dd {
     text-align: left;
 }
 
-.tb-to-project-links, .tb-to-task-links {
-    /*width: 236px;*/
-    margin: 0;
-    background-color: #49a0df;
-    border-radius: 3px;
-    box-shadow: 0px 0px 2px #cccccc
-}
-.tb-to-project-links:hover, .tb-to-task-links:hover {
-    background-color: #1f6ba2;
-}
-.td-to-project-link-a, .td-to-task-link-a {
-    padding: 4px 2px 4px 0px;
-    width: 30px;
-    text-align: right;
-}
-.td-to-project-link-b, .td-to-task-link-b {
-    padding: 4px 0px 4px 2px;
-    width: 100px;
-    text-align: left;
-}
+
 .article .tb-index-bottom-links:first-child {
  
 }
