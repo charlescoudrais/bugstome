@@ -38,11 +38,13 @@
     font-size: 14px;
     font-weight: bold;
     color: #49a0df;
+    text-decoration: none;
 }
 .ul-tasks li.li-notasks a {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 400;
     color: #49a0df;
+    text-decoration: none;
 }
 .ul-tasks li a:hover {
     color: #1f6ba2;
@@ -74,7 +76,7 @@ h2.h2-task-notes {
     list-style-type: square;
 }
 .li-task-note a {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     color: #49a0df;
 }
@@ -82,12 +84,12 @@ h2.h2-task-notes {
     padding: 6px;
     height: 40px;
     list-style-type: none;
-    font-size: 14px;
+    font-size: 13px;
     color: orange;
     font-weight: bold;
 }
 .li-task-nonote a {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     color: #49a0df;
 }

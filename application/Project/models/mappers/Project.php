@@ -31,9 +31,9 @@ class Project_Model_Mapper_Project
      * 
      * @return Array $projects
      */
-    public function fetchAll()
+    public function fetchAll($where = null)
     {
-        $rowSet = $this->getDbTable()->fetchAll();
+        $rowSet = $this->getDbTable()->fetchAll($where);
         if (0 === count($rowSet)) {
             return false;
         }

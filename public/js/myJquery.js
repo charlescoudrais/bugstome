@@ -132,10 +132,16 @@ $(document).ready(function(){
            $(this).css({
               cursor: 'pointer'
            });
+           $(this).find("a:not(.create)").css({
+              color: '#1f6ba2' 
+           });
        });
        $(this).on('mouseout', function() {
            $(this).css({
               cursor: 'normal' 
+           });
+           $(this).find("a:not(.create)").css({
+              color: '#49a0df' 
            });
        });
        $(this).on('click', function() {

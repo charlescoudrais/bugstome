@@ -1,44 +1,75 @@
 <?php
 class Project_IndexController extends Zend_Controller_Action
 {
-    public function listAction()
+    /**
+     *
+     * @var array
+     */
+    private $users = array();
+    
+    /**
+     *
+     * @var int
+     */
+    private $projectId;
+    /**
+     *
+     * @var array
+     */
+    private $projects = array();
+    
+    /**
+     *
+     * @var array
+     */
+    private $tasks = array();
+    
+    /**
+     * Initialize the controller
+     * and its parent
+     */
+    public function init()
     {
+        parent::init();
+        
+        $this->projectId = ($this->getRequest()->getParam('id')) 
+                            ? (int) $this->getRequest()->getParam('id')
+                            : null;
+        $this->users     = $this->_initUsers();
+        $this->projects  = $this->_initProjects();
+        $this->tasks     = $this->_initTasks($this->projectId);
+        
         $this->_initLayout();
         
+    }
+    
+    
+    public function listAction()
+    {
         $project               = new Project_Model_Project(); 
         $projects              = array();
         $projectCollection     = $project->getProjectMapper()->fetchAll();
-//        $projects              = $project->getProjectMapper()
-//                                         ->objectToRow($projectCollection);
-        
         $this->view->pageTitle = $this->view->translate('PROJECTS_TITLE');
-        $this->view->projects  = $projectCollection;
+        $this->view->projects  = $this->projects;
     }
+    
     
     public function projectAction()
     {
-        $auth = Zend_Auth::getInstance();
-        $user = new Core_Model_User();
-        
-        $this->_initLayout();
-        
-        $projectId    = (int) $this->getRequest()->getParam('id');
+        $auth         = Zend_Auth::getInstance();
         $project      = new Project_Model_Project();
-        $task         = new Task_Model_Task();
         $form         = new Project_Form_Project();
-        $lastInsertId = $project->getProjectMapper()->lastInsertId();
+        $usersOptions = array();
         
-        if ($projectId != 0) :
+        foreach ($this->users as $user) {
+            $usersOptions[$user->getId()] = $user->getName();
+        }
+        
+        $form->sel_project_manager->setMultiOptions($usersOptions);
+        
+        if ($this->projectId != 0) :
             
-            $thisProject = $project->getProjectMapper()->find($projectId);
-            $tasks       = $task->getTaskMapper()->fetchAll();
-            
-            $startDate = new Zend_Date(
-                        $thisProject->getProjectStart()
-                    );
-            $endDate = new Zend_Date(
-                        $thisProject->getProjectEnd()
-                    );
+            $thisProject = $project->getProjectMapper()->find($this->projectId);
             
             $form->removeElement('submit_project_form');
             $form->setDefault(
@@ -59,14 +90,16 @@ class Project_IndexController extends Zend_Controller_Action
                     );
             $form->setDefault(
                         'inp_project_start_datepicker',
-                        $startDate->toString('dd-MM-Y H:m:s')
-                        //$startDate->getTimestamp()
+                        $thisProject->getProjectStart()
+                                    ->toString('dd-MM-Y H:m:s')
                     );
             $form->getElement('inp_project_end_datepicker')
                     ->setAttrib('class', null);
+            
             $form->setDefault(
                         'inp_project_end_datepicker',
-                        $endDate->toString('dd-MM-Y H:m:s')
+                        $thisProject->getProjectEnd()
+                                    ->toString('dd-MM-Y H:m:s')
                     );
             
             
@@ -77,28 +110,13 @@ class Project_IndexController extends Zend_Controller_Action
             $this->view->pageTitle = $thisProject->getProjectTitle()
                                         . ' ( #' . $thisProject->getProjectId()
                                         . ' )';
-            $this->view->projectId = $projectId;
-            $this->view->tasks     = $tasks;
+            $this->view->projectId = $this->projectId;
+            $this->view->tasks     = $this->tasks;
         
         else :
-            $this->view->pageTitle = 'NO ID';
-        /*    
-            $creationDate = new Zend_Date();
-        
-            $form->setDefault(
-                        'hid_project_id',
-                        $lastInsertId
-                    );
-            $form->setDefault(
-                        'inp_project_start_datepicker',
-                        $creationDate->toString('dd-MM-Y H:m:s')
-                    );
-            $form->getElement('inp_project_start_datepicker')
-                 ->setAttrib('disabled', 'disabled');
             
-            $this->view->pageTitle = $this->view->translate('NEW_PROJECT_TITLE')
-                                        . ' ( #' . $lastInsertId . ' )';
-        // */    
+            $this->view->pageTitle = 'NO ID';
+            
         endif;
         
         $form->setAction('')->setMethod('post');
@@ -113,32 +131,26 @@ class Project_IndexController extends Zend_Controller_Action
                                         ->read($user)
                                         ->getRole()
                                         ->getId();
-        $this->view->projectId   = $projectId;
+        $this->view->projectId   = $this->projectId;
         $this->view->formProject = $form;
         
     }
     
+    
     public function modifyAction()
     {
-        $auth = Zend_Auth::getInstance();
-        $user = new Core_Model_User();
-        
-        $this->_initLayout();
-        
-        $projectId    = (int) $this->getRequest()->getParam('id');
+        $auth         = Zend_Auth::getInstance();
         $project      = new Project_Model_Project();
-        $task         = new Task_Model_Task();
         $form         = new Project_Form_Project();
+        $thisProject  = $project->getProjectMapper()->find($this->projectId);
+        $usersOptions = array();
         
-        $thisProject  = $project->getProjectMapper()->find($projectId);
+        foreach ($this->users as $user) {
+            $usersOptions[$user->getId()] = $user->getName();
+        }
         
-        $startDate    = new Zend_Date(
-                            $thisProject->getProjectStart()
-                        );
-        $endDate      = new Zend_Date(
-                            $thisProject->getProjectEnd()
-                        );
-
+        $form->sel_project_manager->setMultiOptions($usersOptions);
+        
         $form->setDefault(
                     'hid_project_id',
                     $thisProject->getProjectId()
@@ -157,52 +169,57 @@ class Project_IndexController extends Zend_Controller_Action
                 );
         $form->setDefault(
                     'inp_project_start_datepicker',
-                    $startDate->toString('dd-MM-Y H:m:s')
+                    $thisProject->getProjectStart()->toString('dd-MM-Y H:m:s')
                 );
         $form->getElement('inp_project_start_datepicker')
              ->setAttrib('disabled', 'disabled');
         
         $form->setDefault(
                     'inp_project_end_datepicker',
-                    $endDate->toString('dd-MM-Y H:m:s')
+                    $thisProject->getProjectEnd()->toString('dd-MM-Y H:m:s')
                 );
         
         $this->view->pageTitle   = $thisProject->getProjectTitle()
                                     . ' ( #' . $thisProject->getProjectId()
                                     . ' )';
-        $this->view->projectId   = $projectId;
+        $this->view->projectId   = $this->projectId;
         $this->view->formProject = $form;
     }
     
+    
     public function createAction()
     {
-        $auth = Zend_Auth::getInstance();
-        $user = new Core_Model_User();
-        
-        $this->_initLayout();
+        $auth         = Zend_Auth::getInstance();
+        $user         = new Core_Model_User();
         
         $project      = new Project_Model_Project();
         $task         = new Task_Model_Task();
         $form         = new Project_Form_Project();
         $lastInsertId = $project->getProjectMapper()->lastInsertId();
-        
+        $usersOptions = array();
+        foreach ($this->users as $user) {
+            $usersOptions[$user->getId()] = $user->getName();
+        }
         $creationDate = new Zend_Date();
         
-            $form->setDefault(
-                        'hid_project_id',
-                        $lastInsertId
-                    );
-            $form->setDefault(
-                        'inp_project_start_datepicker',
-                        $creationDate->toString('dd-MM-Y H:m:s')
-                    );
-            $form->getElement('inp_project_start_datepicker')
-                 ->setAttrib('disabled', 'disabled');
-            
-            $this->view->pageTitle = $this->view->translate('NEW_PROJECT_TITLE')
+        $form->sel_project_manager->setMultiOptions($usersOptions);
+        
+        $form->setDefault(
+                    'hid_project_id',
+                    $lastInsertId
+                );
+        $form->setDefault(
+                    'inp_project_start_datepicker',
+                    $creationDate->toString('dd-MM-Y H:m:s')
+                );
+        $form->getElement('inp_project_start_datepicker')
+             ->setAttrib('disabled', 'disabled');
+        
+        $this->view->pageTitle = $this->view->translate('NEW_PROJECT_TITLE')
                                         . ' ( #' . $lastInsertId . ' )';
         $this->view->formProject = $form;
     }
+    
     
     private function _initLayout($path = null)
     {
@@ -219,6 +236,31 @@ class Project_IndexController extends Zend_Controller_Action
                       ->setLayout('layout');
         
         return TRUE;
+    }
+    
+    private function _initUsers()
+    {
+        $user           = new Core_Model_User();
+        $userCollection = $user->getMapper()->fetchAll();
+        
+        return $userCollection;
+    }
+    
+    private function _initProjects()
+    {
+        $project             = new Project_Model_Project();
+        $projectCollection   = $project->getProjectMapper()->fetchAll();
+        
+        return $projectCollection;
+    }
+    
+    private function _initTasks($projectId = null)
+    {
+        $sql = (NULL !== $projectId) ? "project_id = ". $projectId : "1 = 1";
+        $task           = new Task_Model_Task();
+        $taskCollection = $task->getTaskMapper()->fetchAll($sql);
+        
+        return $taskCollection;
     }
     
 }

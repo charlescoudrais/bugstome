@@ -49,20 +49,20 @@ class Project_Form_Project extends Zend_Form
                        new Zend_Validate_Date('dd-mm-yy')
                     );
         
-        $projectUser->setMultiOptions(
-                        array(
-                                1 => 'User 1',
-                                2 => 'User 2',
-                                3 => 'User 3'
-                            )
-                    );
-        $projectPriority->setMultiOptions(
-                array(
-                    1 => 'Low',
-                    2 => 'Normal',
-                    3 => 'Urgent'
-                    )
-                );
+//        $projectUser->setMultiOptions(
+//                        array(
+//                                1 => 'User 1',
+//                                2 => 'User 2',
+//                                3 => 'User 3'
+//                            )
+//                    );
+//        $projectPriority->setMultiOptions(
+//                array(
+//                    1 => 'Low',
+//                    2 => 'Normal',
+//                    3 => 'Urgent'
+//                    )
+//                );
         $projectDescription->addFilter(new Zend_Filter_StripTags());
         
         $this->addElement($projectId);

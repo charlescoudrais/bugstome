@@ -2,12 +2,24 @@
 
 ?>
 <br />
-<?php foreach ($this->projects as $projectId => $projectValue) : ?>
+<?php foreach ($this->projects as $project) : ?>
 <div class="article" style="margin-bottom: 20px;">
     <ul class="ul-tasks">
         <li class="li-notasks" style="padding: 0px; line-height: 24px;">
            <table style="padding: 0px; margin: 0px; width: 100%;">
                 <tr>
+                    <td style="width: 83%; padding: 6px; text-align: left;">
+                        <a href="/project/project/<?= $project->getProjectId() ?>"
+                           style="text-decoration: none;">
+                            (#<?= $project->getProjectId() ?>)&nbsp;    
+                            <?php
+                                echo (strlen($project->getProjectTitle()) > 30)
+                                        ? substr($project->getProjectTitle(), 0, 30)
+                                            . '...'
+                                        : $project->getProjectTitle();
+                            ?>
+                        </a>
+                    </td>
                     <td style="padding: 0px;">
                         <table class="tb-to-task-links" style="padding: 0px; width: 100%;">
                              <tr>
@@ -17,8 +29,8 @@
                                  </td>
                                  <td class="td-to-task-link-b" 
                                      style="font-size: 12px;">
-                                     <a class="add-links"
-                                        href="/task/<?= $projectValue->getProjectId() ?>/0" 
+                                     <a class="create"
+                                        href="/task/<?= $project->getProjectId() ?>/create" 
                                         style="color: #ffffff; font-size: 12px;">
                                          <?=$this->translate('CREATE_NEW_TASK');?>
                                      </a>
@@ -26,41 +38,35 @@
                              </tr>
                          </table>
                     </td>
-                    <td style="width: 83%; padding: 6px 6px 6px 540px;">
-                        <a href="/project/project/<?= $projectValue->getProjectId() ?>"
-                           style="text-decoration: none;">
-                            <?php
-                                echo (strlen($projectValue->getProjectTitle()) > 20)
-                                        ? substr($projectValue->getProjectTitle(), 0, 20)
-                                            . '...'
-                                        : $projectValue->getProjectTitle();
-                            ?>
-                            (#<?= $projectValue->getProjectId() ?>)
-                        </a>
-                    </td>
                 </tr>
             </table> 
         </li>
-    <?php foreach ($this->tasks as $taskId => $taskValue) : ?>
+    <?php 
+    foreach ($this->tasks as $task) :
+        if ($task->getTaskProject() == $project->getProjectId()) :
+        ?>
         <li class="li-tasks">
             <table style="width: 100%">
                 <tr>
                     <td style="width: 75%;">
-                        <?='<a href="/task/'. $projectValue->getProjectId() .'/'.$taskId.'" 
-                                 id="a-task-'.$taskId.'">'.$taskValue.'</a>'?>
+                        <?='<a href="/task/'. $project->getProjectId() .'/'.$task->getTaskId().'" 
+                                 id="a-task-'.$task->getTaskId().'">'.$task->getTaskName().'</a>'?>
                     </td>
                     <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
                         <?php
                         echo $this->translate('TASK_CREATE_DATE') . ' ';
                         echo '<span style="color: #49A0DF">'
-                             //. $taskValue->getTaskStart()
+                             . $task->getTaskStart()->toString('dd-MM-Y')
                              . '</span>';
                         ?>
                     </td>
                 </tr>
             </table>
         </li>
-    <?php endforeach; ?>
+        <?php
+        endif;
+    endforeach;
+    ?>
     </ul>
 </div>
 <?php endforeach; ?>

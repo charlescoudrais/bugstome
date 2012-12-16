@@ -27,9 +27,9 @@ class Task_Model_Mapper_Task
         return $this->rowToObject($row);
     }
     
-    public function fetchAll()
+    public function fetchAll($where = null)
     {
-        $rowSet = $this->getDbTable()->fetchAll();
+        $rowSet = $this->getDbTable()->fetchAll($where);
         if (0 === count($rowSet)) {
             return false;
         }
@@ -71,12 +71,13 @@ class Task_Model_Mapper_Task
     {
         return array( 
             'task_id'          => $task->getTaskId(),
-            'task_title'       => $task->getTaskName(),
+            'task_label'       => $task->getTaskName(),
             'task_start'       => $task->getTaskStart(),
             'task_end'         => $task->getTaskEnd(),
             'task_description' => $task->getTaskDescription(),
             'user_id'          => $task->getTaskManager(),
             'priority_id'      => $task->getTaskPriority(),
+            'project_id'       => $task->getTaskProject(),
         );
     }
     
@@ -85,12 +86,13 @@ class Task_Model_Mapper_Task
          
          $task = new Task_Model_Task();
          $task->setTaskId($row->task_id)
-              ->setTaskName($row->task_title)
+              ->setTaskName($row->task_label)
               ->setTaskStart($row->task_start)
               ->setTaskEnd($row->task_end)
               ->setTaskDescription($row->task_description)
               ->setTaskManager($row->user_id)
-              ->setTaskPriority($row->priority_id);
+              ->setTaskPriority($row->priority_id)
+              ->setTaskProject($row->project_id);
          return $task;
     }
     

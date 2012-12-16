@@ -18,14 +18,21 @@ class Task_Model_DbTable_Task extends Zend_Db_Table_Abstract
                 'Priority' => array(
                     'columns'       => array('priority_id'),
                     'refTableClass' => 'Core_Model_DbTable_Priority',
-                    'refColumns'    => array('user_id'),
+                    'refColumns'    => array('priority_id'),
+                    'onDelete'      => self::RESTRICT,
+                    'onUpdate'      => self::CASCADE
+                 ),
+                'Project' => array(
+                    'columns'       => array('project_id'),
+                    'refTableClass' => 'Project_Model_DbTable_Project',
+                    'refColumns'    => array('priority_id'),
                     'onDelete'      => self::RESTRICT,
                     'onUpdate'      => self::CASCADE
                  )
             ), 
             'dependentTable' => array(
-                'Task_Model_DbTable_Task',
-                'Task_Model_DbTable_Note'
+                //'Task_Model_DbTable_Task',
+                'Task_Model_DbTable_Note',
             )
         );
         

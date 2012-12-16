@@ -13,17 +13,17 @@ class Project_Model_Project
     private $projectTitle;
     /**
      *
-     * @var string 
+     * @var Zend_Date 
      */
     private $projectStart;
     /**
      *
-     * @var string 
+     * @var Zend_Date
      */
     private $projectEnd;
     /**
      *
-     * @var string 
+     * @var int 
      */
     private $projectUser;
     /**
@@ -92,7 +92,7 @@ class Project_Model_Project
      * @return Project_Model_Project
      */
     public function setProjectStart($projectStart) {
-        $this->projectStart = $projectStart;
+        $this->projectStart = new Zend_Date($projectStart);
         return $this;
     }
 
@@ -110,7 +110,7 @@ class Project_Model_Project
      * @return Project_Model_Project
      */
     public function setProjectEnd($projectEnd) {
-        $this->projectEnd = $projectEnd;
+        $this->projectEnd = new Zend_Date($projectEnd);
         return $this;
     }
 

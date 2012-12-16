@@ -5,31 +5,42 @@
 <head>
 <?php
     echo $this->headMeta()->setCharset('utf-8') . PHP_EOL;
-    echo $this->headTitle('Tasks | BUGS ME | Créations 2C') . PHP_EOL;
+    echo $this->headTitle('Stats | BUGS ME | Créations 2C') . PHP_EOL;
     echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
     echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
-    echo $this->headLink()->setStylesheet('/css/task.css') . PHP_EOL;
-    echo $this->headLink()->setStylesheet(
-                '/css/pikaday.css'
-            ) . PHP_EOL;
+//    echo $this->headScript()->setFile('/js/library/prototype.js') . PHP_EOL;
+//    echo $this->headScript()->setFile('/js/prototype.class.js') . PHP_EOL;
     echo $this->headScript()->setFile(
                 '/js/library/jquery-1.8.2.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/moment.min.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/pikaday.jquery.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/myPikaday.js'
             ) . PHP_EOL;
     echo $this->headScript()->setFile(
                 '/js/library/jquery.balloon.min.js'
             ) . PHP_EOL;
     echo $this->headScript()->setFile('/js/myJquery.js') . PHP_EOL;
+    echo $this->headScript()->setFile('/js/myd3/d3.v2.js') . PHP_EOL;
 ?>
-    
+   <style type="text/css">
+        #div-chart-1 {
+            text-align: center;
+            font: 10px sans-serif;
+        }
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #696969;
+            shape-rendering: crispEdges;
+        }
+
+        .bar {
+            fill: steelblue;
+        }
+
+        .x.axis path {
+            display: none;
+        }
+        /*
+        */
+    </style>
 </head>
 <body>
     
@@ -64,6 +75,8 @@
     <div id="notification"></div>
     
     <div id="main">
+        graph
+        <br />
         <?php echo $this->layout()->content . PHP_EOL;?>
     </div>
 
@@ -78,7 +91,7 @@
     </div>
     <div id="popup">
         <div style="height: 500px">
-            <h1 class="h1-page-title">TASK HELP</h1>
+            <h1 class="h1-page-title">HELP</h1>
             <p>
                 CONTENT
                 <br />
@@ -93,4 +106,7 @@
         </div>
     </div>
 </body>
+<?php
+//echo $this->headScript()->setFile('/js/myPrototype.js') . PHP_EOL;
+?>
 </html>

@@ -29,23 +29,11 @@ $this->formTask->sel_task_priority
                ->setLabel('TASK_PRIORITY');
 $this->formTask->tarea_task_description
                ->setLabel('TASK_DESCRIPTION');
+$this->formTask->submit_task_form
+               ->setLabel('SUBMIT')
+               ->clearDecorators()
+               ->setDecorators($buttonDecorators);
 
-if ($this->taskId === 0) {
-    $this->formTask->submit_task_form->setLabel('SUBMIT')
-                                     ->clearDecorators()
-                                     ->setDecorators($buttonDecorators);
-}
-
-//$this->formTask->setDecorators(
-//        array(
-//            'FormElements',
-//            array( 'FormErrors', array(
-//                'placement'       => 'prepend',
-//                'markupListStart' => '<div class="alert-message info">',
-//                'markupListEnd'   => '</div>'
-//            ))
-//        )
-//    ); 
 ?>
 
 <div class="div-time-elapsed-page-title">
@@ -63,33 +51,6 @@ if ($this->taskId === 0) {
 <div class="action-content">
     
     <div><?= $this->formTask; ?></div>
-    
-    <?php if ($this->taskId > 0) : ?>
-    <div class="div-task-notes">
-        <h2 class="h2-task-notes">
-            <?= $this->translate('NOTE_LIST_TITLE') ?>
-        </h2>
-        <ul class="ul-task-notes">
-            <?php
-            if ($this->notes) :
-                foreach ($this->notes as $note) :
-            ?>
-                <li class="li-task-note">
-                    <a href=""><?= @$note ?></a>
-                </li>
-            <?php
-                endforeach;
-            else :
-            ?>
-                <li class="li-task-nonote">
-                    No note
-                </li>
-            <?php
-            endif;
-            ?>
-        </ul>
-    </div>
-    <?php endif; ?>
     
 </div>
 
@@ -141,56 +102,6 @@ if ($this->taskId === 0) {
             </table>
         </li>
     <?php endif; ?>
-        
-    <?php if ($this->taskId > 0) : ?>
-        <li>
-            <table class="table-ul-btn-add">
-                <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/alert_icon.svg" />
-                    </td>
-                    <td class="td-ul-btn-add-b">
-                        <a class="add-links"
-                           href="/alert/task/<?=$this->taskId?>">
-                            <?=$this->translate('ALERT_TASK');?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-        <li>
-            <table class="table-ul-btn-add">
-                <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/timer_icon.svg" />
-                    </td>
-                    <td class="td-ul-btn-add-b">
-                        <a class="add-links" href="#<?=$this->taskId?>">
-                        <?= $this->translate('ADD_TIME'); ?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-    <?php endif; ?>
-        
-    <?php if ($this->taskId > 0) : ?>
-        <li>
-            <table class="table-ul-btn-add">
-                <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/modify_icon.svg" />
-                    </td>
-                    <td class="td-ul-btn-add-b">
-                        <a class="add-links"
-                           href="/task/modify/<?=$this->taskId?>">
-                            <?= $this->translate('MODIFY_TASK'); ?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-    
         <?php if ($this->userRole <= 2 && $this->taskId > 0) : ?>
         <li>
             <table class="table-ul-btn-add">
@@ -200,7 +111,7 @@ if ($this->taskId === 0) {
                     </td>
                     <td class="td-ul-btn-add-b">
                         <a class="add-links"
-                           href="/task/close/<?=$this->taskId?>">
+                           href="/task/task/<?=$this->taskId?>/close">
                             <?=$this->translate('CLOSE_TASK');?>
                         </a>
                     </td>
@@ -208,8 +119,7 @@ if ($this->taskId === 0) {
             </table>
         </li>
         <?php endif; ?>
-    
-    <?php endif; ?>
+        
         <li>
             <table class="table-ul-btn-add">
                 <tr>
@@ -234,5 +144,3 @@ if ($this->taskId === 0) {
     </div>
     <?php endif; ?>
 </div>
-
-

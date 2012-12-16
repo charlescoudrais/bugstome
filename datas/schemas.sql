@@ -54,11 +54,14 @@ CREATE TABLE `tasks` (
   `task_description` text NOT NULL,
   `user_id` smallint(5) unsigned NOT NULL,
   `priority_id` tinyint(3) unsigned NOT NULL,
+  `project_id`int(10) unsigned NOT NULL,
   PRIMARY KEY (`task_id`),
   KEY `fk_user_id_idx` (`user_id`),
   KEY `fk_priority_id_idx` (`priority_id`),
+  KEY `fk_project_id_idx` (`project_id`),
   CONSTRAINT `fk_priority_id` FOREIGN KEY (`priority_id`) REFERENCES `priorities` (`priority_id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE
+  CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 $$
 

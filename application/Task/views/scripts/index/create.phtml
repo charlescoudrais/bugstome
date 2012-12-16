@@ -1,4 +1,10 @@
 <?php
+//echo 'TASK ID    : ' . $this->taskId . '<br />';
+//echo 'PROJECT ID : ' . $this->projectId . '<br />';
+//echo $this->formTask . '<br />';
+
+?>
+<?php
 $buttonDecorators = array(
     'ViewHelper',
     array(
@@ -12,11 +18,13 @@ $buttonDecorators = array(
         )
     )
 );
-
+//$formTask = new Zend_Form();
+//$formTask->sel_task_project->;
 $this->formTask->inp_task_name
                ->setLabel('TASK_NAME');
 $this->formTask->sel_task_project
-               ->setLabel('PROJECT_NAME');
+               ->setLabel('PROJECT_NAME')
+               ;
 $this->formTask->inp_task_id
                ->setLabel('TASK_ID');
 $this->formTask->inp_task_start_datepicker
@@ -72,10 +80,10 @@ if ($this->taskId === 0) {
         <ul class="ul-task-notes">
             <?php
             if ($this->notes) :
-                foreach ($this->notes as $note) :
+                foreach ($this->notes as $noteValue) :
             ?>
                 <li class="li-task-note">
-                    <a href=""><?= @$note ?></a>
+                    <a href=""><?= $noteValue ?></a>
                 </li>
             <?php
                 endforeach;
@@ -234,5 +242,6 @@ if ($this->taskId === 0) {
     </div>
     <?php endif; ?>
 </div>
+
 
 

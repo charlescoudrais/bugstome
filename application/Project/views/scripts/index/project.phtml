@@ -60,13 +60,20 @@ if ($this->projectId === 0) {
         <ul class="ul-project-tasks">
             <?php
             if ($this->tasks) :
-                foreach ($this->tasks as $taskValue) :
+                $taskValue = new Task_Model_Task();
+                //*
+                foreach ($this->tasks as $task) :
             ?>
                 <li class="li-project-task">
-                    <a href=""><?= $taskValue ?></a>
+                    <a href="/task/<?= $task->getTaskProject() . '/'
+                                     . $task->getTaskId(); ?>">
+                        <?= $task->getTaskName(); ?>
+                    </a>
                 </li>
             <?php
                 endforeach;
+                
+                // */
             else :
             ?>
                 <li class="li-project-notask">
@@ -78,7 +85,7 @@ if ($this->projectId === 0) {
                             </td>
                             <td style="padding: 4px;">
                                 <a class="add-links"
-                                   href="/task/<?= $this->projectId ?>/0"
+                                   href="/task/<?= $this->projectId ?>/create"
                                    style="color: #D98E2B; font-size: 16px;">
                                     <?=$this->translate('CREATE_NEW_TASK');?>
                                 </a>
@@ -108,7 +115,7 @@ if ($this->projectId === 0) {
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
-                           href="/task/<?= $this->projectId ?>/0"
+                           href="/task/<?= $this->projectId ?>/create"
                            style="color: #D98E2B; font-size: 16px;">
                             <?=$this->translate('CREATE_NEW_TASK');?>
                         </a>
@@ -132,40 +139,6 @@ if ($this->projectId === 0) {
                 </tr>
             </table>
         </li>
-        <?php if ($this->userRole === 1) : ?>
-        <li>
-            <table>
-                <tr>
-                    <td style="padding: 4px;">
-                        <img src="/img/icons_svg/modify_icon.svg"
-                             style="width: 32px;"  />
-                    </td>
-                    <td style="padding: 4px;">
-                        <a class="add-links"
-                           href="/project/modify/<?=$this->projectId?>">
-                            <?=$this->translate('MODIFY_PROJECT');?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-        <li>
-            <table>
-                <tr>
-                    <td style="padding: 4px;">
-                        <img src="/img/icons_svg/lock_icon.svg"
-                             style="width: 32px;" />
-                    </td>
-                    <td style="padding: 4px;">
-                        <a class="add-links"
-                           href="/project/project/<?=$this->projectId?>/close">
-                            <?=$this->translate('CLOSE_PROJECT');?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-        <?php endif; ?>
         <li>
             <table>
                 <tr>
@@ -182,6 +155,40 @@ if ($this->projectId === 0) {
                 </tr>
             </table>
         </li>
+            <?php if ($this->userRole === 1) : ?>
+            <li>
+                <table>
+                    <tr>
+                        <td style="padding: 4px;">
+                            <img src="/img/icons_svg/modify_icon.svg"
+                                 style="width: 32px;"  />
+                        </td>
+                        <td style="padding: 4px;">
+                            <a class="add-links"
+                               href="/project/modify/<?=$this->projectId?>">
+                                <?=$this->translate('MODIFY_PROJECT');?>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table>
+                    <tr>
+                        <td style="padding: 4px;">
+                            <img src="/img/icons_svg/lock_icon.svg"
+                                 style="width: 32px;" />
+                        </td>
+                        <td style="padding: 4px;">
+                            <a class="add-links"
+                               href="/project/project/<?=$this->projectId?>/close">
+                                <?=$this->translate('CLOSE_PROJECT');?>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <?php endif; ?>
         <?php endif; ?>
         <li>
             <table>
