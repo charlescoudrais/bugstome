@@ -121,6 +121,9 @@ h2.h2-task-notes {
     width: 100px;
     text-align: left;
 }
+.li-notasks table td:first-child {
+   vertical-align: bottom; 
+}
 
 /* FORM */
 #inp_task_id {
