@@ -5,13 +5,16 @@
     Description:
         Purpose of the stylesheet follows.
 */
+.article-projects {
+    border: none;
+}
 
 .ul-projects {
     margin: 0;
     /*margin-left: 20px;*/
     padding: 0;
     list-style-type: none;
-    box-shadow: 0px 0px 2px #cccccc;
+    /*box-shadow: 0px 0px 2px #cccccc;*/
 }
 .ul-projects li {
     padding: 6px;
@@ -20,10 +23,10 @@
     line-height: 40px;
 }
 .ul-projects li:last-child {
-    padding: 6px;
-    height: 40px;
-    border-bottom: none;
-    line-height: 40px;
+    /*padding: 6px;*/
+    /*height: 40px;*/
+    /*border-bottom: none;*/
+    /*line-height: 40px;*/
 }
 .ul-projects li:hover {
     background-color: #f4f4f4;
@@ -113,23 +116,31 @@ h2.h2-project-tasks {
 
 .tb-to-project-links {
     /*width: 236px;*/
-    margin: 0;
+    margin: 3px auto;
     background-color: #49a0df;
-    /*border-radius: 3px 3px 0px 0px;*/
-    /*box-shadow: 0px 0px 2px #cccccc*/
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px #cccccc;
 }
 .tb-to-project-links:hover {
     background-color: #1f6ba2;
 }
 .td-to-project-link-a {
     padding: 2px 0px 0px 2px;
-    height: 24px;
+    /*height: 24px;*/
     width: 30px;
     text-align: right;
 }
 .td-to-project-link-b {
     padding: 2px 0px 0px 2px;
-    height: 24px;
+    /*height: 24px;*/
     width: 100px;
     text-align: left;
+}
+.ul-projects li.li-noprojects {
+    border: 0px;
+    border-bottom: 1px solid #ececec;
+    background-color: #ffffff;
+}
+.ul-projects li.li-noprojects:hover {
+    background-color: none;
 }

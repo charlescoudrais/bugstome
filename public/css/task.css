@@ -16,7 +16,7 @@
     /*margin-left: 20px;*/
     padding: 0;
     list-style-type: none;
-    box-shadow: 0px 0px 2px #cccccc;
+    /*box-shadow: 0px 0px 2px #cccccc;*/
 }
 .ul-tasks li {
     padding: 6px;
@@ -25,10 +25,10 @@
     line-height: 40px;
 }
 .ul-tasks li:last-child {
-    padding: 6px;
-    height: 40px;
-    border-bottom: none;
-    line-height: 40px;
+    /*padding: 6px;*/
+    /*height: 40px;*/
+    /*border-bottom: none;*/
+    /*line-height: 40px;*/
 }
 .ul-tasks li:hover {
     background-color: #f4f4f4;
@@ -41,15 +41,20 @@
     text-decoration: none;
 }
 .ul-tasks li.li-notasks a {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    color: #49a0df;
+    color: #D88E30;
     text-decoration: none;
+}
+.ul-tasks li.li-notasks a:hover {
+    color: #b96b08;
 }
 .ul-tasks li a:hover {
     color: #1f6ba2;
 }
 .ul-tasks li.li-notasks {
+    border: 0px;
+    border-bottom: 1px solid #ececec;
     background-color: #ffffff;
 }
 .ul-tasks li.li-notasks:hover {
@@ -96,23 +101,23 @@ h2.h2-task-notes {
 
 .tb-to-task-links {
     /*width: 236px;*/
-    margin: 0;
+    margin: 2px auto;
     background-color: #49a0df;
-    /*border-radius: 3px 3px 0px 0px;*/
-    /*box-shadow: 0px 0px 2px #cccccc*/
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px #cccccc;
 }
 .tb-to-task-links:hover {
     background-color: #1f6ba2;
 }
 .td-to-task-link-a {
     padding: 2px 0px 0px 2px;
-    height: 24px;
+    /*height: 24px;*/
     width: 30px;
     text-align: right;
 }
 .td-to-task-link-b {
     padding: 2px 0px 0px 2px;
-    height: 24px;
+    /*height: 24px;*/
     width: 100px;
     text-align: left;
 }
