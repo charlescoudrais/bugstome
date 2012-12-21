@@ -2,12 +2,14 @@
 return array(
     
 // GLOBALS
+    'SITENAME'                  => '%s BUGS 2ME | Créations 2C',
+    
     'HOME_TITLE'                => 'DASHBOARD', 
     'STATS_TITLE'               => 'STATISTICS', 
     'USERS_TITLE'               => 'USERS LIST',
     'USER_TITLE'                => 'NEW ACCOUNT',
     'USER_MY_TITLE'             => 'MY ACCOUNT',
-    'LOGIN_TITLE'               => 'BUGSME : Identification',
+    'LOGIN_TITLE'               => 'BUGS 2ME : Identification',
     'DASHBOARD_INBOX'           => 'Notifications',
     'DASHBOARD_ACTIVE_TASKS'    => 'Active tasks',
     'DASHBOARD_ACTIVE_PROJECTS' => 'Active projects',

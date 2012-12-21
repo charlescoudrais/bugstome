@@ -2,12 +2,14 @@
 return array(
     
 // GLOBALS
+    'SITENAME'                  => '%s BUGS 2ME | Créations 2C',
+    
     'HOME_TITLE'                => 'DASHBOARD', 
     'STATS_TITLE'               => 'STATISTIQUES', 
     'USERS_TITLE'               => 'LISTE DES UTILISATEURS', 
     'USER_TITLE'                => 'NOUVEAU COMPTE',
     'USER_MY_TITLE'             => 'MON COMPTE',
-    'LOGIN_TITLE'               => 'BUGSME : Identification',
+    'LOGIN_TITLE'               => 'BUGS 2ME : Identification',
     'DASHBOARD_INBOX'           => 'Notifications',
     'DASHBOARD_ACTIVE_TASKS'    => 'Tâches en cours',
     'DASHBOARD_ACTIVE_PROJECTS' => 'Projets en cours',
@@ -27,6 +29,7 @@ return array(
     'NAV_STAT'                  => 'Statistiques',
 
 // USER
+    //'USER_CONNECTED_AS' => 'Vous êtes connecté avec le compte %s',
     'YOUR_PARAMS'               => 'Mon compte',
     'USER_LIST'                 => 'Liste des utilisateurs',
     
