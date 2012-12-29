@@ -10,47 +10,51 @@ $(document).ready(function(){
         position: 'bottom',
         offsetX: -30,
         offsetY: 6,
-        tipSize: 20,
+        tipSize: 14,
         css: {
-            minWidth: "300px",
-            padding: '10px 6px 10px 4px',
+            minWidth: "200px",
+            padding: '10px',
             color: '#00ff33',
-            background: '#696969',
-            border: '3px solid #efefef',
-            borderRadius: '1px',
-            boxShadow: "0px 0px 2px 0px #606060",
-            opacity: 0.9
+            background: '#ffffff',
+            border: '1px solid #efefef',
+            borderRadius: '2px',
+            boxShadow: "0px 0px 4px 0px #606060",
+            opacity: 1
         },
         contents: '<ul class="ul-balloon">'
-                    + '<li class="li-balloon">'
+                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
                       + '<a href="/project/list">My Projects</a>'
                     + '</li>'
-                    + '<li class="li-balloon">'
+                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
                       + '<a href="/task/list">My Tasks</a>'
                     + '</li>'
-                    + '<li class="li-balloon">'
+                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
                       + '<a href="/note/list">My Notes</a>'
                     + '</li>'
-                    + '<li class="li-balloon">'
+                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
                       + '<a href="">Help</a>'
                     + '</li>'
                     + '<li class="li-balloon li-balloon-separator">'
                       + '&nbsp;'
                     + '</li>'
-                    + '<li class="li-balloon">'
+                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
+                        + '<img src="/img/icons_svg/w_setting_icon.svg" style="width:16px;" />&nbsp;&nbsp;'
                         + '<a href="/user/me">My account</a>'
                     + '</li>'
-                    + '<li class="li-balloon">'
+                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
                         + '<a href="/user/logout" style="color: orange;">LOGOUT</a>'
                     + '</li>'
                   + '</ul>'
     });
     
-    $('li-balloon').each(function(i){
-        $(this).on("click", function(){
-            window.location = $(this).find('a').attr('href'); 
-        });
-    });
+//    $('.li-balloon').each(function(i, li){
+//        $(this).on("mouseover", function(){
+//            alert($(this).find('a').attr('href'));
+//            //window.location = $(this).find('a').attr('href'); 
+//        });
+//    });
+//    $('.li-balloon').
+        
     $('#nav li').each(function(iterator) {
         $(this).on("click", function() {
             window.location = $(this).find('a').attr('href'); 

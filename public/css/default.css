@@ -257,13 +257,14 @@ ul.navigation>li>ul a {
     /*padding-right: 16px;*/
     height: 30px;
     font-weight: bold;
-    color: #00ff33;
+    color: #efefef;
     line-height:30px;
     cursor: default
 }
 #user-links a {
     font-weight: bold;
-    color: #00ff33;
+    /*color: #00ff33;*/
+    color: #efefef;
 }
 
 #main {
@@ -285,17 +286,29 @@ ul.navigation>li>ul a {
 }
 li.li-balloon {
     padding: 6px;
+    margin-bottom: 6px;
+    background-color: #49A0DF;
+    border-radius: 2px;
+    /*border: 1px solid #dcdcdc;*/
+}
+li.li-balloon:hover {
     cursor: pointer;
-    border-bottom: 1px solid #505050;
+    background-color: #1f6ba2;
 }
 li.li-balloon a {
-    color: #00ff33;
+    /*color: #00ff33;*/
+    color: #ffffff;
+    text-decoration: none;
 }
 li.li-balloon-separator {
-    padding: 6px;
-    border-bottom: none;
+    padding: 2px;
+    background-color: #ffffff;
+    border: none;
 }
-
+li.li-balloon-separator:hover {
+    cursor: default;
+    background-color: #ffffff;
+}
 /* PAGES */
 .h1-page-title {
     margin-bottom: 10px;

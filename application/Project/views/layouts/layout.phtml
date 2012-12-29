@@ -48,20 +48,28 @@
         </div>
         <div id="nav">
             <div id="nav-content">
-                <div id="user-links" class="balloon" title="balloon content">
-                    <?php
-                        $auth = Zend_Auth::getInstance();
-                        $user = new Core_Model_User();
-                        if ($auth->getStorage()->read($user)) {
-                            echo ucfirst(
-                                    $auth->getStorage()->read($user)->getName()
-                                );
-                        } else {
-                            echo 'John DOE';
-                        }
-                    ?>
-                    &nbsp;(user links)
-                </div>
+                <table id="user-links" class="balloon"
+                       title="balloon content" style="vertical-align: middle;">
+                    <tr>
+                        <td style="font-size: 12px;">
+                            <?php
+                                $auth = Zend_Auth::getInstance();
+                                $user = new Core_Model_User();
+                                if ($auth->getStorage()->read($user)) {
+                                    echo ucfirst(
+                                            $auth->getStorage()->read($user)->getName()
+                                        );
+                                } else {
+                                    echo 'John DOE';
+                                }
+                            ?>
+                        </td>
+                        <td style="width: 36px; line-height: 8px; text-align: right;">
+                            <img src="/img/users/2charles_coudrais_caricature_by_amaury_cousserans.png" 
+                                 alt="user links" style="width: 28px;" />
+                        </td>
+                    </tr>
+                </table>
                 <?php echo $this->navigation(); ?>
                 <div class="clear-both"></div>
             </div>
