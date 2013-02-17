@@ -2,7 +2,30 @@
  * My application jquery functions, listeners and events...
  */
 
-
+var userBalloonContent = '<ul class="ul-balloon">'
+    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
+      + '<a href="/project/list">My Projects</a>'
+    + '</li>'
+    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
+      + '<a href="/task/list">My Tasks</a>'
+    + '</li>'
+    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
+      + '<a href="/note/list">My Notes</a>'
+    + '</li>'
+    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
+      + '<a href="">Help</a>'
+    + '</li>'
+    + '<li class="li-balloon li-balloon-separator">'
+      + '&nbsp;'
+    + '</li>'
+    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
+        + '<img src="/img/icons_svg/w_setting_icon.svg" style="width:16px;" />&nbsp;&nbsp;'
+        + '<a href="/user/me">My account</a>'
+    + '</li>'
+    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
+        + '<a href="/user/logout" style="color: orange;">LOGOUT</a>'
+    + '</li>'
+  + '</ul>';
     
 $(document).ready(function(){
    
@@ -21,30 +44,7 @@ $(document).ready(function(){
             boxShadow: "0px 0px 4px 0px #606060",
             opacity: 1
         },
-        contents: '<ul class="ul-balloon">'
-                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
-                      + '<a href="/project/list">My Projects</a>'
-                    + '</li>'
-                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
-                      + '<a href="/task/list">My Tasks</a>'
-                    + '</li>'
-                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
-                      + '<a href="/note/list">My Notes</a>'
-                    + '</li>'
-                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
-                      + '<a href="">Help</a>'
-                    + '</li>'
-                    + '<li class="li-balloon li-balloon-separator">'
-                      + '&nbsp;'
-                    + '</li>'
-                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
-                        + '<img src="/img/icons_svg/w_setting_icon.svg" style="width:16px;" />&nbsp;&nbsp;'
-                        + '<a href="/user/me">My account</a>'
-                    + '</li>'
-                    + '<li class="li-balloon" onclick="window.location = $(this).find(\'a\').attr(\'href\')">'
-                        + '<a href="/user/logout" style="color: orange;">LOGOUT</a>'
-                    + '</li>'
-                  + '</ul>'
+        contents: userBalloonContent
     });
     
 //    $('.li-balloon').each(function(i, li){

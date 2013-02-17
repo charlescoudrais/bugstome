@@ -41,13 +41,13 @@ class Project_Form_Project extends Zend_Form
 //                    ->addValidator(
 //                       new Zend_Validate_Date()
 //                    );
-        $projectEndDate->setRequired(false)->setAttrib('class', 'datepicker')
-                    ->addFilter(new Zend_Filter_StripTags())
-                    ->addValidator(
-                       //@TODO: date format
-                       //array('format' => 'YYYY-MM-DD')
-                       new Zend_Validate_Date('dd-mm-yy')
-                    );
+//        $projectEndDate->setRequired(false)->setAttrib('class', 'datepicker')
+//                    ->addFilter(new Zend_Filter_StripTags())
+//                    ->addValidator(
+//                       //@TODO: date format
+//                       //array('format' => 'YYYY-MM-DD')
+//                       new Zend_Validate_Date('dd-mm-yy')
+//                    );
         
 //        $projectUser->setMultiOptions(
 //                        array(
@@ -76,4 +76,12 @@ class Project_Form_Project extends Zend_Form
         $this->addElement($projectSubmit);
       
     }
+    
+//    public function isValid($datas) 
+//    {
+//        echo '<pre>';
+//        var_dump($datas);
+//        echo '</pre>';
+//        //return true;
+//    }
 }

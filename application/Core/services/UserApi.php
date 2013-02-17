@@ -67,12 +67,20 @@ class Core_Service_UserApi
         $this->userMapper = $userMapper;
         return $this;
     }
-
+    
+    /**
+     * 
+     * @return type
+     */
     public function getRoleMapper()
     {
         return $this->roleMapper;
     }
-
+    
+    /**
+     * 
+     * @param type $roleMapper
+     */
     public function setRoleMapper($roleMapper)
     {
         $this->roleMapper = $roleMapper;

@@ -145,6 +145,18 @@ class Project_IndexController extends Zend_Controller_Action
         $thisProject  = $project->getProjectMapper()->find($this->projectId);
         $usersOptions = array();
         
+        $form->setAction('')->setMethod('post');
+        
+        if ($this->getRequest()->isPost()) {
+            if ($form->isValid($this->getRequest()->getPost())) {
+//            if ($this->getRequest()->getPost()) {
+//                $projectDatas = array();
+//                $projectData['projectUser'] = $form->getValue('sel_project_manager');
+//                $projectDatas = $form->getValues();
+                //var_dump($this->getRequest()->getPost());
+            } // endif $form isValid()
+        }
+        
         foreach ($this->users as $user) {
             $usersOptions[$user->getId()] = $user->getName();
         }
@@ -161,7 +173,7 @@ class Project_IndexController extends Zend_Controller_Action
                 );
         $form->setDefault(
                     'sel_project_manager',
-                    '1'
+                    $thisProject->getProjectUser()
                 );
         $form->setDefault(
                     'tarea_project_description',
