@@ -43,7 +43,10 @@ class Project_IndexController extends Zend_Controller_Action
         
     }
     
-    
+    /**
+     * 
+     * return array 
+     */
     public function listAction()
     {
         $project               = new Project_Model_Project(); 

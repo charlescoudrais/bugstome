@@ -60,8 +60,8 @@ if (strpos($userAgent, 'MSIE')) { //  strpos($userAgent, 'MSIE') &&
 }
 // */
 require_once 'Zend/Loader/Autoloader.php';
-
-$autoloader = Zend_Loader_Autoloader::getInstance();
+$loader = Zend_Loader_Autoloader::getInstance();
+//$loader->registerNamespace(array('Foo_', 'Bar_'));
 
 $application = new Zend_Application(
     APPLICATION_ENV,
