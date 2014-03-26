@@ -39,11 +39,12 @@ class Project_Bootstrap extends Zend_Application_Module_Bootstrap
             $this->getApplication()->bootstrap('translate');
         }
         $translator = Zend_Registry::get('Zend_Translate');
-        $options = array( 
+        $options    = array( 
         				  'adapter' => 'array',
                           'content' => __DIR__ . DIRECTORY_SEPARATOR 
                                       . 'i18n' . DIRECTORY_SEPARATOR
         );
         $translator->addTranslation($options);
     }
+    
 }

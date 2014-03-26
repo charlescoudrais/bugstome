@@ -2,11 +2,8 @@
 <!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-<g id="Dossier">
-	<path fill="#4E9FD6" d="M43.068,15.925v-8.46H26.406L20.26,3.662H1.182v42.617h38.947h2.942c5.622,0,5.885-8.151,5.885-10.509
-		c0-2.358,0-19.845,0-19.845H43.068z M6.326,8.806h12.471l6.146,3.802h12.98v3.317H9.651c0,0,0,16.314,0,18.671
-		c0,1.927-1.146,4.229-3.031,6.538H6.326V8.806z M46.017,35.771c0,1.264-0.143,7.569-2.945,7.569H8.612
-		c2.555-3.039,3.978-6.094,3.978-8.743V18.865h33.426V35.771z"/>
-</g>
+	 width="50px" height="50px" viewBox="231 231 50 50" enable-background="new 231 231 50 50" xml:space="preserve">
+<path id="add-folder-2-icon" fill="#4E9FD6" d="M276.6,263.266h-5.173v-5.174h-3.995v5.174h-5.173v3.995h5.173v5.173h3.995v-5.173
+	h5.173V263.266z M258.459,272.434H235.4v-32.867h13.332l3.269,3.254c0.904,0.9,2.129,1.406,3.405,1.406H276.6v10.03h-4v-6.03
+	h-17.194c-2.35,0-4.562-0.913-6.227-2.571l-2.099-2.089h-7.68v24.867h19.059V272.434z"/>
 </svg>

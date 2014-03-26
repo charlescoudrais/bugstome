@@ -13,35 +13,96 @@ $buttonDecorators = array(
                         )
                     );
 
-$this->formProject->inp_project_name->setLabel('PROJECT_NAME');
-$this->formProject->inp_project_end_datepicker->setLabel('PROJECT_END_DATE');
-$this->formProject->tarea_project_description->setLabel('PROJECT_DESCRIPTION');
-$this->formProject->hid_project_id->clearDecorators()
-                       ->setDecorators($buttonDecorators);
+$this->formProject->inp_project_name
+                  ->setLabel('PROJECT_NAME');
+$this->formProject->inp_project_start_datepicker
+                  ->setLabel('PROJECT_START_DATE');
+$this->formProject->inp_project_end_datepicker
+                  ->setLabel('PROJECT_END_DATE');
+$this->formProject->sel_project_manager
+                  ->setLabel('Par ');
+$this->formProject->tarea_project_description
+                  ->setLabel('PROJECT_DESCRIPTION');
+$this->formProject->hid_project_id
+                  ->clearDecorators()
+                  ->setDecorators($buttonDecorators);
+$this->formProject->hid_submit_false
+                  ->setLabel('');
+
 if ($this->projectId === 0) {
-$this->formProject->submit_project_form->setLabel('SUBMIT')
-                       ->clearDecorators()
-                       ->setDecorators($buttonDecorators);
-} else {
-    $this->formProject->removeElement('submit_project_form');
-}
+    $this->formProject->submit_project_form
+                      ->setLabel('SUBMIT')
+                      ->clearDecorators()
+                      ->setDecorators($buttonDecorators);
+} 
+
 ?>
 
 <div style="float:right; margin: 0; padding: 6px; line-height: 32px;">
     <?php
     //@TODO : elapsed time
-        echo $this->translate('PROJECT_ELAPSED_TIME') . ' : ';
-        echo '<span class="span-h1">';
-        echo '00:00:00';
-        echo '</span>';
+    echo $this->translate('PROJECT_ELAPSED_TIME') . ' : ';
+    echo '<span class="span-h1">';
+    echo '00:00:00';
+    echo '</span>';
     ?>
 </div>
+
 <h1 class="h1-page-title"><?= $this->pageTitle; ?></h1>
+
 <div class="action-content">
-    <?= $this->formProject; ?>
+    
+    <div><?= $this->formProject; ?></div>
+    
+    <?php if ($this->projectId > 0) : ?>
+    <div class="div-project-tasks">
+        <h2 class="h2-project-tasks"><?= $this->translate('TASK_LIST') ?></h2>
+        <ul class="ul-project-tasks">
+            <?php
+            if ($this->tasks) :
+                $taskValue = new Task_Model_Task();
+                //*
+                foreach ($this->tasks as $task) :
+            ?>
+                <li class="li-project-task">
+                    <a href="/task/<?= $task->getTaskProject() . '/'
+                                     . $task->getTaskId(); ?>">
+                        <?= $task->getTaskName(); ?>
+                    </a>
+                </li>
+            <?php
+                endforeach;
+                
+                // */
+            else :
+            ?>
+                <li class="li-project-notask">
+                    <table>
+                        <tr>
+                            <td style="padding: 4px;">
+                                <img src="/img/icons_svg/task_icon.svg"
+                                     style="width: 32px;"  />
+                            </td>
+                            <td style="padding: 4px;">
+                                <a class="add-links"
+                                   href="/task/<?= $this->projectId ?>/create"
+                                   style="color: #D98E2B; font-size: 16px;">
+                                    <?=$this->translate('CREATE_NEW_TASK');?>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            <?php
+            endif;
+            ?>
+        </ul>
+    </div>
+    <?php endif; ?>
+    
 </div>
 
-
+<!-- MENU //-->
 <div class="article-btn">
     <ul class="ul-btn-add">
         <?php if ($this->projectId > 0) : ?>
@@ -54,7 +115,7 @@ $this->formProject->submit_project_form->setLabel('SUBMIT')
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
-                           href="/task/task/0"
+                           href="/task/<?= $this->projectId ?>/create"
                            style="color: #D98E2B; font-size: 16px;">
                             <?=$this->translate('CREATE_NEW_TASK');?>
                         </a>
@@ -71,47 +132,13 @@ $this->formProject->submit_project_form->setLabel('SUBMIT')
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
-                           href="/project/project/<?=$this->projectId?>/0">
+                           href="/note/<?=$this->projectId?>/0">
                             <?=$this->translate('ADD_A_NOTE');?>
                         </a>
                     </td>
                 </tr>
             </table>
         </li>
-        <?php if (isset($this->userRole)) : ?>
-        <li>
-            <table>
-                <tr>
-                    <td style="padding: 4px;">
-                        <img src="/img/icons_svg/modify_icon.svg"
-                             style="width: 32px;"  />
-                    </td>
-                    <td style="padding: 4px;">
-                        <a class="add-links"
-                           href="/project/project/<?=$this->projectId?>">
-                            <?=$this->translate('MODIFY_PROJECT');?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-        <li>
-            <table>
-                <tr>
-                    <td style="padding: 4px;">
-                        <img src="/img/icons_svg/lock_icon.svg"
-                             style="width: 32px;" />
-                    </td>
-                    <td style="padding: 4px;">
-                        <a class="add-links"
-                           href="/project/project/<?=$this->projectId?>/close">
-                            <?=$this->translate('CLOSE_PROJECT');?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-        <?php endif; ?>
         <li>
             <table>
                 <tr>
@@ -128,6 +155,40 @@ $this->formProject->submit_project_form->setLabel('SUBMIT')
                 </tr>
             </table>
         </li>
+            <?php if ($this->userRole === 1) : ?>
+            <li>
+                <table>
+                    <tr>
+                        <td style="padding: 4px;">
+                            <img src="/img/icons_svg/modify_icon.svg"
+                                 style="width: 32px;"  />
+                        </td>
+                        <td style="padding: 4px;">
+                            <a class="add-links"
+                               href="/project/modify/<?=$this->projectId?>">
+                                <?=$this->translate('MODIFY_PROJECT');?>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table>
+                    <tr>
+                        <td style="padding: 4px;">
+                            <img src="/img/icons_svg/lock_icon.svg"
+                                 style="width: 32px;" />
+                        </td>
+                        <td style="padding: 4px;">
+                            <a class="add-links"
+                               href="/project/project/<?=$this->projectId?>/close">
+                                <?=$this->translate('CLOSE_PROJECT');?>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <?php endif; ?>
         <?php endif; ?>
         <li>
             <table>
@@ -146,10 +207,12 @@ $this->formProject->submit_project_form->setLabel('SUBMIT')
             </table>
         </li>
     </ul>
+    
     <?php if ($this->projectId == 0) : ?>
     <div class="article">
         <p>TODO : Explain...</p>
     </div>
     <?php endif; ?>
+    
 </div>
 

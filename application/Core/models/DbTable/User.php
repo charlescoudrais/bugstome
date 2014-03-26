@@ -6,7 +6,8 @@ class Core_Model_DbTable_User extends Zend_Db_Table_Abstract
     {
         $options = array(
             'name'          => 'users',
-            'primary'       => 'user_id', 
+            'primary'       => 'user_id',
+            'unique'        => 'user_mail',
             'referenceMap'  => array(
                 'Role'      => array(
                     'columns'       => array('role_id'),

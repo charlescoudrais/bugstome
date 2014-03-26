@@ -1,6 +1,9 @@
 <?php
 class Core_Service_UserApi
 {
+    const ERROR_UNKNOWN_USER = 'errorInvalidDataName';
+    const ERROR_USERS_LIST   = 'errorInvalidDataList';
+
     private $userMapper;
     private $roleMapper;
     private $authAdapter;
@@ -82,7 +85,7 @@ class Core_Service_UserApi
         }
         
         $this->authAdapter->setTableName('users');
-        $this->authAdapter->setIdentityColumn('user_name');
+        $this->authAdapter->setIdentityColumn('user_mail');
         $this->authAdapter->setCredentialColumn('user_password');
         $this->authAdapter->setCredentialTreatment('SHA1(?) AND user_active = 1');
         return $this->authAdapter;
@@ -94,9 +97,28 @@ class Core_Service_UserApi
         return $this;
     }
     
-    public function findById()
+    public function findById($id)
     {
-        
+        $user = $this->getUserMapper()->find((int) $id);
+           
+        if (!$user) {
+            return self::ERROR_UNKNOWN_USER;
+            
+        }
+        return $this->getUserMapper()->objectToRow($user);
+    }
+    
+    public function fetchUsers($count=100, $offset=0)
+    {
+        $users = $this->getUserMapper()
+                      ->fetchAll(null, null, $count, $offset);
+        if(!$users) {
+            return self::ERROR_USERS_LIST;
+        }            
+        return $users;
+        // @TODO: objectToRow for "collection"
+        //return $this->getUserMapper()->objectToRow($users);
+
     }
 
 }

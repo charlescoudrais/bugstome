@@ -6,11 +6,11 @@ return array(
     'TASKS_TITLE'       => 'TASKS',
     'NEW_TASK_TITLE'    => 'NEW TASK',
     'TASK_ELAPSED_TIME' => 'Elapsed time',
+    'TASK_LIST'         => 'Tasks list',
     
     'CREATE_NEW_TASK'   => 'New task',
     'TASK'              => 'Task',
-    'TASK_START_DATE'   => 'Start date :',
-    'TASK_END_DATE'     => 'End date :',
+    'TASK_START_DATE'   => 'Create from :',
     
     'ADD_A_NOTE'        => 'Add a note',
     'ATTACH_A_DOCUMENT' => 'Attach a document',
@@ -23,6 +23,9 @@ return array(
 // FORMS
     'TASK_ID'           => 'Identifiant :',
     'TASK_NAME'         => 'Label :',
+    'PROJECT_NAME'      => 'Project :',
+    'TASK_START_DATE'   => 'Date :',
+    'TASK_END_DATE'     => 'End fin :',
     'TASK_MANAGER'      => 'Manager :',
     'TASK_PRIORITY'     => 'Priority :',
     'TASK_DESCRIPTION'  => 'Description :',

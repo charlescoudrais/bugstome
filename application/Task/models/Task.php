@@ -13,9 +13,29 @@ class Task_Model_Task
     private $taskName;
     /**
      *
-     * @var string 
+     * @var Zend_Date
+     */
+    private $taskStart;
+    /**
+     *
+     * @var Zend_Date 
+     */
+    private $taskEnd;
+    /**
+     *
+     * @var int 
      */
     private $taskManager;
+    /**
+     *
+     * @var int 
+     */
+    private $taskPriority;
+    /**
+     *
+     * @var int 
+     */
+    private $taskProject;
     /**
      *
      * @var string 
@@ -32,51 +52,162 @@ class Task_Model_Task
      * 
      * @return type
      */
-    public function getTaskId() {
+    public function getTaskId()
+    {
         return $this->taskId;
     }
     
 
-    public function setTaskId($taskId) {
+    public function setTaskId($taskId)
+    {
         $this->taskId = $taskId;
         return $this;
     }
 
-    public function getTaskName() {
+    public function getTaskName()
+    {
         return $this->taskName;
     }
 
-    public function setTaskName($taskName) {
+    public function setTaskName($taskName)
+    {
         $this->taskName = $taskName;
         return $this;
     }
-
-    public function getTaskManager() {
+    
+    public function getTaskStart()
+    {
+        return $this->taskStart;
+    }
+    
+    /**
+     * 
+     * @param string $taskStart
+     * @return Task_Model_Task
+     */
+    public function setTaskStart($taskStart)
+    {
+        $this->taskStart = new Zend_Date($taskStart);
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getTaskEnd()
+    {
+        return $this->taskEnd;
+    }
+    
+    /**
+     * 
+     * @param string $taskEnd
+     * @return Task_Model_Task
+     */
+    public function setTaskEnd($taskEnd)
+    {
+        $this->taskEnd = new Zend_Date($taskEnd);
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return int
+     */
+    public function getTaskManager()
+    {
         return $this->taskManager;
     }
-
-    public function setTaskManager($taskManager) {
+    
+    /**
+     * 
+     * @param int $taskManager
+     * @return Task_Model_Task
+     */
+    public function setTaskManager($taskManager)
+    {
         $this->taskManager = $taskManager;
         return $this;
     }
-
-    public function getTaskDescription() {
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getTaskDescription()
+    {
         return $this->taskDescription;
     }
-
-    public function setTaskDescription($taskDescription) {
+    
+    /**
+     * 
+     * @param string $taskDescription
+     * @return Task_Model_Task
+     */
+    public function setTaskDescription($taskDescription)
+    {
         $this->taskDescription = $taskDescription;
         return $this;
     }
     
-    public function getTaskMapper() {
+    /**
+     * 
+     * @return int
+     */
+    public function getTaskPriority() {
+        return $this->taskPriority;
+    }
+    
+    /**
+     * 
+     * @param int $taskPriority
+     * @return Task_Model_Task
+     */
+    public function setTaskPriority($taskPriority) {
+        $this->taskPriority = $taskPriority;
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return int
+     */
+    public function getTaskProject()
+    {
+        return $this->taskProject;
+    }
+    
+    /**
+     * 
+     * @param int $taskProject
+     * @return Task_Model_Task
+     */
+    public function setTaskProject($taskProject)
+    {
+        $this->taskProject = $taskProject;
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return Task_Model_Mapper_Task 
+     */
+    public function getTaskMapper()
+    {
         if (NULL === $this->taskMapper) {
             $this->taskMapper = new Task_Model_Mapper_Task();
         }
         return $this->taskMapper;
     }
-
-    public function setTaskMapper($taskMapper) {
+    
+    /**
+     * 
+     * @param Task_Model_Mapper_Task $taskMapper
+     * @return Task_Model_Task
+     */
+    public function setTaskMapper($taskMapper)
+    {
         $this->taskMapper = $taskMapper;
         return $this;
     }

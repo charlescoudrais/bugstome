@@ -2,13 +2,9 @@
 <!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-<g id="RSS">
-	<path id="circle_1_" fill="#49a0df" d="M14.195,42.327c0,3.451-2.797,6.237-6.253,6.237c-3.443,0-6.241-2.786-6.241-6.237
-		c0-3.441,2.798-6.257,6.241-6.257C11.398,36.07,14.195,38.886,14.195,42.327z"/>
-	<path fill="#49a0df" d="M32.325,48.215h-8.22c-0.106-5.862-2.428-11.351-6.564-15.492c-4.138-4.149-9.606-6.477-15.436-6.585
-		v-8.192C18.669,18.169,32.103,31.624,32.325,48.215L32.325,48.215z"/>
-	<path fill="#49a0df" d="M48.322,48.215h-8.203C39.893,27.313,22.972,10.35,2.12,10.124v-8.19
-		C27.496,2.162,48.097,22.796,48.322,48.215L48.322,48.215z"/>
-</g>
+	 width="50px" height="50px" viewBox="231 231 50 50" enable-background="new 231 231 50 50" xml:space="preserve">
+<path id="warning-6-icon" fill="#4E9FD6" d="M254.394,253.959h3.212v9.742h-3.212V253.959z M256,268.727
+	c-0.958,0-1.733-0.776-1.733-1.733c0-0.958,0.776-1.734,1.733-1.734c0.957,0,1.733,0.776,1.733,1.734
+	C257.733,267.95,256.957,268.727,256,268.727z M256,238.631l-20.6,35.68h41.2L256,238.631z M256,246.631l13.672,23.68h-27.344
+	L256,246.631z"/>
 </svg>

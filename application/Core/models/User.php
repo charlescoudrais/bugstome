@@ -13,7 +13,15 @@ class Core_Model_User
     /**
      * @var string
      */
+    private $mail;
+    /**
+     * @var string
+     */
     private $password;
+    /**
+     * @var string
+     */
+    private $function;
     /**
      * @var boolean
      */
@@ -72,6 +80,26 @@ class Core_Model_User
      * 
      * @return String
      */
+    public function getMail ()
+    {
+        return $this->mail;
+    }
+
+	/**
+     * 
+     * @param string $mail
+     * @return Core_Model_User
+     */
+    public function setMail ($mail)
+    {
+        $this->mail = (string) $mail;
+        return $this;
+    }
+
+	/**
+     * 
+     * @return String
+     */
     public function getPassword ()
     {
         return $this->password;
@@ -84,6 +112,26 @@ class Core_Model_User
     public function setPassword ($password)
     {
         $this->password = (string) $password;
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getFunction()
+    {
+        return $this->function;
+    }
+    
+    /**
+     * 
+     * @param string $function
+     * @return Core_Model_User
+     */
+    public function setFunction($function)
+    {
+        $this->function = $function;
         return $this;
     }
 

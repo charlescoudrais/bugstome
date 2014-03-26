@@ -1,0 +1,83 @@
+<?php
+$buttonDecorators = array(
+                        'ViewHelper',
+                        array(
+                            array(
+                                'row' => 'HtmlTag',
+                                'class' => 'sub'
+                            ),
+                            array(
+                                'tag'   => 'div',
+                                'class' => 'form-row-submit offset-label'
+                            )
+                        )
+                    );
+
+$this->formProject->inp_project_name
+                  ->setLabel('PROJECT_NAME');
+$this->formProject->inp_project_start_datepicker
+                  ->setLabel('PROJECT_START_DATE');
+$this->formProject->inp_project_end_datepicker
+                  ->setLabel('PROJECT_END_DATE');
+$this->formProject->tarea_project_description
+                  ->setLabel('PROJECT_DESCRIPTION');
+$this->formProject->hid_project_id
+                  ->clearDecorators()
+                  ->setDecorators($buttonDecorators);
+
+$this->formProject->submit_project_form
+                   ->setLabel('SUBMIT')
+                   ->clearDecorators()
+                   ->setDecorators($buttonDecorators);
+
+?>
+
+<h1 class="h1-page-title"><?= $this->pageTitle ?></h1>
+
+<div class="action-content">
+    
+    <div><?= $this->formProject ?></div>
+
+</div>
+
+
+<!-- MENU //-->
+<div class="article-btn">
+    <ul class="ul-btn-add">
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/backward_icon.svg"
+                             style="width: 32px;" />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="/project/list">
+                            <?=$this->translate('BACKWARD');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <table>
+                <tr>
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/help_icon.svg"
+                             style="width: 32px;" />
+                    </td>
+                    <td style="padding: 4px;">
+                        <a class="add-links"
+                           href="javascript: return false;">
+                            <?=$this->translate('HELP_PROJECT');?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    <div class="article">
+        <p>TODO : Explain...</p>
+    </div>
+</div>

@@ -1,21 +1,23 @@
-<?php echo $this->doctype() . PHP_EOL; ?>
+<?php
+    echo $this->doctype() . PHP_EOL;
+?>
 <html>
 <head>
-    <?php
-    $this->headMeta()->setCharset('UTF-8');
-    $this->headLink()->setStylesheet('/css/reset.css')
-                     ->appendStylesheet('/css/default.css')
-                     ->appendStylesheet('/css/smoothness/jquery-ui-1.9.1.custom.css');
-    $this->headScript()->setFile('/js/library/jquery-1.8.2.js')
-                       ->appendFile('/js/library/jquery-ui-1.9.1.custom.min.js')
-                       ->appendFile('/js/library/jquery.balloon.min.js')
-                       ->appendFile('/js/myJquery.js');
-    echo $this->headTitle('BUGS ME | Créations 2C') . PHP_EOL;
-    echo $this->headMeta() . PHP_EOL;
-    echo $this->headLink() . PHP_EOL;
-    echo $this->headStyle() . PHP_EOL;
-    echo $this->headScript() . PHP_EOL;
-    ?>
+<?php
+    echo $this->headMeta()->setCharset('utf-8') . PHP_EOL;
+    echo $this->headTitle('BUGS2ME | Créations 2C') . PHP_EOL;
+    echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
+    echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
+//    echo $this->headScript()->setFile('/js/library/prototype.js') . PHP_EOL;
+//    echo $this->headScript()->setFile('/js/prototype.class.js') . PHP_EOL;
+    echo $this->headScript()->setFile(
+                '/js/library/jquery-1.8.2.js'
+            ) . PHP_EOL;
+    echo $this->headScript()->setFile(
+                '/js/library/jquery.balloon.min.js'
+            ) . PHP_EOL;
+    echo $this->headScript()->setFile('/js/myJquery.js') . PHP_EOL;
+?>
     
 </head>
 <body>
@@ -29,7 +31,18 @@
         <div id="nav">
             <div id="nav-content">
                 <div id="user-links" class="balloon" title="balloon content">
-                    User Name (user links)
+                    <?php
+                        $auth = Zend_Auth::getInstance();
+                        $user = new Core_Model_User();
+                        if ($auth->getStorage()->read($user)) {
+                            echo ucfirst(
+                                    $auth->getStorage()->read($user)->getName()
+                                );
+                        } else {
+                            echo 'John DOE';
+                        }
+                    ?>
+                    &nbsp;(user links)
                 </div>
                 <?php echo $this->navigation(); ?>
                 <div class="clear-both"></div>
@@ -45,9 +58,11 @@
 
     <div id="footer">
         <p style="margin-: auto; width: 1000px;">
-             <img src="/img/icons_svg/b_c2c.svg" alt="Une création 2C" style="width: 24px;" />
+             <img src="/img/icons_svg/b_c2c.svg" 
+                  alt="Une création 2C" style="width: 24px;" />
              &nbsp;&nbsp;
-             <img src="/img/PoweredBy_ZF_4LightBG.png" alt="Powered by Zend Framework" />
+             <img src="/img/PoweredBy_ZF_4LightBG.png" 
+                  alt="Powered by Zend Framework" />
         </p>
     </div>
     <div id="popup">

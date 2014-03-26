@@ -1,26 +1,79 @@
-<table class="tb-to-project-links">
-    <tr>
-        <td class="td-to-project-link-a">
-            <img src="/img/icons_svg/w_folder_icon.svg"
-                 style="width: 22px;"  />
-        </td>
-        <td class="td-to-project-link-b" style="font-size: 12px;">
-            <a class="add-links"
-               href="/project/project/0" style="color: #ffffff; font-size: 12px;">
-                <?=$this->translate('CREATE_NEW_PROJECT');?>
-            </a>
-        </td>
-    </tr>
-</table>
 
 <br />
-<div class="article">
+<div class="article article-projects">
     <ul class="ul-projects">
-    <?php foreach ($this->projects as $projectId => $projectValue) : ?>
-        <li class="li-projects">
-        <?='<a href="/project/project/'.$projectId.'" 
-                 id="a-project-'.$projectId.'">'.$projectValue.'</a>'?>
+        <li class="li-noprojects" style="padding: 0px; line-height: 24px;">
+           <table style="padding: 0px; margin: 0px; width: 100%;">
+                <tr>
+                    <td style="width: 83%; padding: 6px 6px 6px 40px;">
+                        
+                    </td>
+                    <td> <!-- style="padding: 0px;"-->
+                        <table class="tb-to-project-links"><!--  style="padding: 0px; width: 100%;"-->
+                             <tr>
+                                 <td class="td-to-project-link-a">
+                                     <img src="/img/icons_svg/w_folder_icon.svg"
+                                          style="height: 24px;"  />
+                                 </td>
+                                 <td class="td-to-project-link-b" 
+                                     style="font-size: 12px;">
+                                     <a class="create"
+                                        href="/project/create" 
+                                        style="color: #ffffff; font-size: 12px;">
+                                         <?=$this->translate('CREATE_NEW_PROJECT');?>
+                                     </a>
+                                 </td>
+                             </tr>
+                         </table>
+                    </td>
+                </tr>
+            </table> 
         </li>
-    <?php endforeach; ?>
+    <?php
+        $i = 0;
+        foreach ($this->projects as $projectValue) :
+            $startDate = new Zend_Date($projectValue->getProjectStart());
+            $endDate   = new Zend_Date($projectValue->getProjectEnd());
+    ?>
+        <li class="li-projects">
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 56%;">
+                        <?='<a href="/project/project/'
+                                        .$projectValue->getProjectId().'" 
+                                 id="a-project-'
+                                        .$projectValue->getProjectId().'">'
+                                        . $projectValue->getProjectTitle()
+                                        .'</a>'?>
+                    </td>
+                    <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
+                        <?php
+                        echo $this->translate('PROJECT_START_DATE') . ' ';
+                        echo '<span style="color: #49A0DF">'
+                             . $startDate->toString('dd-MM-Y')
+                             . '</span>';
+                        ?>
+                    </td>
+                    <td style="width: 15%; border-left: 1px solid #ececec; padding-left: 6px;">
+                        <?php
+                        echo $this->translate('PROJECT_END_DATE') . ' ';
+                        echo '<span style="color: orange">'
+                             . $endDate->toString('dd-MM-Y')
+                             . '</span>';
+                        ?>
+                    </td>
+                    <td style="width: 4%; text-align: center;">
+                        <!--<img src="/img/state_medium.png"--> 
+                        <img src="/img/state_low.png" 
+                             alt="state low"
+                             style="width: 12px;" />
+                    </td>
+                </tr>
+            </table>
+        </li>
+    <?php
+    $i++;
+    endforeach;
+    ?>
     </ul>
 </div>

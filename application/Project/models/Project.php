@@ -10,12 +10,22 @@ class Project_Model_Project
      *
      * @var string 
      */
-    private $projectName;
+    private $projectTitle;
     /**
      *
-     * @var string 
+     * @var Zend_Date 
      */
-    private $projectManager;
+    private $projectStart;
+    /**
+     *
+     * @var Zend_Date
+     */
+    private $projectEnd;
+    /**
+     *
+     * @var int 
+     */
+    private $projectUser;
     /**
      *
      * @var string 
@@ -52,9 +62,9 @@ class Project_Model_Project
      * 
      * @return String
      */
-    public function getProjectName()
+    public function getProjectTitle()
     {
-        return $this->projectName;
+        return $this->projectTitle;
     }
     
     /**
@@ -62,29 +72,65 @@ class Project_Model_Project
      * @param String $projectName
      * @return Project_Model_Project
      */
-    public function setProjectName($projectName)
+    public function setProjectTitle($projectTitle)
     {
-        $this->projectName = $projectName;
+        $this->projectTitle = $projectTitle;
         return $this;
     }
     
     /**
      * 
-     * @return String
+     * @return string
      */
-    public function getProjectManager()
-    {
-        return $this->projectManager;
+    public function getProjectStart() {
+        return $this->projectStart;
+    }
+
+    /**
+     * 
+     * @param String $projectStart
+     * @return Project_Model_Project
+     */
+    public function setProjectStart($projectStart) {
+        $this->projectStart = new Zend_Date($projectStart);
+        return $this;
+    }
+
+    /**
+     * 
+     * @return string
+     */
+    public function getProjectEnd() {
+        return $this->projectEnd;
     }
     
     /**
      * 
-     * @param String $projectManager
+     * @param string
      * @return Project_Model_Project
      */
-    public function setProjectManager($projectManager)
+    public function setProjectEnd($projectEnd) {
+        $this->projectEnd = new Zend_Date($projectEnd);
+        return $this;
+    }
+
+        /**
+     * 
+     * @return String
+     */
+    public function getProjectUser()
     {
-        $this->projectManager = $projectManager;
+        return $this->projectUser;
+    }
+    
+    /**
+     * 
+     * @param String $projectUser
+     * @return Project_Model_Project
+     */
+    public function setProjectUser($projectUser)
+    {
+        $this->projectUser = $projectUser;
         return $this;
     }
     
@@ -130,4 +176,5 @@ class Project_Model_Project
         $this->projectMapper = $projectMapper;
         return $this;
     }
+    
 }

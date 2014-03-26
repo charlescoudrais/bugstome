@@ -5,14 +5,26 @@
     Description:
         Purpose of the stylesheet follows.
 */
+/*@import url('http://fonts.googleapis.com/css?family=Open+Sans');*/
+@font-face {
+  font-family: 'Open Sans';
+  /*font-style: normal;*/
+  /*font-weight: 400;*/
+  src: local('Open Sans'), local('OpenSans'), 
+       url(/fonts/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) 
+       format('woff');
+}
 
 body {
     color: #696969;
-    font-family: Helvetica, sans-serif;
-    font-size: 13px;
+    /*font-family: Helvetica, sans-serif;*/
+    font-family:'Open Sans', sans-serif;
+    font-size: 12px;
+    /*background-image: url(/img/bg/index.png);*/
 }
 
 #footer {
+    clear: both;
     margin-top: 20px;
     padding-top: 20px;
     background-color: #ffffff;
@@ -28,20 +40,23 @@ body {
 h1, h2, h3, h4, h5, h6 {
     padding: 6px;
 }
-h1 { font-size: 18px; }
-h2 { font-size: 16px; }
-h3 { font-size: 14px; }
+h1 { font-size: 16px; }
+h2 { font-size: 14px; }
+h3 { font-size: 13px; }
 h4 { font-size: 12px; }
 h5 { font-size: 10px; }
 h6 { font-size:  8px; }
 
+
 h3.h3-dashboard {color: #d88e30; text-align: left;}
-span.span-h1 {font-size: 20px; color: #49a0df; /* #ff9900 */}
 h3.heading {
     background-color: #ececec;
     color: #49a0df;
     border-bottom: 1px solid #ececec;
 }
+
+span.span-h1 {font-size: 20px; color: #49a0df; /* #ff9900 */}
+span.span-italic-small { font-size: 9px; color: #909090; font-style: italic; }
 
 
 /* LINKS */
@@ -51,7 +66,7 @@ a:active { color: #0066ff; }
 
 a.add-links {
     color: #49a0df ; font-weight: bold; line-height: 28px;
-    font-size: 14px; text-decoration: none;
+    font-size: 13px; text-decoration: none;
 }
 
 /* TABLE */
@@ -61,7 +76,7 @@ a.add-links {
     /*
     background-color: #49a0df;
     border-radius: 3px;
-    box-shadow: 0px 0px 2px 1px #cccccc;
+    box-shadow: 0px 0px 2px #cccccc;
     */
 }
 .td-ul-btn-add-a {
@@ -83,7 +98,7 @@ a.add-links {
     color: #ffffff;
     background-color: #49a0df;
     border-radius: 3px;
-    box-shadow: 0px 0px 4px #cccccc;
+    box-shadow: 0px 0px 2px #cccccc;
     text-decoration: none;
 }
 .button:hover {
@@ -115,9 +130,10 @@ a.add-links {
     /*vertical-align: baseline;*/
     /*background-color: #49a0df;*/
     border-radius: 3px;
-    /*box-shadow: 0px 0px 2px 1px #cccccc;*/
+    /*box-shadow: 0px 0px 2px #cccccc;*/
     border: 1px solid #ececec;
 }
+
 .article {
     /*border: 1px solid #ececec;*/
     /*padding: 6px;*/
@@ -267,11 +283,17 @@ ul.navigation>li>ul a {
     min-width: 180px;
     list-style-type: none;
 }
-.ul-balloon li {
+li.li-balloon {
     padding: 6px;
+    cursor: pointer;
+    border-bottom: 1px solid #505050;
 }
-.ul-balloon li a {
+li.li-balloon a {
     color: #00ff33;
+}
+li.li-balloon-separator {
+    padding: 6px;
+    border-bottom: none;
 }
 
 /* PAGES */
@@ -289,35 +311,35 @@ ul.navigation>li>ul a {
 }
 
 /* LISTS */
-.ul-projects, .ul-tasks, .ul-notes {
+.ul-notes {
     margin: 0;
     /*margin-left: 20px;*/
     padding: 0;
     list-style-type: none;
-    box-shadow: 0px 0px 2px 1px #cccccc;
+    box-shadow: 0px 0px 2px #cccccc;
 }
-.ul-projects li, .ul-tasks li, .ul-notes li {
+.ul-notes li {
     padding: 6px;
     height: 40px;
     border-bottom: 1px solid #ececec;
     line-height: 40px;
 }
-.ul-projects li:last-child, .ul-tasks li:last-child, .ul-notes li:last-child {
+.ul-notes li:last-child {
     padding: 6px;
     height: 40px;
     border-bottom: none;
     line-height: 40px;
 }
-.ul-projects li:hover, .ul-tasks li:hover, .ul-notes li:hover {
+.ul-notes li:hover {
     background-color: #f4f4f4;
     /*cursor: pointer;*/
 }
-.ul-projects li a, .ul-tasks li a, .ul-notes li a {
+.ul-notes li a {
     font-size: 16px;
     font-weight: bold;
     color: #49a0df;
 }
-.ul-projects li a:hover, .ul-tasks li a:hover, .ul-notes li a:hover {
+.ul-notes li a:hover {
     color: #1f6ba2;
 }
 
@@ -342,7 +364,7 @@ input[type=submit] {
     color: #ffffff;
     background-color: #49a0df;
     border-radius: 3px;
-    box-shadow: 0px 0px 4px #cccccc;
+    box-shadow: 0px 0px 2px #cccccc;
     cursor: pointer;
     border: none;
 }
@@ -396,6 +418,7 @@ dl.zend_form {
 }
 .errors {
     color: red;
+    /*z-index: 99;*/
 }
 dl.zend_form dt {
     float: left;
@@ -403,9 +426,10 @@ dl.zend_form dt {
     height: 29px;
     line-height: 28px;
     
-    color: #49a0df;
+    color: #696969;
+    /*color: #49a0df;*/
     font-size: 14px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 dl.zend_form dd {
     padding: 0px;
@@ -414,35 +438,7 @@ dl.zend_form dd {
     height: 30px;
     line-height: 28px;
 }
-#inp_task_id, #inp_project_id {
-    width: 100px;
-    padding: 0 6px;
-    text-align: center;
-}
-#inp_task_name, #inp_project_name {
-    width: 468px;
-    padding: 0 6px;
-}
-#inp_task_start_datepicker-label {
-    
-}
-#inp_task_end_datepicker-label {
-    
-}
-#inp_task_id-element,
-#inp_task_start_datepicker-element, #inp_project_start_datepicker-element {
-    float: left;
-    width: 200px;
-}
-#inp_task_start_datepicker, #inp_project_start_datepicker {
-    /*padding-left: 6px;*/
-}
-#inp_task_end_datepicker-element {
-    
-}
-#tarea_task_description-element, #tarea_project_description-element {
-    height: 100px;
-}
+
 /* .form-div-label {
      display: inline;
      height: 26px;
@@ -477,33 +473,33 @@ dl.zend_form dd {
     /*background-clip: padding-box;*/
     /*border: solid transparent;;*/
     /*border: 1px solid #ececec;*/
-    box-shadow: 0px 0px 2px 1px #cccccc;
+    box-shadow: 0px 0px 2px #cccccc;
     /*box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, .1),inset 10px 10px -10px rgba(0, 0, 0, .07);*/
 }
 #user-activity-summary {
     margin-left: 34%;
     height: 100px;
-    box-shadow: 0px 0px 2px 1px #cccccc;
+    box-shadow: 0px 0px 2px #cccccc;
 }
 
 #div-index-inbox-msg {
     float: left;
     width: 32%;
-    height: 200px;
-    box-shadow: 0px 0px 2px 1px #cccccc;
+    /*height: 200px;*/
+    box-shadow: 0px 0px 2px #cccccc;
 }
 #div-index-active-project {
     float: right;
     width: 32%;
-    height: 200px;
-    box-shadow: 0px 0px 2px 1px #cccccc;
+    /*height: 200px;*/
+    box-shadow: 0px 0px 2px #cccccc;
 }
 #div-index-active-task {
     margin-left: 34%;
     margin-right: 34%;
     width: 32%;
-    height: 200px;
-    box-shadow: 0px 0px 2px 1px #cccccc;
+    /*height: 200px;*/
+    box-shadow: 0px 0px 2px #cccccc;
 }
 .index-inbox-msg {
     padding-right: 30px;
@@ -513,7 +509,7 @@ dl.zend_form dd {
     float: left;
     width: 236px;
     margin: 0 18px 0 0px;
-    box-shadow: 0px 0px 2px 1px #cccccc;
+    box-shadow: 0px 0px 2px #cccccc;
 }
 .tb-index-bottom-links:hover {
     background-color: #f4f4f4;
@@ -529,31 +525,21 @@ dl.zend_form dd {
     text-align: left;
 }
 
-.tb-to-project-links, .tb-to-task-links {
-    /*width: 236px;*/
-    margin: 0;
-    background-color: #49a0df;
-    border-radius: 3px;
-    box-shadow: 0px 0px 2px 1px #cccccc
-}
-.tb-to-project-links:hover, .tb-to-task-links:hover {
-    background-color: #1f6ba2;
-}
-.td-to-project-link-a, .td-to-task-link-a {
-    padding: 4px 2px 4px 0px;
-    width: 30px;
-    text-align: right;
-}
-.td-to-project-link-b, .td-to-task-link-b {
-    padding: 4px 0px 4px 2px;
-    width: 100px;
-    text-align: left;
-}
+
 .article .tb-index-bottom-links:first-child {
  
 }
 .article .tb-index-bottom-links:last-child {
     margin: 0;
+}
+
+.tb-user-me, .tb-users-list {
+    
+}
+.tb-user-me td, .tb-user-me th
+.tb-users-list td, .tb-users-list th {
+    padding: 6px;
+    border: 1px solid #ececec;
 }
 
 /* POPUP */
@@ -569,7 +555,7 @@ dl.zend_form dd {
     background-color: #f5f5f5;
     /*border: 1px solid #ccc;*/
     border-radius: 0 0 3px 3px;
-    box-shadow: 0px 0px 10px 1px #000;
+    box-shadow: 0px 0px 10px #000;
     z-index: 9999;
 }
 #popup-close-btn {

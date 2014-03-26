@@ -5,13 +5,13 @@ class Project_Form_Project extends Zend_Form
     {
         $projectId          = new Zend_Form_Element_Hidden('hid_project_id');
         $projectName        = new Zend_Form_Element_Text('inp_project_name');
-//        $projectStartDate   = new Zend_Form_Element_Text(
-//                    'inp_project_start_datepicker'
-//                );
+        $projectStartDate   = new Zend_Form_Element_Text(
+                    'inp_project_start_datepicker'
+                );
         $projectEndDate     = new Zend_Form_Element_Text(
                     'inp_project_end_datepicker'
                 );
-        $projectManager     = new Zend_Form_Element_Select(
+        $projectUser        = new Zend_Form_Element_Select(
                     'sel_project_manager'
                 );
         $projectPriority    = new Zend_Form_Element_Select(
@@ -20,8 +20,13 @@ class Project_Form_Project extends Zend_Form
         $projectDescription = new Zend_Form_Element_Textarea(
                     'tarea_project_description'
                 );
+//        $projectDescription->setOptions(array('cols' => '4', 'rows' => '4'));
+                  
         $projectSubmit      = new Zend_Form_Element_Submit(
                     'submit_project_form'
+                );
+        $projectSubmitFalse = new Zend_Form_Element_Hidden(
+                    'hid_submit_false'
                 );
         
         $projectName->setRequired(true)
@@ -43,17 +48,31 @@ class Project_Form_Project extends Zend_Form
                        //array('format' => 'YYYY-MM-DD')
                        new Zend_Validate_Date('dd-mm-yy')
                     );
-//        $projectManager->setMultiOptions(array('User 1', 'User 2', 'User 3'));
-//        $projectPriority->setMultiOptions(array('Low', 'Normal', 'Urgent'));
+        
+//        $projectUser->setMultiOptions(
+//                        array(
+//                                1 => 'User 1',
+//                                2 => 'User 2',
+//                                3 => 'User 3'
+//                            )
+//                    );
+//        $projectPriority->setMultiOptions(
+//                array(
+//                    1 => 'Low',
+//                    2 => 'Normal',
+//                    3 => 'Urgent'
+//                    )
+//                );
         $projectDescription->addFilter(new Zend_Filter_StripTags());
         
         $this->addElement($projectId);
         $this->addElement($projectName);
-//        $this->addElement($projectStartDate);
+        $this->addElement($projectUser);
+        $this->addElement($projectStartDate);
         $this->addElement($projectEndDate);
-//        $this->addElement($projectManager);
 //        $this->addElement($projectPriority);
         $this->addElement($projectDescription);
+        $this->addElement($projectSubmitFalse);
         $this->addElement($projectSubmit);
       
     }
