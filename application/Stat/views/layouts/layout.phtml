@@ -1,25 +1,21 @@
-<?php
-    echo $this->doctype() . PHP_EOL;
-?>
+<?php echo $this->doctype('HTML5') ?>
 <html>
 <head>
-<?php
-    echo $this->headMeta()->setCharset('utf-8') . PHP_EOL;
-    echo $this->headTitle('Stats | BUGS ME | Créations 2C') . PHP_EOL;
-    echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
-    echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
-//    echo $this->headScript()->setFile('/js/library/prototype.js') . PHP_EOL;
-//    echo $this->headScript()->setFile('/js/prototype.class.js') . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/jquery-1.8.2.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/jquery.balloon.min.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile('/js/myJquery.js') . PHP_EOL;
-    echo $this->headScript()->setFile('/js/myd3/d3.v2.js') . PHP_EOL;
-?>
-   <style type="text/css">
+    <?php
+    $this->headMeta()->setCharset('UTF-8');
+    $this->headLink()->setStylesheet('/css/reset.css')
+                     ->appendStylesheet('/css/default.css');
+    $this->headScript()->setFile('/js/library/jquery-1.8.2.js')
+                       ->appendFile('/js/library/jquery.balloon.min.js')
+                       ->appendFile('/js/myJquery.js')
+                       ->appendFile('/js/myd3/d3.v2.js');
+    echo $this->headTitle('Stats | BUGS2ME | Créations 2C');
+    echo $this->headMeta();
+    echo $this->headLink();
+    echo $this->headStyle();
+    echo $this->headScript();
+    ?>
+    <style type="text/css">
         #div-chart-1 {
             text-align: center;
             font: 10px sans-serif;
@@ -41,6 +37,11 @@
         /*
         */
     </style>
+    <script>
+        //$(document).ready(function(){
+
+        //});
+    </script>
 </head>
 <body>
     
@@ -82,8 +83,8 @@
 
     <div id="footer">
         <p style="margin-: auto; width: 1000px;">
-             <img src="/img/icons_svg/b_c2c.svg" 
-                  alt="Une création 2C" style="width: 24px;" />
+             <img src="/img/creations2c.png" 
+                  alt="Une création 2C" style="width: 90px;" />
              &nbsp;&nbsp;
              <img src="/img/PoweredBy_ZF_4LightBG.png" 
                   alt="Powered by Zend Framework" />

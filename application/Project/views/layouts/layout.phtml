@@ -1,35 +1,29 @@
-<?php
-    echo $this->doctype() . PHP_EOL;
-?>
+<?php echo $this->doctype('HTML5') ?>
 <html>
 <head>
-<?php
-    echo $this->headMeta()->setCharset('utf-8') . PHP_EOL;
-    echo $this->headTitle('Projects | BUGS2ME | Créations 2C') . PHP_EOL;
-    echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
-    echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
-    echo $this->headLink()->setStylesheet('/css/project.css') . PHP_EOL;
-    echo $this->headLink()->setStylesheet(
-                '/css/pikaday.css'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/jquery-1.8.2.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/moment.min.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/pikaday.jquery.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/myPikaday.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/jquery.balloon.min.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile('/js/myJquery.js') . PHP_EOL;
-?>
-    
+    <?php
+    $this->headMeta()->setCharset('UTF-8');
+    $this->headLink()->setStylesheet('/css/reset.css')
+                     ->appendStylesheet('/css/default.css')
+                     ->appendStylesheet('/css/project.css')
+                     ->appendStylesheet('/css/pikaday.css');
+    $this->headScript()->setFile('/js/library/jquery-1.8.2.js')
+                       ->appendFile('/js/library/moment.min.js')
+                       ->appendFile('/js/library/pikaday.jquery.js')
+                       ->appendFile('/js/myPikaday.js')
+                       ->appendFile('/js/library/jquery.balloon.min.js')
+                       ->appendFile('/js/myJquery.js');
+    echo $this->headTitle('Projects | BUGS2ME | Créations 2C');
+    echo $this->headMeta();
+    echo $this->headLink();
+    echo $this->headStyle();
+    echo $this->headScript();
+    ?>
+    <script>
+        //$(document).ready(function(){
+
+        //});
+    </script>
 </head>
 <body>
     
@@ -69,8 +63,8 @@
 
     <div id="footer">
         <p style="margin-: auto; width: 1000px;">
-             <img src="/img/icons_svg/b_c2c.svg" 
-                  alt="Une création 2C" style="width: 24px;" />
+             <img src="/img/creations2c.png" 
+                  alt="Une création 2C" style="width: 90px;" />
              <!--<span class="span-italic-small">CharlesCoudrais</span>-->
              &nbsp;&nbsp; <!-- &copy; //-->
              <img src="/img/PoweredBy_ZF_4LightBG.png" 
