@@ -1,10 +1,10 @@
 DELIMITER $$
 
-USE `bugsme`
+USE `bugstome`
 $$
 
 -- Priorities
-INSERT INTO `bugsme`.`priorities`(
+INSERT INTO `bugstome`.`priorities`(
 	`priority_id`,
 	`priority_name`
 )
@@ -14,7 +14,7 @@ VALUES(
 )
 $$
 
-INSERT INTO `bugsme`.`priorities`(
+INSERT INTO `bugstome`.`priorities`(
 	`priority_id`,
 	`priority_name`
 )
@@ -24,7 +24,7 @@ VALUES(
 )
 $$
 
-INSERT INTO `bugsme`.`priorities`(
+INSERT INTO `bugstome`.`priorities`(
 	`priority_id`,
 	`priority_name`
 )
@@ -35,7 +35,7 @@ VALUES(
 $$
 
 -- Roles
-INSERT INTO `bugsme`.`roles`(
+INSERT INTO `bugstome`.`roles`(
 	`role_id`,
 	`role_name`
 )
@@ -45,7 +45,7 @@ VALUES(
 )
 $$
 
-INSERT INTO `bugsme`.`roles`(
+INSERT INTO `bugstome`.`roles`(
 	`role_id`,
 	`role_name`
 )
@@ -55,7 +55,7 @@ VALUES(
 )
 $$
 
-INSERT INTO `bugsme`.`roles`(
+INSERT INTO `bugstome`.`roles`(
 	`role_id`,
 	`role_name`
 )
@@ -65,7 +65,7 @@ VALUES(
 )
 $$
 
-INSERT INTO `bugsme`.`roles`(
+INSERT INTO `bugstome`.`roles`(
 	`role_id`,
 	`role_name`
 )
@@ -76,7 +76,7 @@ VALUES(
 $$
 
 -- Users
-INSERT INTO `bugsme`.`users`(
+INSERT INTO `bugstome`.`users`(
 	`user_id`,
 	`user_name`,
 	`user_password`,

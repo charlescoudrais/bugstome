@@ -14,7 +14,7 @@ define('ROOT_PATH', dirname(__DIR__));
  * Ne pas oublier de mettre le-dit framework 
  * dans le dossier library
  */
-ini_set('include_path', ROOT_PATH . '/library/');
+//ini_set('include_path', ROOT_PATH . '/library/');
 
 /*
 set_exception_handler(

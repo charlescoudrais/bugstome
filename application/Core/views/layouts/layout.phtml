@@ -1,29 +1,21 @@
-<?php
-    echo $this->doctype() . PHP_EOL;
-?>
+<?php echo $this->doctype() . PHP_EOL; ?>
 <html>
 <head>
-<?php
-    echo $this->headMeta()->setCharset('utf-8') . PHP_EOL;
+    <?php
+    $this->headMeta()->setCharset('UTF-8');
+    $this->headLink()->setStylesheet('/css/reset.css')
+                     ->appendStylesheet('/css/default.css')
+                     ->appendStylesheet('/css/smoothness/jquery-ui-1.9.1.custom.css');
+    $this->headScript()->setFile('/js/library/jquery-1.8.2.js')
+                       ->appendFile('/js/library/jquery-ui-1.9.1.custom.min.js')
+                       ->appendFile('/js/library/jquery.balloon.min.js')
+                       ->appendFile('/js/myJquery.js');
     echo $this->headTitle('BUGS ME | Créations 2C') . PHP_EOL;
-    echo $this->headLink()->setStylesheet('/css/reset.css') . PHP_EOL;
-    echo $this->headLink()->setStylesheet('/css/default.css') . PHP_EOL;
-    echo $this->headLink()->setStylesheet(
-                '/css/smoothness/jquery-ui-1.9.1.custom.css'
-            ) . PHP_EOL;
-//    echo $this->headScript()->setFile('/js/library/prototype.js') . PHP_EOL;
-//    echo $this->headScript()->setFile('/js/prototype.class.js') . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/jquery-1.8.2.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/jquery-ui-1.9.1.custom.min.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile(
-                '/js/library/jquery.balloon.min.js'
-            ) . PHP_EOL;
-    echo $this->headScript()->setFile('/js/myJquery.js') . PHP_EOL;
-?>
+    echo $this->headMeta() . PHP_EOL;
+    echo $this->headLink() . PHP_EOL;
+    echo $this->headStyle() . PHP_EOL;
+    echo $this->headScript() . PHP_EOL;
+    ?>
     
 </head>
 <body>
@@ -31,7 +23,7 @@
     <div id="header">
         <div id="header-top">
             <h1 id="sitename">
-                <a href="/index/index">BUGS ME | Créations 2C</a>
+                <a href="/index/index">BUGS2ME | Créations 2C</a>
             </h1> 
         </div>
         <div id="nav">
