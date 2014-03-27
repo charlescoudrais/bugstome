@@ -1,6 +1,21 @@
     <?php
 class IndexController extends Zend_Controller_Action
 {
+    /**
+     *
+     * @var Core_Model_User
+     */
+    private $user;
+    
+    public function init() {
+        parent::init();
+        
+        $auth       = Zend_Auth::getInstance();
+        $user       = new Core_Model_User();
+        
+        $this->user = $auth->getStorage()->read($user);
+    }
+    
     public function indexAction()
     {
         $dateArray = array(
@@ -12,10 +27,7 @@ class IndexController extends Zend_Controller_Action
             'second' => 10
         );
         
-        $auth      = Zend_Auth::getInstance();
-        $user      = new Core_Model_User();
         $lastAlert = new Task_Model_Note();
-        $thisUser  = $auth->getStorage()->read($user);
         
         $lastAlert->setNoteDate($dateArray);
         
@@ -23,9 +35,9 @@ class IndexController extends Zend_Controller_Action
         $lastEditDate  = new Zend_Date($lastAlert->getNoteDate());
         
         $this->view->pageTitle     = $this->view->translate('HOME_TITLE');
-        $this->view->userName      = ucfirst($thisUser->getName());
-        $this->view->userRole      = $thisUser->getRole()->getName();
-        $this->view->userFunction  = $thisUser->getFunction();
+        $this->view->userName      = ucfirst($this->user->getName());
+        $this->view->userRole      = $this->user->getRole()->getName();
+        $this->view->userFunction  = $this->user->getFunction();
         $this->view->lastAlertDate = $lastAlertDate->toString('dd-MM-Y H:m:s');
         $this->view->lastEditDate  = $lastEditDate->toString('dd-MM-Y H:m:s');
         $this->view->lastAlert     = 'Alert description...';

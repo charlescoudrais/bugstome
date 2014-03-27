@@ -1,6 +1,22 @@
 <?php
 class UserController extends Zend_Controller_Action
 {
+    /**
+     *
+     * @var Core_Model_User
+     */
+    private $user;
+    
+    public function init() {
+        parent::init();
+        
+        
+        $auth       = Zend_Auth::getInstance();
+        $user       = new Core_Model_User();
+        
+        $this->user = $auth->getStorage()->read($user);
+    }
+    
     public function loginAction()
     {
         $this->view->pageTitle = $this->view->translate('LOGIN_TITLE');
@@ -34,7 +50,7 @@ class UserController extends Zend_Controller_Action
     
     public function listAction()
     {
-        $user                  = new Core_Model_User();
+//        $user                  = new Core_Model_User();
         $userService           = new Core_Service_UserApi();
         $this->view->users     = $userService->fetchUsers();
         $this->view->pageTitle = $this->view->translate('USERS_TITLE');
@@ -42,12 +58,10 @@ class UserController extends Zend_Controller_Action
     
     public function meAction()
     {
-        $auth                  = Zend_Auth::getInstance();
-        $user                  = new Core_Model_User();
         $userService           = new Core_Service_UserApi();
         $this->view->pageTitle = $this->view->translate('USER_MY_TITLE');
-        $this->view->mySession = $auth->getStorage()->read($user);
-        $this->view->me        = $userService->findById($this->view->mySession);
+        $this->view->mySession = $this->user;
+        $this->view->me        = $userService->findById($this->user->getId());
     }
     
     public function userAction()

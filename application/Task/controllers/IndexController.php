@@ -2,6 +2,11 @@
 class Task_IndexController extends Zend_Controller_Action
 {
     /**
+     *
+     * @var Core_Model_User
+     */
+    private $user;
+    /**
      * @var array $notes
      */
     private $notes    = array();
@@ -26,6 +31,10 @@ class Task_IndexController extends Zend_Controller_Action
     {
         parent::init();
         
+        $auth           = Zend_Auth::getInstance();
+        $user           = new Core_Model_User();
+        
+        $this->user     = $auth->getStorage()->read($user);
         $this->tasks    = $this->_initTasks();
         $this->users    = $this->_initUsers();
         $this->notes    = $this->_initNotes();
@@ -45,8 +54,8 @@ class Task_IndexController extends Zend_Controller_Action
     
     public function taskAction()
     {
-        $auth = Zend_Auth::getInstance();
-        $user = new Core_Model_User();
+//        $auth = Zend_Auth::getInstance();
+//        $user = new Core_Model_User();
         
         $taskId        = (int) $this->getRequest()->getParam('id');
         $taskProjectId = (int) $this->getRequest()->getParam('pid');
@@ -135,8 +144,7 @@ class Task_IndexController extends Zend_Controller_Action
             
             $form->removeElement('submit_task_form');
             
-            $this->view->userRole  = $auth->getStorage()
-                                          ->read($user)
+            $this->view->userRole  = $this->user
                                           ->getRole()
                                           ->getId();
             $this->view->pageTitle = $this->view->translate('TASK') . $taskId;
@@ -305,6 +313,7 @@ class Task_IndexController extends Zend_Controller_Action
     {
 //        $this->_helper->viewRenderer->setNoRender(true);
 //        $this->_helper->layout()->disableLayout();
+        $this->redirect('/task/list');
     }
     
     private function _initLayout($path = null)

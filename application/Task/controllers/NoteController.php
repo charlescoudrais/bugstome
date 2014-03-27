@@ -1,6 +1,12 @@
 <?php
 class Task_NoteController extends Zend_Controller_Action
 {
+    /**
+     *
+     * @var Core_Model_User
+     */
+    private $user;
+    
     private $notes = array(
         1 => 'Note 1',
         2 => 'Note 2',
@@ -16,10 +22,14 @@ class Task_NoteController extends Zend_Controller_Action
     {
         $this->_initLayout();
         
-        $noteId = (int) $this->getRequest()->getParam('id');
-        $taskId = (int) $this->getRequest()->getParam('tid');
-        $this->view->noteId = $noteId;
-        $this->view->taskId = $taskId;
+        $auth                  = Zend_Auth::getInstance();
+        $user                  = new Core_Model_User();
+        $noteId                = (int) $this->getRequest()->getParam('id');
+        $taskId                = (int) $this->getRequest()->getParam('tid');
+        
+        $this->user            = $auth->getStorage()->read($user);
+        $this->view->noteId    = $noteId;
+        $this->view->taskId    = $taskId;
         $this->view->pageTitle = $this->view->translate('NOTE_NOTE_TITLE');
         
         if ($taskId === 0) {

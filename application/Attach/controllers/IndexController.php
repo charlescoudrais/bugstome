@@ -1,5 +1,5 @@
 <?php
-class Notify_AlertController extends Zend_Controller_Action
+class Attach_IndexController extends Zend_Controller_Action
 {
     private $user;
     
@@ -13,6 +13,6 @@ class Notify_AlertController extends Zend_Controller_Action
     
     public function indexAction()
     {
-        $this->view->pageTitle = 'BUGS2ME | Alert | index';
+        
     }
 }

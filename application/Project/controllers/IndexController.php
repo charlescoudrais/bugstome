@@ -3,6 +3,12 @@ class Project_IndexController extends Zend_Controller_Action
 {
     /**
      *
+     * @var Core_Model_User
+     */
+    private $user;
+    
+    /**
+     *
      * @var array
      */
     private $users = array();
@@ -32,6 +38,10 @@ class Project_IndexController extends Zend_Controller_Action
     {
         parent::init();
         
+        $auth            = Zend_Auth::getInstance();
+        $user            = new Core_Model_User();
+        
+        $this->user      = $auth->getStorage()->read($user);
         $this->projectId = ($this->getRequest()->getParam('id')) 
                             ? (int) $this->getRequest()->getParam('id')
                             : null;
@@ -127,10 +137,7 @@ class Project_IndexController extends Zend_Controller_Action
             }
         }
         
-        $this->view->userRole    = $auth->getStorage()
-                                        ->read($user)
-                                        ->getRole()
-                                        ->getId();
+        $this->view->userRole    = $this->user->getRole()->getId();
         $this->view->projectId   = $this->projectId;
         $this->view->formProject = $form;
         
@@ -139,7 +146,6 @@ class Project_IndexController extends Zend_Controller_Action
     
     public function modifyAction()
     {
-        $auth         = Zend_Auth::getInstance();
         $project      = new Project_Model_Project();
         $form         = new Project_Form_Project();
         $thisProject  = $project->getProjectMapper()->find($this->projectId);
@@ -189,9 +195,6 @@ class Project_IndexController extends Zend_Controller_Action
     
     public function createAction()
     {
-        $auth         = Zend_Auth::getInstance();
-        $user         = new Core_Model_User();
-        
         $project      = new Project_Model_Project();
         $task         = new Task_Model_Task();
         $form         = new Project_Form_Project();
