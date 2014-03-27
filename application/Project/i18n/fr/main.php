@@ -18,7 +18,7 @@ return array(
     'HELP_PROJECT'         => 'Aide',
     'ALERT_PROJECT'        => 'Ajouter une alerte',
     'ATTACH_A_DOCUMENT'    => 'Joindre un document',
-    'MODIFY_PROJECT'       => 'Éditer la projet',
+    'MODIFY_PROJECT'       => 'Éditer ce projet',
     
 // FORMS
     'PROJECT_NAME'         => 'Titre :',
