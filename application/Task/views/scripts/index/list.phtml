@@ -1,6 +1,3 @@
-<?php
-
-?>
 <br />
 <?php foreach ($this->projects as $project) : ?>
 <div class="article" style="margin-bottom: 20px;">
@@ -9,6 +6,7 @@
            <table style="padding: 0px; margin: 0px; width: 100%;">
                 <tr>
                     <td style="width: 83%; text-align: left; vertical-align: bottom;">
+                        <h3>
                         <a href="/project/project/<?= $project->getProjectId() ?>"
                            style="text-decoration: none;">
                             (#<?= $project->getProjectId() ?>)&nbsp;    
@@ -19,6 +17,7 @@
                                         : $project->getProjectTitle();
                             ?>
                         </a>
+                        </h3>
                     </td>
                     <td> <!-- style="padding: 0px;"-->
                         <table class="tb-to-task-links"> <!--  style="padding: 0px; width: 100%;"-->
@@ -43,7 +42,7 @@
         </li>
     <?php 
     foreach ($this->tasks as $task) :
-        if ($task->getTaskProject() == $project->getProjectId()) :
+        if ($task->getTaskProject()->getProjectId() == $project->getProjectId()) :
         ?>
         <li class="li-tasks">
             <table style="width: 100%">

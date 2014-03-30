@@ -1,34 +1,34 @@
+<table style="padding: 0px; margin: 0px; width: 100%;">
+    <tr>
+        <td style="width: 83%; padding: 6px 6px 6px 40px;">
 
+        </td>
+        <td> <!-- style="padding: 0px;"-->
+            <table class="tb-to-project-links"><!--  style="padding: 0px; width: 100%;"-->
+                 <tr>
+                     <td class="td-to-project-link-a">
+                         <img src="/img/icons_svg/w_folder_icon.svg"
+                              style="height: 24px;"  />
+                     </td>
+                     <td class="td-to-project-link-b" 
+                         style="font-size: 12px;">
+                         <a class="create"
+                            href="/project/create" 
+                            style="color: #ffffff; font-size: 12px;">
+                             <?=$this->translate('CREATE_NEW_PROJECT');?>
+                         </a>
+                     </td>
+                 </tr>
+             </table>
+        </td>
+    </tr>
+</table>
 <br />
 <div class="article article-projects">
     <ul class="ul-projects">
-        <li class="li-noprojects" style="padding: 0px; line-height: 24px;">
-           <table style="padding: 0px; margin: 0px; width: 100%;">
-                <tr>
-                    <td style="width: 83%; padding: 6px 6px 6px 40px;">
-                        
-                    </td>
-                    <td> <!-- style="padding: 0px;"-->
-                        <table class="tb-to-project-links"><!--  style="padding: 0px; width: 100%;"-->
-                             <tr>
-                                 <td class="td-to-project-link-a">
-                                     <img src="/img/icons_svg/w_folder_icon.svg"
-                                          style="height: 24px;"  />
-                                 </td>
-                                 <td class="td-to-project-link-b" 
-                                     style="font-size: 12px;">
-                                     <a class="create"
-                                        href="/project/create" 
-                                        style="color: #ffffff; font-size: 12px;">
-                                         <?=$this->translate('CREATE_NEW_PROJECT');?>
-                                     </a>
-                                 </td>
-                             </tr>
-                         </table>
-                    </td>
-                </tr>
-            </table> 
-        </li>
+<!--        <li class="li-noprojects" style="padding: 0px; line-height: 24px;">
+            
+        </li>-->
     <?php
         $i = 0;
         foreach ($this->projects as $projectValue) :
