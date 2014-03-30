@@ -50,7 +50,6 @@ class Project_IndexController extends Zend_Controller_Action
         $this->tasks     = $this->_initTasks($this->projectId);
         
         $this->_initLayout();
-        
     }
     
     
@@ -92,7 +91,7 @@ class Project_IndexController extends Zend_Controller_Action
                     );
             $form->setDefault(
                         'sel_project_manager',
-                        $thisProject->getProjectUser()
+                        $thisProject->getProjectUser()->getId()
                     );
             $form->setDefault(
                         'tarea_project_description',
@@ -167,7 +166,7 @@ class Project_IndexController extends Zend_Controller_Action
                 );
         $form->setDefault(
                     'sel_project_manager',
-                    '1'
+                    $this->getProjectUser()->getId()
                 );
         $form->setDefault(
                     'tarea_project_description',
@@ -252,7 +251,8 @@ class Project_IndexController extends Zend_Controller_Action
     private function _initProjects()
     {
         $project             = new Project_Model_Project();
-        $projectCollection   = $project->getProjectMapper()->fetchAll();
+        $projectCollection   = $project->getProjectMapper()
+                                       ->fetchAll("user_id = " . $this->user->getId());
         
         return $projectCollection;
     }
@@ -262,7 +262,7 @@ class Project_IndexController extends Zend_Controller_Action
         $sql = (NULL !== $projectId) ? "project_id = ". $projectId : "1 = 1";
         $task           = new Task_Model_Task();
         $taskCollection = $task->getTaskMapper()->fetchAll($sql);
-        
+//        var_dump($taskCollection);
         return $taskCollection;
     }
     

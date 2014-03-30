@@ -60,12 +60,13 @@ if ($this->projectId === 0) {
         <ul class="ul-project-tasks">
             <?php
             if ($this->tasks) :
-                $taskValue = new Task_Model_Task();
+                //$taskValue = new Task_Model_Task();
                 //*
                 foreach ($this->tasks as $task) :
             ?>
                 <li class="li-project-task">
-                    <a href="/task/<?= $task->getTaskProject() . '/'
+                    <a href="/task/<?= $task->getTaskProject()->getProjectId() 
+                                     . '/'
                                      . $task->getTaskId(); ?>">
                         <?= $task->getTaskName(); ?>
                     </a>

@@ -53,7 +53,9 @@ $this->formTask->submit_task_form
     <div><?= $this->formTask; ?></div>
     
 </div>
-
+<div>
+    <h1><?php echo $this->projectId; ?></h1>
+</div>
 <!-- MENU //-->
 <div class="article-btn">
     <ul class="ul-btn-add">
@@ -63,10 +65,10 @@ $this->formTask->submit_task_form
         //@TODO : Tempory treatment, refactor, move...
         $disabledNote = ($this->taskId === 0)
             ? 'javascript: var i = 0; return false;' 
-            : '/note/'.$this->taskId.'/0';
+            : '/note/' . $this->projectId . '/' . $this->taskId;
         $disabledAttach = ($this->taskId === 0)
             ? 'javascript: var i = 0; return false;' 
-            : '/attach/file/'.$this->taskId.'/0';
+            : '/attach/file/' . $this->projectId . '/' . $this->taskId . '/0';
         ?>
         <li>
             <table class="table-ul-btn-add">

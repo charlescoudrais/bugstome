@@ -1,5 +1,5 @@
 <?php
-class Core_Model_Mapper_Pririty
+class Core_Model_Mapper_Priority
 {
     private $dbTable;
     
@@ -19,11 +19,11 @@ class Core_Model_Mapper_Pririty
         if (0 === count($rowSet)) {
             return false;
         }
-        $users = array();
+        $priorities = array();
         foreach ($rowSet as $row) {
-             $users[] = $this->rowToObject($row);
+             $priorities[] = $this->rowToObject($row);
         }
-        return $users;
+        return $priorities;
     }    
     
  

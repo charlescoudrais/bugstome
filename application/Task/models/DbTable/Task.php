@@ -32,7 +32,7 @@ class Task_Model_DbTable_Task extends Zend_Db_Table_Abstract
             ), 
             'dependentTable' => array(
                 //'Task_Model_DbTable_Task',
-                'Task_Model_DbTable_Note',
+//                'Task_Model_DbTable_Note',
             )
         );
         

@@ -1,4 +1,4 @@
-<?php
+    <?php
 class Task_IndexController extends Zend_Controller_Action
 {
     /**
@@ -46,8 +46,8 @@ class Task_IndexController extends Zend_Controller_Action
     
     public function listAction()
     {
-        $this->view->tasks = $this->tasks;
-        $this->view->projects = $this->projects;
+        $this->view->tasks     = $this->tasks;
+        $this->view->projects  = $this->projects;
         $this->view->pageTitle = $this->view->translate('TASKS_TITLE');
         
     }
@@ -128,11 +128,11 @@ class Task_IndexController extends Zend_Controller_Action
                     );
 //            $form->setDefault(
 //                        'sel_task_project',
-//                        $taskProjectId - 1
+//                        $thisTask->getTaskProject()->getProjectId()
 //                    );
             $form->setDefault(
                         'sel_task_manager',
-                        $thisTask->getTaskManager()
+                        $thisTask->getTaskManager()->getId()
                     );
             $form->setDefault(
                         'tarea_task_description',
@@ -156,8 +156,8 @@ class Task_IndexController extends Zend_Controller_Action
         
         
         
-        $this->view->taskId    = $taskId;
-        //$this->view->projectId = $hisProject;
+        $this->view->taskId    = $thisTask->getTaskId();
+        $this->view->projectId = $thisTask->getTaskProject()->getProjectId();
         $this->view->formTask  = $form;
         
     }
@@ -165,8 +165,8 @@ class Task_IndexController extends Zend_Controller_Action
     
     public function createAction()
     {
-        $auth = Zend_Auth::getInstance();
-        $user = new Core_Model_User();
+//        $auth = Zend_Auth::getInstance();
+//        $user = new Core_Model_User();
         
         $task          = new Task_Model_Task();
         $form          = new Task_Form_Task();
@@ -234,8 +234,6 @@ class Task_IndexController extends Zend_Controller_Action
     
     public function modifyAction()
     {
-        $auth          = Zend_Auth::getInstance();
-        $user          = new Core_Model_User();
         $taskModel     = new Task_Model_Task();
         $form          = new Task_Form_Task();
         $time1         = new Zend_Date();
@@ -260,8 +258,8 @@ class Task_IndexController extends Zend_Controller_Action
             $users[$user->getId()] = $user->getName();
         }
         
-        $form->setAction('')
-             ->setMethod('post');
+        $form->setAction('')->setMethod('post');
+        
         if ($this->getRequest()->isPost()) {
             if ($form->isValid($this->getRequest()->getPost())) {
 
@@ -276,7 +274,7 @@ class Task_IndexController extends Zend_Controller_Action
 
         $form->setDefault(
                     'inp_task_name',
-                    $taskModel->getTaskName()
+                    $task->getTaskName()
                 );
         $form->setDefault(
                     'inp_task_id',
@@ -288,19 +286,18 @@ class Task_IndexController extends Zend_Controller_Action
 //                );
         $form->setDefault(
                     'sel_task_priority',
-                    $taskModel->getTaskPriority()
+                    $task->getTaskPriority()->getId()
                 );
         $form->setDefault(
                     'sel_task_manager',
-                    '1'
+                    $task->getTaskManager()->getId()
                 );
         $form->setDefault(
                     'tarea_task_description',
                     ''
                 );
         
-        $this->view->userRole  = $auth->getStorage()
-                                      ->read($user)
+        $this->view->userRole  = $this->user
                                       ->getRole()
                                       ->getId();
         $this->view->pageTitle = $this->view->translate('TASK') . $taskId;

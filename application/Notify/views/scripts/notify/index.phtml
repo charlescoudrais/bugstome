@@ -1,0 +1,25 @@
+<h2><?php echo $this->pageTitle; ?></h2>
+<h3>Projects</h3>
+<div>
+    <?php
+    $project = new Project_Model_Project();
+    foreach ($this->projects as $project) :
+        echo $project->getProjectTitle() 
+            . ' | ' 
+            . $project->getProjectUser()->getName();
+        echo '<hr />';
+    endforeach;
+    ?>
+</div>
+<h3>Tasks</h3>
+<div>
+    <?php
+//    $task = new Task_Model_Task();
+    foreach ($this->tasks as $task) :
+        echo $task->getTaskName() 
+            . ' | ' 
+            . $task->getTaskManager()->getName();
+        echo '<hr />';
+    endforeach;
+    ?>
+</div>

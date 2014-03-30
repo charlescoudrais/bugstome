@@ -45,6 +45,9 @@ class Task_Model_Mapper_Task
     public function save($task)
     {
         $row = $this->objectToRow($task);
+        unset($row['project']);
+        unset($row['user']);
+        unset($row['priority']);
         
         if (0 === (int) $task->getId()) {
             unset($row['task_id']);
@@ -69,31 +72,53 @@ class Task_Model_Mapper_Task
     
     public function objectToRow($task)
     {
+        
         return array( 
             'task_id'          => $task->getTaskId(),
             'task_label'       => $task->getTaskName(),
             'task_start'       => $task->getTaskStart(),
             'task_end'         => $task->getTaskEnd(),
             'task_description' => $task->getTaskDescription(),
-            'user_id'          => $task->getTaskManager(),
-            'priority_id'      => $task->getTaskPriority(),
-            'project_id'       => $task->getTaskProject(),
+            'user_id'          => $task->getTaskManager()->getId(),
+            'priority_id'      => $task->getTaskPriority()->getId(),
+            'project_id'       => $task->getTaskProject()->getProjectId(),
         );
     }
     
     public function rowToObject($row)
     {
+        $userRow    = $row->findParentRow(
+                            'Core_Model_DbTable_User',
+                            'User'
+                        );
+        $userMapper = new Core_Model_Mapper_User();
+        $user       = $userMapper->rowToObject($userRow);
+        
+        $projectRow    = $row->findParentRow(
+                            'Project_Model_DbTable_Project',
+                            'Project'
+                        );
+        $projectMapper = new Project_Model_Mapper_Project();
+//        $project       = $projectMapper->rowToObject($projectRow);
+        $project = $projectMapper->find($row->project_id);
+        
+        $priorityRow    = $row->findParentRow(
+                            'Core_Model_DbTable_Priority',
+                            'Priority'
+                        );
+        $priorityMapper = new Core_Model_Mapper_Priority();
+        $priority       = $priorityMapper->rowToObject($priorityRow);
          
-         $task = new Task_Model_Task();
-         $task->setTaskId($row->task_id)
-              ->setTaskName($row->task_label)
-              ->setTaskStart($row->task_start)
-              ->setTaskEnd($row->task_end)
-              ->setTaskDescription($row->task_description)
-              ->setTaskManager($row->user_id)
-              ->setTaskPriority($row->priority_id)
-              ->setTaskProject($row->project_id);
-         return $task;
+        $task = new Task_Model_Task();
+        $task->setTaskId($row->task_id)
+             ->setTaskName($row->task_label)
+             ->setTaskStart($row->task_start)
+             ->setTaskEnd($row->task_end)
+             ->setTaskDescription($row->task_description)
+             ->setTaskManager($user)
+             ->setTaskPriority($priority)
+             ->setTaskProject($project);
+        return $task;
     }
     
     public function getDbTable()

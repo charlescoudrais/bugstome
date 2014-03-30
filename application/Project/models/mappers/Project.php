@@ -49,6 +49,8 @@ class Project_Model_Mapper_Project
     public function save($project)
     {
         $row = $this->objectToRow($project);
+        unset($row['priority']);
+        unset($row['user']);
         
         if (0 === (int) $project->getId()) {
             unset($row['project_id']);
@@ -79,21 +81,36 @@ class Project_Model_Mapper_Project
             'project_start'       => $project->getProjectStart(),
             'project_end'         => $project->getProjectEnd(),
             'project_description' => $project->getProjectDescription(),
-            'user_id'             => $project->getProjectUser(),
+            'user_id'             => $project->getProjectUser()->getId(),
+            'priority_id'         => $project->getProjectPriority()->getId(),
         );
     }
     
     public function rowToObject($row)
     {
-         
-         $project = new Project_Model_Project();
-         $project->setProjectId($row->project_id)
-                 ->setProjectTitle($row->project_title)
-                 ->setProjectStart($row->project_start)
-                 ->setProjectEnd($row->project_end)
-                 ->setProjectDescription($row->project_description)
-                 ->setProjectUser($row->user_id);
-         return $project;
+        $userRow    = $row->findParentRow(
+                            'Core_Model_DbTable_User',
+                            'User'
+                        );
+        $userMapper = new Core_Model_Mapper_User();
+        $user       = $userMapper->rowToObject($userRow);
+        
+        $priorityRow    = $row->findParentRow(
+                            'Core_Model_DbTable_Priority',
+                            'Priority'
+                        );
+        $priorityMapper = new Core_Model_Mapper_Priority();
+        $priority       = $priorityMapper->rowToObject($priorityRow);
+        
+        $project = new Project_Model_Project();
+        $project->setProjectId($row->project_id)
+                ->setProjectTitle($row->project_title)
+                ->setProjectStart($row->project_start)
+                ->setProjectEnd($row->project_end)
+                ->setProjectDescription($row->project_description)
+                ->setProjectUser($user)
+                ->setProjectPriority($priority);
+        return $project;
     }
     
     public function getDbTable()

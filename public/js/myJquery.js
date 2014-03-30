@@ -19,7 +19,7 @@ $(document).ready(function(){
             border: '3px solid #efefef',
             borderRadius: '1px',
             boxShadow: "0px 0px 2px 0px #606060",
-            opacity: 0.9
+            opacity: 1
         },
         contents: '<ul class="ul-balloon">'
                     + '<li class="li-balloon">'

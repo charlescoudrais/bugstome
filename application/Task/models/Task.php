@@ -23,19 +23,34 @@ class Task_Model_Task
     private $taskEnd;
     /**
      *
-     * @var int 
+     * @var Core_Model_User 
      */
     private $taskManager;
     /**
      *
      * @var int 
      */
+    private $taskManagerId;
+    /**
+     *
+     * @var Core_Model_Priority 
+     */
     private $taskPriority;
     /**
      *
      * @var int 
      */
+    private $taskPriorityId;
+    /**
+     *
+     * @var Project_Model_Project 
+     */
     private $taskProject;
+    /**
+     *
+     * @var int 
+     */
+    private $taskProjectId;
     /**
      *
      * @var string 
@@ -113,7 +128,7 @@ class Task_Model_Task
     
     /**
      * 
-     * @return int
+     * @return Core_Model_User
      */
     public function getTaskManager()
     {
@@ -122,12 +137,27 @@ class Task_Model_Task
     
     /**
      * 
-     * @param int $taskManager
+     * @return int
+     */
+    public function getTaskManagerId()
+    {
+        return $this->taskManagerId;
+    }
+    
+    /**
+     * 
+     * @param Core_Model_User $taskManager
      * @return Task_Model_Task
      */
-    public function setTaskManager($taskManager)
+    public function setTaskManager(Core_Model_User $taskManager)
     {
         $this->taskManager = $taskManager;
+        return $this;
+    }
+    
+    public function setTaskManagerId($id)
+    {
+        $this->taskManagerId = $id;
         return $this;
     }
     
@@ -153,25 +183,34 @@ class Task_Model_Task
     
     /**
      * 
-     * @return int
+     * @return Core_Model_Priority
      */
     public function getTaskPriority() {
         return $this->taskPriority;
     }
     
+    public function getTaskPriorityId() {
+        return $this->taskPriorityId;
+    }
+    
     /**
      * 
-     * @param int $taskPriority
+     * @param Core_Model_Priority $taskPriority
      * @return Task_Model_Task
      */
-    public function setTaskPriority($taskPriority) {
+    public function setTaskPriority(Core_Model_Priority $taskPriority) {
         $this->taskPriority = $taskPriority;
+        return $this;
+    }
+    
+    public function setTaskPriorityId($id) {
+        $this->taskPriorityId = $id;
         return $this;
     }
     
     /**
      * 
-     * @return int
+     * @return Project_Model_Project
      */
     public function getTaskProject()
     {
@@ -180,12 +219,18 @@ class Task_Model_Task
     
     /**
      * 
-     * @param int $taskProject
+     * @param Project_Model_Project $taskProject
      * @return Task_Model_Task
      */
-    public function setTaskProject($taskProject)
+    public function setTaskProject(Project_Model_Project $taskProject)
     {
         $this->taskProject = $taskProject;
+        return $this;
+    }
+    
+    public function setTaskProjectId($id)
+    {
+        $this->taskProjectId = $id;
         return $this;
     }
     

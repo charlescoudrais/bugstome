@@ -18,8 +18,8 @@ class Core_Model_DbTable_User extends Zend_Db_Table_Abstract
                  )
             ), 
             'dependentTable' => array(
-                'Task_Model_DbTable_Task',
-                'Task_Model_DbTable_Note'
+//                'Task_Model_DbTable_Task',
+//                'Task_Model_DbTable_Note'
             )
         );
         

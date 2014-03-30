@@ -8,7 +8,7 @@ class Core_Model_DbTable_Priority extends Zend_Db_Table_Abstract
             'primary' => 'priority_id', 
             'referenceMap' => array(),
             'dependentTable' => array(
-                'Task_Model_DbTable_Task'
+                //'Task_Model_DbTable_Task'
             )
         );
         
