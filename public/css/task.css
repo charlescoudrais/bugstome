@@ -122,6 +122,63 @@ h2.h2-task-notes {
     text-align: left;
 }
 
+
+.tb-tasks-header a {
+    font-size: 12px;
+    font-weight: 400;
+    color: #D88E30;
+    text-decoration: none;
+}
+.tb-tasks-header a:hover {
+    color: #b96b08;
+}
+
+.tb-tasks {
+    width: 100%;
+    margin-top: 20px;
+}
+.tb-tasks tr {
+    
+}
+.tb-tasks tr:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+.tb-tasks tr:first-child:hover {
+    background-color: transparent;
+    cursor: default;
+}
+.tb-tasks th {
+    padding: 6px;
+    text-align: left;
+    border-left: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.tb-tasks th:first-child {
+    border-left: none;
+}
+.tb-tasks th:last-child {
+    
+}
+.tb-tasks td {
+    height: 30px;
+    padding: 6px;
+    border-left: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.tb-tasks a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #49a0df;
+    text-decoration: none;
+}
+.tb-tasks td:first-child {
+    border-left: none;
+}
+.tb-tasks td:last-child {
+    
+}
+
 /* FORM */
 #inp_task_id {
     width: 100px;

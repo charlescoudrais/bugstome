@@ -18,16 +18,21 @@ class Task_NoteController extends Zend_Controller_Action
         3 => 'Task 3'
     );
     
+    public function init()
+    {
+        parent::init();
+        
+        $auth           = Zend_Auth::getInstance();
+        $user           = new Core_Model_User();
+        
+        $this->user     = $auth->getStorage()->read($user);
+        $this->_initLayout();
+    }
+    
     public function noteAction()
     {
-        $this->_initLayout();
-        
-        $auth                  = Zend_Auth::getInstance();
-        $user                  = new Core_Model_User();
         $noteId                = (int) $this->getRequest()->getParam('id');
         $taskId                = (int) $this->getRequest()->getParam('tid');
-        
-        $this->user            = $auth->getStorage()->read($user);
         $this->view->noteId    = $noteId;
         $this->view->taskId    = $taskId;
         $this->view->pageTitle = $this->view->translate('NOTE_NOTE_TITLE');
@@ -40,8 +45,6 @@ class Task_NoteController extends Zend_Controller_Action
     
     public function listAction()
     {
-        $this->_initLayout();
-        
         $this->view->pageTitle = $this->view->translate('NOTE_LIST_TITLE');
         
         $this->view->notes = $this->notes;

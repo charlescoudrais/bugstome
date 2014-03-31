@@ -166,7 +166,7 @@ class Project_IndexController extends Zend_Controller_Action
                 );
         $form->setDefault(
                     'sel_project_manager',
-                    $this->getProjectUser()->getId()
+                    $thisProject->getProjectUser()->getId()
                 );
         $form->setDefault(
                     'tarea_project_description',

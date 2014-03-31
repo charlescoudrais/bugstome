@@ -144,3 +144,61 @@ h2.h2-project-tasks {
 .ul-projects li.li-noprojects:hover {
     background-color: none;
 }
+
+
+
+.tb-projects-header a {
+    font-size: 12px;
+    font-weight: 400;
+    color: #D88E30;
+    text-decoration: none;
+}
+.tb-projects-header a:hover {
+    color: #b96b08;
+}
+
+.tb-projects {
+    width: 100%;
+    margin-top: 20px;
+}
+.tb-projects tr {
+    
+}
+.tb-projects tr:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+.tb-projects tr:first-child:hover {
+    background-color: transparent;
+    cursor: default;
+}
+.tb-projects th {
+    padding: 6px;
+    text-align: left;
+    border-left: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.tb-projects th:first-child {
+    border-left: none;
+}
+.tb-projects th:last-child {
+    
+}
+.tb-projects td {
+    height: 30px;
+    padding: 6px;
+    border-left: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.tb-projects a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #49a0df;
+    text-decoration: none;
+}
+.tb-projects td:first-child {
+    border-left: none;
+}
+.tb-projects td:last-child {
+    
+}
