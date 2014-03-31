@@ -81,19 +81,15 @@ foreach ($this->projects as $project) :
             <?php
             date_default_timezone_set('Europe/Paris');
             Zend_Date::setOptions(array('format_type' => 'php'));
-//            $dateNow = Zend_Date::now("fr");
-            $dateNow = new Zend_date("fr");
-//            if ($dateNow->compare($endDate->getDayOfYear(), $dateNow->getDayOfYear()) == 1) {
-            if ($dateNow->compare($endDate, $dateNow) == 1) {
+            
+            if ($endDate->compare(new Zend_date("fr")) == -1) {
                 $imgStatus = "state_high";
             } else {
                 $imgStatus = "state_low";
             }
-//            echo (1 == 1) ? "state_low" : "state_high";
             ?>
             <img src="/img/<?php echo $imgStatus ?>.png"
-                 alt="state low"
-                 title="<?php echo $endDate . ' | ' . $dateNow ?>"
+                 alt="<?php echo $imgStatus ?>"
                  style="width: 12px;" />
         </td>
     </tr>

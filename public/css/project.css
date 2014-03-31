@@ -196,6 +196,9 @@ h2.h2-project-tasks {
     color: #49a0df;
     text-decoration: none;
 }
+.tb-projects a:hover {
+    /*color: red;*/
+}
 .tb-projects td:first-child {
     border-left: none;
 }

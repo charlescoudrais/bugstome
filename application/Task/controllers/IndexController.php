@@ -68,7 +68,7 @@ class Task_IndexController extends Zend_Controller_Action
         $timeElapsed   = $time1->compare($time2);
         $lastInsertId  = $task->getTaskMapper()->lastInsertId();
         
-        $projects = array();
+        $projects = array('--');
         foreach ($this->projects as $project) {
             $projects[$project->getProjectId()] = '#'. $project->getProjectId()
                                                   . ' ' 
@@ -126,10 +126,11 @@ class Task_IndexController extends Zend_Controller_Action
                         $thisTask->getTaskEnd()
                                  ->toString('dd-MM-Y H:m:s')
                     );
-//            $form->setDefault(
-//                        'sel_task_project',
-//                        $thisTask->getTaskProject()->getProjectId()
-//                    );
+            $form->setDefault(
+                'sel_task_project',
+//                $taskProjectId - 1
+                $thisTask->getTaskProject()->getProjectId()
+            );
             $form->setDefault(
                         'sel_task_manager',
                         $thisTask->getTaskManager()->getId()
@@ -176,7 +177,7 @@ class Task_IndexController extends Zend_Controller_Action
         $startDate     = new Zend_Date();
         $endDate       = new Zend_Date();
         
-        $projects = array();
+        $projects = array('--');
         foreach ($this->projects as $project) {
             $projects[$project->getProjectId()] = '#'. $project->getProjectId()
                                                   . ' ' 
@@ -207,7 +208,7 @@ class Task_IndexController extends Zend_Controller_Action
                 );
         $form->setDefault(
                     'sel_task_project',
-                    ($hisProjectID !== '0') ? $hisProjectID : ''
+                    ($hisProjectID !== '0') ? $hisProjectID : 0
                 );
         $form->setDefault(
                     'inp_task_start_datepicker',
@@ -249,7 +250,7 @@ class Task_IndexController extends Zend_Controller_Action
         $thisProject = $project->getProjectMapper()->find($hisProject);
         $startDate   = new Zend_Date();
         $endDate     = $thisProject->getProjectEnd();
-        $projects = array();
+        $projects = array('--');
         foreach ($this->projects as $project) {
             $projects[$project->getProjectId()] = $project->getProjectTitle();
         }
@@ -280,10 +281,11 @@ class Task_IndexController extends Zend_Controller_Action
                     'inp_task_id',
                     '#' . $taskId
                 );
-//        $form->setDefault(
-//                    'sel_task_project',
+        $form->setDefault(
+                    'sel_task_project',
 //                    $taskProjectId - 1
-//                );
+                    $task->getTaskProject()->getProjectId()
+                );
         $form->setDefault(
                     'sel_task_priority',
                     $task->getTaskPriority()->getId()
