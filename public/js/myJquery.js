@@ -126,7 +126,8 @@ $(document).ready(function(){
     $(".td-index-bottom-link-a, .td-index-bottom-link-b ,"
         + ".td-to-project-link-a, .td-to-project-link-b, "
         + ".td-to-task-link-a, .td-to-task-link-b, "
-        + ".li-tasks, .li-projects"
+        + ".li-tasks, .li-projects,"
+        + ".tb-tasks tr, .tb-projects tr"
     ).each( function() {
        $(this).on('mouseover', function() {
            $(this).css({
