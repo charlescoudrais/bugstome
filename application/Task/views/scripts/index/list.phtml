@@ -84,7 +84,12 @@ foreach ($this->tasks as $task) :
             ?>
         </td>
         <td style="width: 10%;">
-            
+            <?php
+//            echo $this->translate('TASK_END_DATE') . ' ';
+            echo '<span style="color: #49A0DF">'
+                 . $task->getTaskEnd()->toString('dd-MM-Y')
+                 . '</span>';
+            ?>
         </td>
     </tr>
     <?php

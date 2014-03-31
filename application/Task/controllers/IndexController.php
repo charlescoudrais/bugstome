@@ -207,7 +207,7 @@ class Task_IndexController extends Zend_Controller_Action
                 );
         $form->setDefault(
                     'sel_task_project',
-                    ($hisProjectID !== 0) ? $hisProjectID : ''
+                    ($hisProjectID !== '0') ? $hisProjectID : ''
                 );
         $form->setDefault(
                     'inp_task_start_datepicker',

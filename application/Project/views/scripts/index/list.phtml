@@ -26,7 +26,7 @@
                      <td class="td-to-project-link-b" 
                          style="font-size: 12px;">
                          <a class="create"
-                            href="/project/create/0" 
+                            href="/project/create" 
                             style="color: #ffffff; font-size: 12px;">
                              <?=$this->translate('CREATE_NEW_PROJECT');?>
                          </a>
@@ -83,7 +83,8 @@ foreach ($this->projects as $project) :
             Zend_Date::setOptions(array('format_type' => 'php'));
 //            $dateNow = Zend_Date::now("fr");
             $dateNow = new Zend_date("fr");
-            if ($dateNow->compare($endDate->getDayOfYear(), $dateNow->getDayOfYear()) == 1) {
+//            if ($dateNow->compare($endDate->getDayOfYear(), $dateNow->getDayOfYear()) == 1) {
+            if ($dateNow->compare($endDate, $dateNow) == 1) {
                 $imgStatus = "state_high";
             } else {
                 $imgStatus = "state_low";
@@ -92,12 +93,11 @@ foreach ($this->projects as $project) :
             ?>
             <img src="/img/<?php echo $imgStatus ?>.png"
                  alt="state low"
-                 title="<?php echo $endDate->getDayOfYear(). ' | ' .$dateNow->getDayOfYear() ?>"
+                 title="<?php echo $endDate . ' | ' . $dateNow ?>"
                  style="width: 12px;" />
         </td>
     </tr>
     <?php
-//    endif;
 endforeach;
 ?>
 </table>
