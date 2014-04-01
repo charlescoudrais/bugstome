@@ -33,10 +33,9 @@ $(document).ready(function() {
         firstDay: 1,
 //        format: 'DD-MM-YYYY HH:mm:ss',
         format: 'DD-MM-YYYY',
-        minDate: moment().toDate(),
+//        minDate: moment().toDate(),
         i18n: translation
     });
-    
     
 });
 

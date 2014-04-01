@@ -100,7 +100,7 @@ class Project_IndexController extends Zend_Controller_Action
             $form->setDefault(
                         'inp_project_start_datepicker',
                         $thisProject->getProjectStart()
-                                    ->toString('dd-MM-Y H:m:s')
+                                    ->toString('dd-MM-Y')
                     );
             $form->getElement('inp_project_end_datepicker')
                     ->setAttrib('class', null);
@@ -108,7 +108,7 @@ class Project_IndexController extends Zend_Controller_Action
             $form->setDefault(
                         'inp_project_end_datepicker',
                         $thisProject->getProjectEnd()
-                                    ->toString('dd-MM-Y H:m:s')
+                                    ->toString('dd-MM-Y')
                     );
             
             
@@ -174,14 +174,14 @@ class Project_IndexController extends Zend_Controller_Action
                 );
         $form->setDefault(
                     'inp_project_start_datepicker',
-                    $thisProject->getProjectStart()->toString('dd-MM-Y H:m:s')
+                    $thisProject->getProjectStart()->toString('dd-MM-Y')
                 );
         $form->getElement('inp_project_start_datepicker')
              ->setAttrib('disabled', 'disabled');
         
         $form->setDefault(
                     'inp_project_end_datepicker',
-                    $thisProject->getProjectEnd()->toString('dd-MM-Y H:m:s')
+                    $thisProject->getProjectEnd()->toString('dd-MM-Y')
                 );
         
         $this->view->pageTitle   = $thisProject->getProjectTitle()
@@ -212,7 +212,7 @@ class Project_IndexController extends Zend_Controller_Action
                 );
         $form->setDefault(
                     'inp_project_start_datepicker',
-                    $creationDate->toString('dd-MM-Y H:m:s')
+                    $creationDate->toString('dd-MM-Y')
                 );
         $form->getElement('inp_project_start_datepicker')
              ->setAttrib('disabled', 'disabled');
