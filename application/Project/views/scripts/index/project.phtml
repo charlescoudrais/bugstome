@@ -65,9 +65,9 @@ if ($this->projectId === 0) {
                 foreach ($this->tasks as $task) :
             ?>
                 <li class="li-project-task">
-                    <a href="/task/<?= $task->getTaskProject()->getProjectId() 
-                                     . '/'
-                                     . $task->getTaskId(); ?>">
+                    <a href="/task/task/<?php //echo $task->getTaskProject()->getProjectId() 
+                                     //. '/'
+                                     echo $task->getTaskId(); ?>">
                         <?= $task->getTaskName(); ?>
                     </a>
                 </li>
@@ -86,7 +86,7 @@ if ($this->projectId === 0) {
                             </td>
                             <td style="padding: 4px;">
                                 <a class="add-links"
-                                   href="/task/<?= $this->projectId ?>/create"
+                                   href="/task/create/<?= $this->projectId ?>"
                                    style="color: #D98E2B; font-size: 16px;">
                                     <?=$this->translate('CREATE_NEW_TASK');?>
                                 </a>
@@ -116,7 +116,7 @@ if ($this->projectId === 0) {
                     </td>
                     <td style="padding: 4px;">
                         <a class="add-links"
-                           href="/task/<?= $this->projectId ?>/create"
+                           href="/task/create/<?= $this->projectId ?>"
                            style="color: #D98E2B; font-size: 16px;">
                             <?=$this->translate('CREATE_NEW_TASK');?>
                         </a>
