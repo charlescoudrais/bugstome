@@ -38,11 +38,11 @@ $this->formTask->sel_task_priority
 $this->formTask->tarea_task_description
                ->setLabel('TASK_DESCRIPTION');
 
-if ($this->taskId === 0) {
+//if ($this->taskId === 0) {
     $this->formTask->submit_task_form->setLabel('SUBMIT')
                                      ->clearDecorators()
                                      ->setDecorators($buttonDecorators);
-}
+//}
 
 //$this->formTask->setDecorators(
 //        array(
@@ -71,8 +71,8 @@ if ($this->taskId === 0) {
 <div class="action-content">
     
     <div><?= $this->formTask; ?></div>
-    
-    <?php if ($this->taskId > 0) : ?>
+    <br /><br />
+    <?php if ($this->pid !== 0) : ?>
     <div class="div-task-notes">
         <h2 class="h2-task-notes">
             <?= $this->translate('NOTE_LIST_TITLE') ?>
@@ -104,127 +104,30 @@ if ($this->taskId === 0) {
 <!-- MENU //-->
 <div class="article-btn">
     <ul class="ul-btn-add">
-    <?php if ($this->userRole <= 3) : ?>
-        
-        <?php
-        //@TODO : Tempory treatment, refactor, move...
-        $disabledNote = ($this->taskId === 0)
-            ? 'javascript: var i = 0; return false;' 
-            : '/note/'.$this->taskId.'/0';
-        $disabledAttach = ($this->taskId === 0)
-            ? 'javascript: var i = 0; return false;' 
-            : '/attach/file/'.$this->taskId.'/0';
-        ?>
         <li>
-            <table class="table-ul-btn-add">
+            <table>
                 <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/note_icon.svg"
- />
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/backward_icon.svg"
+                             style="width: 32px;" />
                     </td>
-                    <td class="td-ul-btn-add-b">
+                    <td style="padding: 4px;">
                         <a class="add-links"
-                           href="<?=$disabledNote?>"
-                           style=" font-size: 16px;">
-                        <?= $this->translate('ADD_A_NOTE'); ?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-        
-        <li>
-            <table class="table-ul-btn-add">
-                <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/b_attachment_icon.svg" />
-                    </td>
-                    <td class="td-ul-btn-add-b">
-                        <a class="add-links"
-                           href="<?=$disabledAttach?>">
-                            <?=$this->translate('ATTACH_A_DOCUMENT');?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-    <?php endif; ?>
-        
-    <?php if ($this->taskId > 0) : ?>
-        <li>
-            <table class="table-ul-btn-add">
-                <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/alert_icon.svg" />
-                    </td>
-                    <td class="td-ul-btn-add-b">
-                        <a class="add-links"
-                           href="/alert/task/<?=$this->taskId?>">
-                            <?=$this->translate('ALERT_TASK');?>
+                           href="/task/list">
+                            <?=$this->translate('BACKWARD');?>
                         </a>
                     </td>
                 </tr>
             </table>
         </li>
         <li>
-            <table class="table-ul-btn-add">
+            <table>
                 <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/timer_icon.svg" />
+                    <td style="padding: 4px;">
+                        <img src="/img/icons_svg/help_icon.svg"
+                             style="width: 32px;" />
                     </td>
-                    <td class="td-ul-btn-add-b">
-                        <a class="add-links" href="#<?=$this->taskId?>">
-                        <?= $this->translate('ADD_TIME'); ?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-    <?php endif; ?>
-        
-    <?php if ($this->taskId > 0) : ?>
-        <li>
-            <table class="table-ul-btn-add">
-                <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/modify_icon.svg" />
-                    </td>
-                    <td class="td-ul-btn-add-b">
-                        <a class="add-links"
-                           href="/task/modify/<?=$this->taskId?>">
-                            <?= $this->translate('MODIFY_TASK'); ?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-    
-        <?php if ($this->userRole <= 2 && $this->taskId > 0) : ?>
-        <li>
-            <table class="table-ul-btn-add">
-                <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/lock_icon.svg" />
-                    </td>
-                    <td class="td-ul-btn-add-b">
-                        <a class="add-links"
-                           href="/task/close/<?=$this->taskId?>">
-                            <?=$this->translate('CLOSE_TASK');?>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </li>
-        <?php endif; ?>
-    
-    <?php endif; ?>
-        <li>
-            <table class="table-ul-btn-add">
-                <tr>
-                    <td class="td-ul-btn-add-a">
-                        <img src="/img/icons_svg/help_icon.svg" />
-                    </td>
-                    <td class="td-ul-btn-add-b">
+                    <td style="padding: 4px;">
                         <a class="add-links"
                            href="javascript: return false;">
                             <?=$this->translate('HELP_TASK');?>
@@ -234,14 +137,7 @@ if ($this->taskId === 0) {
             </table>
         </li>
     </ul>
-    
-    <?php if ($this->taskId == 0) : ?>
-    <br />
     <div class="article">
-        <p>TODO : Explain...</p>
+        
     </div>
-    <?php endif; ?>
 </div>
-
-
-

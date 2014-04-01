@@ -224,7 +224,7 @@ class Task_IndexController extends Zend_Controller_Action
         
         $this->view->pageTitle = $this->view->translate('NEW_TASK_TITLE');
         $this->view->taskId    = $lastInsertId;
-//        $this->view->projectId = $hisProjectID;
+        $this->view->pid       = $hisProjectID;
         $this->view->projects  = $projectsNames;
         $this->view->formTask  = $form;
     }
