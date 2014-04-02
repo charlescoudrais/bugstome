@@ -19,6 +19,8 @@ return array(
 // FORMS
     'USER_LOGIN'                => 'Mail adress',
     'USER_PASSWORD'             => 'Password',
+    'LOG_ON'                    => 'Log on',
+    'LOG_OUT'                   => 'Log out',
     
 // STATS
     

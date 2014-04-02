@@ -19,6 +19,7 @@ return array(
 // FORMS
     'USER_LOGIN'                => 'Adresse mail',
     'USER_PASSWORD'             => 'Mot de passe',
+    'LOG_ON'                    => 'S\'identifier',
     
 // STATS
     

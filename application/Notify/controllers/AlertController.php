@@ -1,6 +1,10 @@
 <?php
 class Notify_AlertController extends Zend_Controller_Action
 {
+    /**
+     *
+     * @var Core_Model_User
+     */
     private $user;
     
     public function init()
@@ -50,6 +54,5 @@ class Notify_AlertController extends Zend_Controller_Action
         $taskId  = (int) $this->getRequest()->getParam('taskId');
         
         $this->view->pageTitle = 'BUGS2ME | Alert | ';
-//        $this->view->
     }
 }

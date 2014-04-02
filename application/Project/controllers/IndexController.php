@@ -6,13 +6,11 @@ class Project_IndexController extends Zend_Controller_Action
      * @var Core_Model_User
      */
     private $user;
-    
     /**
      *
      * @var array
      */
     private $users = array();
-    
     /**
      *
      * @var int
@@ -23,7 +21,6 @@ class Project_IndexController extends Zend_Controller_Action
      * @var array
      */
     private $projects = array();
-    
     /**
      *
      * @var array
@@ -103,7 +100,7 @@ class Project_IndexController extends Zend_Controller_Action
                                     ->toString('dd-MM-Y')
                     );
             $form->getElement('inp_project_end_datepicker')
-                    ->setAttrib('class', null);
+                 ->setAttrib('class', null);
             
             $form->setDefault(
                         'inp_project_end_datepicker',
@@ -217,11 +214,16 @@ class Project_IndexController extends Zend_Controller_Action
         $form->getElement('inp_project_start_datepicker')
              ->setAttrib('disabled', 'disabled');
         
-        $this->view->pageTitle = $this->view->translate('NEW_PROJECT_TITLE')
+        $this->view->pageTitle   = $this->view->translate('NEW_PROJECT_TITLE')
                                         . ' ( #' . $lastInsertId . ' )';
         $this->view->formProject = $form;
     }
     
+    public function closeAction()
+    {
+        $this->view->pageTitle = 'close project';
+        $this->_helper->layout->disableLayout();
+    }
     
     private function _initLayout($path = null)
     {
@@ -250,9 +252,12 @@ class Project_IndexController extends Zend_Controller_Action
     
     private function _initProjects()
     {
-        $project             = new Project_Model_Project();
-        $projectCollection   = $project->getProjectMapper()
-                                       ->fetchAll("user_id = " . $this->user->getId());
+        $project           = new Project_Model_Project();
+        $projectCollection = $project->getProjectMapper()
+                                     ->fetchAll(
+                                                "user_id = " . $this->user
+                                                                    ->getId()
+                                             );
         
         return $projectCollection;
     }
@@ -262,7 +267,6 @@ class Project_IndexController extends Zend_Controller_Action
         $sql = (NULL !== $projectId) ? "project_id = ". $projectId : "1 = 1";
         $task           = new Task_Model_Task();
         $taskCollection = $task->getTaskMapper()->fetchAll($sql);
-//        var_dump($taskCollection);
         return $taskCollection;
     }
     
